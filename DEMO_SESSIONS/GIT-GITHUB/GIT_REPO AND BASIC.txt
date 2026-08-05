@@ -35,3 +35,8 @@ git push -u origin main  --> this commands push all the changes to github
 // git add .
 // git commit -m "mesaage"
 // git push orgin main 
+
+
+// to get the copy form your github to your local 
+
+git clone url of repo
