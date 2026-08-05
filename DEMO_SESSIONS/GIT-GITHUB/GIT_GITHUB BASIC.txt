@@ -1,0 +1,28 @@
+//GIT    -->git is version controller software/tool 
+//GITHUB --> github is website which used to store your code
+
+
+// GIT_GITHUB --> the prefect platform to share your code 
+
+
+
+
+
+
+// SHARING 
+// 1 bluetooth// airdrop/asndriod  --> 
+RISK-->
+1 secuirty -- it takes time  
+
+// 2 pendrive/ harddisk  
+RISK --> 
+1 corruption risk ()
+2 secuirty or malware risk ( virus )
+3 damage risk 
+
+// 3 onedrive/sharepoint/googledrive 
+// here the platform is bult for document or file sharing 
+
+// risk --> data loss 
+
+

@@ -1,0 +1,32 @@
+GIT    -> git in a version control tool or software
+GITHUB -> github is a hosting platform/ website  
+
+// github is one of the hosting platform 
+
+// 80 - 85 (github)
+// 5 --> (bitbucket)
+//ADO and AWS ( Azure deveops amazon web services) - 10 
+
+
+//what we need to achieve -> 
+//1 we need to push our code in the  github system 
+//2 we need to understand the common terminology 
+
+// common terminology used  --> 
+
+// REPOSISTORY (REPO) -->  A unique local to store your code 
+
+
+
+// commands to push your code in repo for the first time 
+
+git init           --> it installs all the realted config for git
+git add .          --> this command add all the files to the stagging area ( git)
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SourceCode-code/Source_and_code_batch_6.git
+git push -u origin main
+
+
+
+
