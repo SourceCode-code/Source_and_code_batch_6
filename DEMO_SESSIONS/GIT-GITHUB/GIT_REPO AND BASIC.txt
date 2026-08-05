@@ -40,3 +40,9 @@ git push -u origin main  --> this commands push all the changes to github
 // to get the copy form your github to your local 
 
 git clone url of repo
+
+
+// what git vs  github
+//tell 5 github commands 
+
+// 80% --> people only knows this 
