@@ -22,11 +22,16 @@ GITHUB -> github is a hosting platform/ website
 
 git init           --> it installs all the realted config for git
 git add .          --> this command add all the files to the stagging area ( git)
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/SourceCode-code/Source_and_code_batch_6.git
-git push -u origin main
+git commit -m "first commit"  -->this is command used to tag the message for changes uploaded 
+git branch -M main     --> this commands create a master branch 
+git remote add origin https://github.com/SourceCode-code/Source_and_code_batch_6.git  --> this is patn or localtion where the code is upolaod
+git push -u origin main  --> this commands push all the changes to github 
 
 
+// if i have to upload the changes do i need to create the repo always 
 
+// now 
 
+// git add .
+// git commit -m "mesaage"
+// git push orgin main 
