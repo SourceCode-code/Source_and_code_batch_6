@@ -40,3 +40,15 @@ git push -u origin main --> this will push  all your files to github
 // to update the chnages in the repo used this commands 
 
 git add . --> add all the files 
+git commit -m "message" --> adds check point 
+git push origin main --> pushes files to github 
+
+// i have to push the code in github but i dont want to add or push the two file 
+
+
+// Difference between git add and git add .
+
+// git add filename   --> this used to add only the specfic file changes 
+// git add .  --> this used to add all updated changes in all the file 
+
+
