@@ -1,0 +1,42 @@
+GIT    -> GIT IS VERSION CONTROL TOOL/SOFTWARE
+GITHUB -> GITHUB IS HOSITING PALTFROM
+AZURE --> 
+BITBUCKET ->
+GITLAB ->
+
+
+
+TOGETHER IT BECOMES -> A POWER SYSTEM THAT IS USED TO MANAGE AND EFFECTIVELY USED YOUR CODE 
+
+// WAS THE THE GOBAL LOSS THAT OCCUR DUE THE OUTAGE --> 180 + MILLION DOLLARS (736 HUNDRED CORES)
+
+
+//TOPIC OF THE DAY 
+
+//SETTING UP THE ACCOUNT OF GITHUB AND SETTING UP THE REPO AND PUSHING THE FIRST CODE WITH UNDERSTANDING OF WHAT HAPPENS 
+
+
+commands to setup the repo 
+
+git init  
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SourceCode-code/demo_1.git
+git push -u origin main
+
+
+
+commands and there explaination 
+
+git init    --> THIS WILL INSTALL A GIT CONFIG FOLDER (this will add a setting folder for repo)
+git add .   --> This is used to add / update all the files 
+git commit -m "first commit" --> this will create a checkpoint for the your files in the repo 
+git branch -M main -->  this will create a main/Master branch which will your prodcution repo
+git remote add origin https://github.com/SourceCode-code/demo_1.git --> this add the  a connection between the repo website and the folder 
+git push -u origin main --> this will push  all your files to github 
+
+
+// to update the chnages in the repo used this commands 
+
+git add . --> add all the files 

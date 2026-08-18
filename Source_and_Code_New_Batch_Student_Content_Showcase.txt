@@ -1,0 +1,585 @@
+SOURCE & CODE — NEW BATCH
+=============================
+SOFTWARE TESTING & AUTOMATION
+STUDENT CONTENT SHOWCASE
+
+Welcome to your learning journey.
+
+This is not just a course where you watch lectures and write a few scripts.
+The goal is to take you from the fundamentals of Software Testing to
+real-world Automation Testing, framework development, project work,
+and interview readiness.
+
+Your journey will follow:
+
+UNDERSTAND
+    ↓
+PRACTICE
+    ↓
+AUTOMATE
+    ↓
+BUILD
+    ↓
+TEST REAL PROJECTS
+    ↓
+PREPARE FOR INTERVIEWS
+
+
+WHAT WILL YOU LEARN?
+====================
+
+You will build your skills step by step across the complete QA / Automation
+Testing workflow.
+
+
+01. SOFTWARE TESTING FUNDAMENTALS
+=================================
+
+You will first understand how a professional Software Tester thinks and
+works before moving into automation.
+
+YOU WILL LEARN:
+- What is Software Testing?
+- Why do we need Testing?
+- SDLC and STLC
+- Verification vs Validation
+- Functional and Non-Functional Testing
+- Different Testing Types
+- Test Scenario
+- Test Case
+- Test Data
+- Bug / Defect
+- Bug Life Cycle
+- Severity vs Priority
+- Smoke Testing
+- Sanity Testing
+- Regression Testing
+- Retesting
+- Test Design Techniques
+- Agile and Scrum
+- Jira basics
+
+WHAT YOU WILL BE ABLE TO DO:
+You will be able to understand a requirement, identify testing scenarios,
+write effective test cases, report defects and participate in an Agile
+testing process.
+
+
+02. JAVASCRIPT
+=============
+
+Automation is not only about tools. You need programming fundamentals to
+build strong automation skills.
+
+YOU WILL LEARN:
+- Variables
+- Data Types
+- Operators
+- Conditions
+- Loops
+- Functions
+- Arrays
+- Objects
+- String handling
+- Array methods
+- ES6 concepts
+- Destructuring
+- Spread and Rest operators
+- Template literals
+- DOM basics
+- Asynchronous JavaScript
+- Promises
+- Basic error handling
+
+PRACTICE:
+You will solve programming problems and write small utilities that improve
+your logic-building skills.
+
+WHAT YOU WILL BE ABLE TO DO:
+You will be comfortable reading, writing and debugging JavaScript code
+required for modern test automation.
+
+
+03. GIT & GITHUB
+===============
+
+You will learn how professional teams manage automation code.
+
+YOU WILL LEARN:
+- Git fundamentals
+- Repository structure
+- Clone
+- Commit
+- Push
+- Pull
+- Branches
+- Merge
+- Pull Requests
+- Resolving basic conflicts
+- Working with GitHub
+- Maintaining your automation project
+
+WHAT YOU WILL BE ABLE TO DO:
+You will be able to maintain your own automation code and work with
+source control like a professional QA engineer.
+
+
+04. PLAYWRIGHT
+==============
+
+This is where you move from programming fundamentals into browser
+automation.
+
+YOU WILL LEARN:
+
+PLAYWRIGHT BASICS
+- What is Playwright?
+- Installation and setup
+- Project structure
+- Configuration
+- Your first automation test
+
+LOCATORS
+- CSS
+- XPath
+- getByRole
+- getByText
+- getByLabel
+- getByPlaceholder
+- getByTestId
+- Reliable locator strategies
+- Dynamic elements
+
+WEB AUTOMATION
+- Text fields
+- Buttons
+- Checkboxes
+- Radio buttons
+- Dropdowns
+- Links
+- Tables
+- Alerts
+- Frames
+- Multiple tabs / windows
+- File upload
+- File download
+
+TESTING CONCEPTS
+- Assertions
+- Auto waiting
+- Hooks
+- Test isolation
+- Test organization
+- Parallel execution
+- Cross-browser execution
+
+FRAMEWORK DEVELOPMENT
+- Page Object Model
+- Reusable methods
+- Fixtures
+- Test data management
+- Environment handling
+- Utility functions
+- Common framework design practices
+- Reporting
+
+ADVANCED AUTOMATION
+- API + UI integration
+- Data-driven testing
+- Reusable automation components
+- Framework optimization
+- Real-world execution practices
+
+WHAT YOU WILL BE ABLE TO DO:
+You will move from writing a simple automated script to building a
+maintainable Playwright automation framework.
+
+
+05. API TESTING
+===============
+
+Modern QA engineers need to understand both UI and backend testing.
+
+YOU WILL LEARN:
+- What is an API?
+- Client and Server
+- Request and Response
+- HTTP methods
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
+- Status codes
+- Headers
+- Request body
+- Response body
+- Query parameters
+- Path parameters
+- Authentication
+- API testing using Postman
+- API validation
+- API automation
+- API + UI testing
+
+WHAT YOU WILL BE ABLE TO DO:
+You will understand how applications communicate in the backend and how
+to validate APIs independently and as part of an automation framework.
+
+
+06. DOM & WEB FUNDAMENTALS
+==========================
+
+Before becoming strong in automation, you need to understand how a web
+page is built.
+
+YOU WILL LEARN:
+- HTML basics
+- DOM structure
+- Elements
+- Attributes
+- IDs and Classes
+- Parent / Child relationships
+- Inspecting web elements
+- Understanding dynamic elements
+- How browser automation interacts with the DOM
+
+WHAT YOU WILL BE ABLE TO DO:
+You will understand what you are actually automating instead of depending
+only on copy-paste locator techniques.
+
+
+07. TEST DATA MANAGEMENT
+========================
+
+Real automation projects require reliable and reusable data.
+
+YOU WILL LEARN:
+- What is test data?
+- Static vs dynamic test data
+- Test data generation
+- Reusable data
+- Random data
+- Environment-based data
+- Managing user credentials safely
+- Using data inside automated tests
+- Data-driven testing concepts
+
+WHAT YOU WILL BE ABLE TO DO:
+You will learn how to design automation that does not depend on manually
+entering the same data for every test.
+
+
+08. TEST AUTOMATION FRAMEWORK
+=============================
+
+The goal is not to write 100 scripts.
+
+The goal is to build an automation solution that can be maintained by a
+team.
+
+YOU WILL LEARN HOW TO:
+- Organize automation projects
+- Create reusable components
+- Separate test logic from page logic
+- Manage test data
+- Create utilities
+- Configure environments
+- Generate reports
+- Reduce duplicate code
+- Improve framework maintainability
+- Follow practical coding standards
+
+WHAT YOU WILL BE ABLE TO DO:
+You will start thinking like an Automation Engineer rather than someone
+who simply writes test scripts.
+
+
+09. REPORTING & DEBUGGING
+=========================
+
+Automation is useful only when the team can understand the result.
+
+YOU WILL LEARN:
+- Test reports
+- Execution results
+- Screenshots
+- Traces
+- Logs
+- Failure analysis
+- Debugging failed tests
+- Understanding flaky tests
+- Identifying automation issues
+
+WHAT YOU WILL BE ABLE TO DO:
+You will be able to investigate failures and explain why a test passed or
+failed.
+
+
+10. REAL-WORLD PROJECT
+======================
+
+Knowledge becomes valuable when you can use it together.
+
+You will work toward a project that combines:
+
+MANUAL TESTING
++
+JAVASCRIPT
++
+PLAYWRIGHT
++
+API TESTING
++
+GIT & GITHUB
++
+TEST DATA
++
+REPORTING
++
+FRAMEWORK DESIGN
+
+
+PROJECT JOURNEY:
+
+Requirement
+    ↓
+Understand Application
+    ↓
+Create Test Scenarios
+    ↓
+Write Test Cases
+    ↓
+Prepare Test Data
+    ↓
+Perform API Testing
+    ↓
+Create UI Automation
+    ↓
+Build Reusable Framework
+    ↓
+Execute Tests
+    ↓
+Generate Reports
+    ↓
+Debug Failures
+    ↓
+Push Code to GitHub
+    ↓
+Present the Project
+
+
+11. INTERVIEW PREPARATION
+=========================
+
+The objective is not only to learn.
+
+The objective is to explain what you know confidently.
+
+YOU WILL PRACTICE QUESTIONS AROUND:
+- Manual Testing
+- Test Scenarios and Test Cases
+- Bug Reporting
+- Agile
+- JavaScript
+- Playwright
+- Locators
+- Auto Waiting
+- Assertions
+- Page Object Model
+- Fixtures
+- API Testing
+- Framework Design
+- Test Data Management
+- Git and GitHub
+- Real-world testing scenarios
+
+YOU WILL ALSO LEARN:
+- How to explain your project
+- How to explain your contribution
+- How to answer scenario-based questions
+- How to discuss challenges and solutions
+- How to present yourself as a good Automation Tester
+
+
+HOW EACH TOPIC WILL BE TAUGHT
+=============================
+
+Every important topic follows this cycle:
+
+1. UNDERSTAND
+   Learn the concept and why it is used.
+
+2. SEE
+   Understand a practical example.
+
+3. CODE
+   Write the solution yourself.
+
+4. PRACTICE
+   Solve an exercise or assignment.
+
+5. APPLY
+   Use the concept in a realistic testing scenario.
+
+6. EXPLAIN
+   Learn how to discuss it in an interview.
+
+This means you are not expected to simply remember the topic.
+
+
+WHAT YOU WILL BUILD DURING THE JOURNEY
+======================================
+
+By the end of the learning journey, you should have experience with:
+
+[ ] Manual Testing fundamentals
+[ ] Test case and bug reporting
+[ ] JavaScript programming
+[ ] Git and GitHub
+[ ] Web / DOM understanding
+[ ] Playwright automation
+[ ] API testing
+[ ] Test data management
+[ ] Page Object Model
+[ ] Fixtures and reusable components
+[ ] Test reporting
+[ ] Framework structure
+[ ] Debugging automation failures
+[ ] Real-world project execution
+[ ] Interview preparation
+
+
+YOUR PROGRESSION
+================
+
+STARTING POINT:
+
+"I have little or no automation experience."
+
+                ↓
+
+FOUNDATION:
+
+"I understand Software Testing and programming basics."
+
+                ↓
+
+AUTOMATION:
+
+"I can automate web applications using Playwright."
+
+                ↓
+
+ENGINEERING:
+
+"I can create reusable and maintainable automation."
+
+                ↓
+
+INTEGRATION:
+
+"I can combine UI, API, test data and reporting."
+
+                ↓
+
+PROJECT:
+
+"I can work on a real-world testing project."
+
+                ↓
+
+INTERVIEW:
+
+"I can explain my work and answer practical QA Automation questions."
+
+
+WHAT MAKES THIS JOURNEY DIFFERENT?
+===================================
+
+The focus is not:
+
+WATCH CLASSES
+     ↓
+COPY CODE
+     ↓
+FINISH COURSE
+
+
+The focus is:
+
+LEARN
+  ↓
+UNDERSTAND WHY
+  ↓
+WRITE YOUR OWN CODE
+  ↓
+PRACTICE
+  ↓
+SOLVE PROBLEMS
+  ↓
+BUILD PROJECTS
+  ↓
+REVISE
+  ↓
+EXPLAIN
+  ↓
+BECOME JOB-READY
+
+
+YOUR GITHUB REPOSITORY
+======================
+
+The GitHub repository will act as your learning workspace.
+
+Inside it you will find:
+
+- Class learning material
+- Source code
+- Practice examples
+- Assignments
+- Revision content
+- Interview preparation
+- Project work
+- Student trackers
+- Additional resources
+
+Repository:
+https://github.com/SourceCode-code/Source_and_Code_Batch_4_Master
+
+The current Batch 4 repository already contains areas for API Testing,
+JavaScript Sessions, Manual Testing notes, GitHub Sessions, DOM Sessions,
+Playwright work, revision, resources, trackers and projects.
+
+
+THE FINAL OUTCOME
+=================
+
+By the end of the program, the aim is that you can confidently say:
+
+"I understand Software Testing."
+
+"I can write JavaScript."
+
+"I can automate web applications using Playwright."
+
+"I can test APIs."
+
+"I can manage automation code using Git and GitHub."
+
+"I understand test data and framework design."
+
+"I can debug automation failures."
+
+"I can work on a real-world testing project."
+
+"I can explain my work in an interview."
+
+
+SOURCE & CODE
+=============
+LEARN • PRACTICE • BUILD • TEST • REVISE • INTERVIEW
+
+This is not just a collection of classes.
+
+THIS IS YOUR SOFTWARE TESTING & AUTOMATION LEARNING JOURNEY.
