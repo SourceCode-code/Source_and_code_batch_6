@@ -52,3 +52,23 @@ git push origin main --> pushes files to github
 // git add .  --> this used to add all updated changes in all the file 
 
 
+
+when ever we push a file to github through then files goes through 3 env 
+
+// 1 working directory --> local folder 
+// 2 stagging area    --> between local and github (self review)
+// 3 production       -->github
+
+
+// the file travels thorugh this path 
+
+
+// local folder --> GIT STAGING -->
+
+
+
+
+
+
+
+
