@@ -11,7 +11,7 @@ steps ->
 3 copy the url to clipboard
 4 go to any folder where you want the repo to be cloned 
 5 right click -> show more options -> select git bash here ( it will open this ternminal of git)
-6  type ' git clone - url '
+6  type ' git clone  url '
 
 now have completed the full circle flow 
 
