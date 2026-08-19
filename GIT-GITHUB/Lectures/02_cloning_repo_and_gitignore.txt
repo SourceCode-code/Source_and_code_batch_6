@@ -25,4 +25,14 @@ git add  ->add ones file to staging
 git add .-> add all the updating file to stagginhg  
 
 
+// gitignore --> this file will permantely ingore the file path added to this file 
+
+// how to add a file to git igonre 
+
+step 1 create a file name .gitignore  -> where to create where your .git folder is present
+step 2 how to add the file to .gitignore -> 
+
+
+
+
 
