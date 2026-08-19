@@ -37,5 +37,6 @@ step 2 how to add the file to .gitignore ->  just add the file name or file path
 
 if there is file which is already uploaded on github and if i want to add that file on gitignore will it remove the file github
 
+gitigonre will only igonre untracked or unpublished file 
 
 
