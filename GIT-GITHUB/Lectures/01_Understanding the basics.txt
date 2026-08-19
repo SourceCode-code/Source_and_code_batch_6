@@ -62,8 +62,8 @@ when ever we push a file to github through then files goes through 3 env
 
 // the file travels thorugh this path 
 
---> CHANGES     --> GIT ADD .   --> COMMIT -M "MESSAGE"   -->GO LIVE ON GITHUB
-// local folder --> GIT STAGING --> LOCAL GIT REPOSITORY  -->GIT PUSH ORIGIN MAIN
+--> CHANGES     --> GIT ADD .   --> COMMIT -M "MESSAGE"   -->GIT PUSH ORIGIN MAIN
+// local folder --> GIT STAGING --> LOCAL GIT REPOSITORY  -->GO LIVE ON GITHUB
 
 
 

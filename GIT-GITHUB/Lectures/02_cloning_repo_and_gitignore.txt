@@ -1,0 +1,28 @@
+
+//TOPIC OF THE DAY --> learning how to clone a REPOSITORY and what is the gitignore and how it is used 
+
+
+git cloning --> the process of importing/copying a repo form github to local
+
+steps ->
+
+1 go to repo url 
+2 click on the green code button 
+3 copy the url to clipboard
+4 go to any folder where you want the repo to be cloned 
+5 right click -> show more options -> select git bash here ( it will open this ternminal of git)
+6  type ' git clone - url '
+
+now have completed the full circle flow 
+
+
+
+
+        github <---> local
+
+       
+git add  ->add ones file to staging
+git add .-> add all the updating file to stagginhg  
+
+
+
