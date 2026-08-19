@@ -1,0 +1,1152 @@
+# Git & GitHub — Understanding the Basics
+
+## 1. What is Git?
+
+**Git is a Version Control System (VCS).**
+
+It is a software/tool used to:
+
+* Track changes in code
+* Maintain different versions of a project
+* Create checkpoints of our work
+* Compare changes
+* Go back to previous versions
+* Work safely with other developers
+
+### Simple example
+
+Imagine you are working on a project:
+
+```text
+Login Page → Login Page v2 → Login Page v3 → Login Page v4
+```
+
+Git keeps track of these changes so you know:
+
+* What changed?
+* Who changed it?
+* When was it changed?
+* What was the previous version?
+
+---
+
+# 2. What is GitHub?
+
+**GitHub is a cloud-based platform that hosts Git repositories.**
+
+Think of it like:
+
+```text
+Git     → Version Control Tool
+GitHub  → Platform where Git repositories can be hosted
+```
+
+Other platforms that can host Git repositories include:
+
+* GitHub
+* GitLab
+* Bitbucket
+* Azure Repos
+
+### Easy way to remember
+
+```text
+Git = Tool
+GitHub = Hosting/Collaboration Platform
+```
+
+Git can work without GitHub.
+
+For example, you can create commits on your laptop without an internet connection.
+
+GitHub becomes useful when you want to:
+
+* Store code remotely
+* Collaborate with a team
+* Share code
+* Review code
+* Manage branches
+* Create Pull Requests
+* Connect code with CI/CD
+* Maintain a central repository
+
+---
+
+# 3. Git vs GitHub
+
+| Git                        | GitHub                          |
+| -------------------------- | ------------------------------- |
+| Version control tool       | Git repository hosting platform |
+| Installed on your computer | Cloud-based service             |
+| Tracks code changes        | Hosts and shares repositories   |
+| Can work offline           | Usually requires internet       |
+| Creates commits            | Stores remote copies of commits |
+| Manages local branches     | Provides collaboration features |
+
+### Remember
+
+```text
+Git manages versions.
+GitHub hosts and helps collaborate on those versions.
+```
+
+---
+
+# 4. Today's Practical Goal
+
+The objective of this lecture is to understand how to:
+
+1. Create a GitHub account
+2. Create a repository
+3. Create a local project
+4. Initialize Git
+5. Add files to Git
+6. Create a commit
+7. Connect the local repository to GitHub
+8. Push code to GitHub
+9. Update the code
+10. Push the updated code
+
+---
+
+# 5. Creating a Local Git Repository
+
+Suppose we have:
+
+```text
+demo_1/
+    login.js
+    signup.js
+    README.md
+```
+
+Currently, this is just a normal folder.
+
+Git does not track it yet.
+
+Run:
+
+```bash
+git init
+```
+
+## What does `git init` do?
+
+`git init` initializes Git inside the current folder.
+
+It creates a hidden:
+
+```text
+.git
+```
+
+directory.
+
+Conceptually:
+
+```text
+demo_1/
+│
+├── login.js
+├── signup.js
+├── README.md
+│
+└── .git/
+```
+
+The `.git` directory contains Git's internal information for that repository.
+
+### Remember
+
+```text
+git init
+     ↓
+Initialize Git repository
+     ↓
+Git can now track changes
+```
+
+---
+
+# 6. Working Directory
+
+The **Working Directory** is the actual project folder where you work.
+
+Example:
+
+```text
+demo_1/
+├── login.js
+├── signup.js
+└── README.md
+```
+
+When you modify a file, the change first exists in your **Working Directory**.
+
+Example:
+
+```text
+login.js → Modified
+```
+
+At this point, Git knows that something changed, but the change has not been staged or committed yet.
+
+---
+
+# 7. Git Staging Area
+
+The **Staging Area** is where we select the changes that we want to include in the next commit.
+
+Think of it as a **self-review area**.
+
+```text
+Working Directory
+       ↓
+   git add
+       ↓
+Staging Area
+```
+
+You can decide exactly which changes should go into the next commit.
+
+---
+
+# 8. `git add`
+
+## Add a specific file
+
+```bash
+git add login.js
+```
+
+This stages only:
+
+```text
+login.js
+```
+
+### Meaning
+
+> "I want to include the changes from this file in my next commit."
+
+---
+
+## Add all changes
+
+```bash
+git add .
+```
+
+The `.` means the current directory and its contents.
+
+It stages all relevant changed/untracked files under the current directory.
+
+### Meaning
+
+> "Stage all the changes I currently want to include."
+
+---
+
+# 9. Difference Between `git add` and `git add .`
+
+### Specific file
+
+```bash
+git add login.js
+```
+
+Only `login.js` is staged.
+
+### All changes
+
+```bash
+git add .
+```
+
+All applicable changes under the current directory are staged.
+
+### Example
+
+Suppose:
+
+```text
+login.js       → Modified
+signup.js      → Modified
+README.md      → Modified
+```
+
+If you run:
+
+```bash
+git add login.js
+```
+
+Only:
+
+```text
+login.js
+```
+
+is staged.
+
+If you run:
+
+```bash
+git add .
+```
+
+all three can be staged.
+
+---
+
+# 10. Important: `git add` Does NOT Push to GitHub
+
+This is a common beginner mistake.
+
+```bash
+git add .
+```
+
+does **not** send code to GitHub.
+
+It only moves the changes:
+
+```text
+Working Directory
+        ↓
+Staging Area
+```
+
+---
+
+# 11. Git Commit
+
+After staging our changes, we create a commit.
+
+```bash
+git commit -m "first commit"
+```
+
+## What is a commit?
+
+A commit is a **checkpoint/snapshot of the staged changes in your local Git repository**.
+
+Think:
+
+```text
+Code changes
+     ↓
+git add .
+     ↓
+Staging Area
+     ↓
+git commit
+     ↓
+Local Git Repository
+```
+
+The commit also contains information such as:
+
+* Commit ID
+* Author
+* Date/time
+* Commit message
+* Snapshot of the changes
+
+---
+
+# 12. Why Do We Use `-m`?
+
+Example:
+
+```bash
+git commit -m "Added login test"
+```
+
+`-m` means we are providing a commit message.
+
+The message should explain what the commit contains.
+
+### Good examples
+
+```bash
+git commit -m "Added login test"
+```
+
+```bash
+git commit -m "Updated registration validation"
+```
+
+```bash
+git commit -m "Fixed checkout test"
+```
+
+Avoid vague messages like:
+
+```bash
+git commit -m "changes"
+```
+
+or:
+
+```bash
+git commit -m "update"
+```
+
+---
+
+# 13. Local Git Repository
+
+After committing:
+
+```bash
+git commit -m "first commit"
+```
+
+the commit exists in your **local Git repository**.
+
+It is still on your computer.
+
+It has NOT necessarily been uploaded to GitHub.
+
+This distinction is extremely important.
+
+```text
+Your Computer
+
+Working Directory
+       ↓
+Staging Area
+       ↓
+Local Git Repository
+```
+
+---
+
+# 14. GitHub Remote Repository
+
+Now suppose we created a repository on GitHub:
+
+```text
+GitHub
+└── demo_1
+```
+
+Our local repository needs to know where the remote repository is located.
+
+We connect them using:
+
+```bash
+git remote add origin https://github.com/SourceCode-code/demo_1.git
+```
+
+---
+
+# 15. What is `origin`?
+
+`origin` is simply the conventional name given to the remote repository.
+
+Think of:
+
+```text
+origin = nickname for the remote GitHub repository
+```
+
+Instead of repeatedly typing the complete GitHub URL, Git can use:
+
+```text
+origin
+```
+
+You can check your remote using:
+
+```bash
+git remote -v
+```
+
+---
+
+# 16. Local Repository vs Remote Repository
+
+### Local Repository
+
+Exists on your computer.
+
+```text
+Laptop
+└── Project
+    └── .git
+```
+
+### Remote Repository
+
+Usually hosted on GitHub.
+
+```text
+GitHub
+└── demo_1
+```
+
+The relationship is:
+
+```text
+LOCAL REPOSITORY
+       │
+       │ push
+       ▼
+REMOTE REPOSITORY
+      GitHub
+```
+
+---
+
+# 17. What is `git push`?
+
+Now we want to upload our local commits to GitHub.
+
+```bash
+git push -u origin main
+```
+
+This transfers the local commits to the remote repository's `main` branch.
+
+Break it down:
+
+```text
+git       → Git command
+push      → Send local commits to remote
+-u        → Set upstream tracking relationship
+origin    → Remote repository name
+main      → Target branch
+```
+
+---
+
+# 18. What Does `-u` Mean?
+
+In:
+
+```bash
+git push -u origin main
+```
+
+`-u` sets the upstream/tracking relationship between your local branch and the remote branch.
+
+After this is configured, future pushes can often be simplified to:
+
+```bash
+git push
+```
+
+instead of:
+
+```bash
+git push origin main
+```
+
+---
+
+# 19. What is a Branch?
+
+A branch is an independent line of development.
+
+For example:
+
+```text
+main
+ │
+ ├── feature-login
+ │
+ ├── feature-payment
+ │
+ └── bugfix-checkout
+```
+
+Developers commonly create feature branches so they can work without directly changing the main branch.
+
+---
+
+# 20. `git branch -M main`
+
+Command:
+
+```bash
+git branch -M main
+```
+
+This renames the current branch to:
+
+```text
+main
+```
+
+`-M` forces the rename if necessary.
+
+### Important clarification
+
+`main` is **not automatically the production environment**.
+
+It is simply a branch name.
+
+A company may configure its CI/CD system so that:
+
+```text
+main → production deployment
+```
+
+but Git itself does not define `main` as "production."
+
+For example:
+
+```text
+feature/login
+      ↓
+develop
+      ↓
+main
+      ↓
+Production
+```
+
+The actual workflow depends on the company's development and deployment strategy.
+
+---
+
+# 21. Complete First-Time Setup
+
+A typical first-time flow is:
+
+```bash
+git init
+
+git add .
+
+git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin https://github.com/SourceCode-code/demo_1.git
+
+git push -u origin main
+```
+
+### Flow
+
+```text
+Create project
+      ↓
+git init
+      ↓
+Git repository created
+      ↓
+git add .
+      ↓
+Stage changes
+      ↓
+git commit
+      ↓
+Create local checkpoint
+      ↓
+git remote add origin
+      ↓
+Connect to GitHub
+      ↓
+git push
+      ↓
+Upload commits to GitHub
+```
+
+---
+
+# 22. Updating Existing Code
+
+After the first push, suppose you modify:
+
+```text
+login.js
+```
+
+You need to:
+
+```bash
+git add .
+git commit -m "Updated login test"
+git push origin main
+```
+
+### What happens?
+
+```text
+Modified files
+      ↓
+git add .
+      ↓
+Staging Area
+      ↓
+git commit
+      ↓
+Local Git Repository
+      ↓
+git push origin main
+      ↓
+GitHub
+```
+
+---
+
+# 23. The Complete Git Flow
+
+This is the most important diagram to remember:
+
+```text
+              YOUR COMPUTER
+┌────────────────────────────────────┐
+│                                    │
+│  Working Directory                 │
+│  "I am writing/changing code"      │
+│              │                     │
+│              │ git add             │
+│              ▼                     │
+│  Staging Area                      │
+│  "I selected these changes"        │
+│              │                     │
+│              │ git commit          │
+│              ▼                     │
+│  Local Git Repository              │
+│  "Checkpoint saved locally"        │
+│              │                     │
+└──────────────┼─────────────────────┘
+               │
+               │ git push
+               ▼
+        ┌───────────────┐
+        │    GitHub     │
+        │    Remote     │
+        │   Repository  │
+        └───────────────┘
+```
+
+---
+
+# 24. Very Important: There Are 4 Concepts Here
+
+Do not confuse these four:
+
+### 1. Working Directory
+
+Your actual project files.
+
+```text
+login.js
+signup.js
+README.md
+```
+
+### 2. Staging Area
+
+Changes selected for the next commit.
+
+```bash
+git add .
+```
+
+### 3. Local Repository
+
+Commits stored on your computer.
+
+```bash
+git commit -m "message"
+```
+
+### 4. Remote Repository
+
+Repository hosted on GitHub.
+
+```bash
+git push
+```
+
+---
+
+# 25. What Happens When You Push?
+
+Suppose you change:
+
+```text
+login.js
+```
+
+The complete journey is:
+
+```text
+1. Change the file
+       ↓
+2. git add login.js
+       ↓
+3. Change enters Staging Area
+       ↓
+4. git commit -m "Updated login"
+       ↓
+5. Commit saved locally
+       ↓
+6. git push origin main
+       ↓
+7. Commit sent to GitHub
+```
+
+---
+
+# 26. Does `git push` Change Production?
+
+**Not necessarily.**
+
+This is a very important real-world concept.
+
+Normally:
+
+```text
+Developer Laptop
+       ↓
+Git
+       ↓
+GitHub
+```
+
+GitHub is your source-code repository.
+
+Production is a separate environment.
+
+For example:
+
+```text
+Developer
+    ↓
+GitHub
+    ↓
+CI/CD Pipeline
+    ↓
+Build
+    ↓
+Tests
+    ↓
+Deployment
+    ↓
+Production
+```
+
+If the organization has configured:
+
+```text
+main → automatic production deployment
+```
+
+then:
+
+```bash
+git push origin main
+```
+
+could indirectly trigger a production deployment.
+
+But that is because of the **CI/CD configuration**, not because Git considers `main` to be production.
+
+---
+
+# 27. Real-World Developer Workflow
+
+A more realistic team workflow may look like:
+
+```text
+Developer
+    ↓
+Create feature branch
+    ↓
+Write code
+    ↓
+git add
+    ↓
+git commit
+    ↓
+git push
+    ↓
+GitHub
+    ↓
+Pull Request
+    ↓
+Code Review
+    ↓
+Automated Tests
+    ↓
+Merge
+    ↓
+Deployment Pipeline
+    ↓
+Production
+```
+
+This is how Git and GitHub become part of a larger **software development and CI/CD process**.
+
+---
+
+# 28. Useful Commands to Remember
+
+### Check Git version
+
+```bash
+git --version
+```
+
+### Initialize repository
+
+```bash
+git init
+```
+
+### Check current status
+
+```bash
+git status
+```
+
+### Add specific file
+
+```bash
+git add filename
+```
+
+### Add all changes
+
+```bash
+git add .
+```
+
+### Create commit
+
+```bash
+git commit -m "message"
+```
+
+### Check branches
+
+```bash
+git branch
+```
+
+### Rename branch
+
+```bash
+git branch -M main
+```
+
+### Add remote
+
+```bash
+git remote add origin <repository-url>
+```
+
+### Check remote
+
+```bash
+git remote -v
+```
+
+### Push
+
+```bash
+git push origin main
+```
+
+### Pull latest changes
+
+```bash
+git pull
+```
+
+---
+
+# 29. One-Line Explanation of Every Important Command
+
+```text
+git init
+→ Start Git tracking in the project.
+
+git status
+→ Check what has changed.
+
+git add filename
+→ Stage a specific file.
+
+git add .
+→ Stage all relevant changes.
+
+git commit -m "message"
+→ Create a checkpoint in the local repository.
+
+git branch -M main
+→ Rename the current branch to main.
+
+git remote add origin <URL>
+→ Connect the local repository to the remote repository.
+
+git push origin main
+→ Upload local commits to GitHub's main branch.
+
+git pull
+→ Get and integrate the latest remote changes.
+```
+
+---
+
+# 30. Easy Interview Explanation
+
+### What is Git?
+
+> Git is a distributed version control system used to track and manage changes in source code.
+
+### What is GitHub?
+
+> GitHub is a platform used to host Git repositories and collaborate on source code.
+
+### What is `git add`?
+
+> It stages changes that we want to include in the next commit.
+
+### What is `git commit`?
+
+> It creates a checkpoint of staged changes in the local Git repository.
+
+### What is `git push`?
+
+> It sends local commits to a remote repository such as GitHub.
+
+### What is `origin`?
+
+> `origin` is the default/common name given to the remote repository.
+
+### What is `main`?
+
+> `main` is a branch name. It is commonly used as the primary branch, but whether it represents production depends on the team's workflow.
+
+---
+
+# 31. Golden Rule to Remember
+
+```text
+CHANGE
+  ↓
+git add
+  ↓
+STAGE
+  ↓
+git commit
+  ↓
+SAVE LOCALLY
+  ↓
+git push
+  ↓
+GITHUB
+```
+
+### In one sentence:
+
+**`git add` selects the changes → `git commit` saves a checkpoint locally → `git push` sends those commits to GitHub.**
+
+---
+
+# 32. Today's Assignment
+
+Practice the complete flow:
+
+### Task 1 — Create GitHub Account
+
+Create/login to your GitHub account.
+
+### Task 2 — Create Repository
+
+Create a new GitHub repository.
+
+### Task 3 — Create Local Project
+
+Create a project folder on your computer.
+
+### Task 4 — Initialize Git
+
+```bash
+git init
+```
+
+### Task 5 — Add Files
+
+Create some files and run:
+
+```bash
+git add .
+```
+
+### Task 6 — Commit
+
+```bash
+git commit -m "first commit"
+```
+
+### Task 7 — Connect GitHub
+
+```bash
+git remote add origin <your-repository-url>
+```
+
+### Task 8 — Push
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+### Task 9 — Modify the Project
+
+Change one of your files.
+
+### Task 10 — Push the Update
+
+```bash
+git add .
+git commit -m "Updated project"
+git push origin main
+```
+
+---
+
+# Final Revision
+
+Remember these four layers:
+
+```text
+┌─────────────────────────────┐
+│      WORKING DIRECTORY      │
+│       Your actual code      │
+└──────────────┬──────────────┘
+               │
+            git add
+               ↓
+┌─────────────────────────────┐
+│       STAGING AREA          │
+│   Changes selected for      │
+│       next commit           │
+└──────────────┬──────────────┘
+               │
+          git commit
+               ↓
+┌─────────────────────────────┐
+│     LOCAL GIT REPOSITORY    │
+│    Commits saved locally    │
+└──────────────┬──────────────┘
+               │
+            git push
+               ↓
+┌─────────────────────────────┐
+│       REMOTE REPOSITORY     │
+│           GitHub            │
+└─────────────────────────────┘
+```
+
+**Master this flow first. Everything else in Git builds on this foundation.**
