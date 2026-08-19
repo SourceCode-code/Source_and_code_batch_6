@@ -30,9 +30,12 @@ git add .-> add all the updating file to stagginhg
 // how to add a file to git igonre 
 
 step 1 create a file name .gitignore  -> where to create where your .git folder is present
-step 2 how to add the file to .gitignore -> 
+step 2 how to add the file to .gitignore ->  just add the file name or file path to gitigonre
 
 
+// the question now will be --> 
+
+if there is file which is already uploaded on github and if i want to add that file on gitignore will it remove the file github
 
 
 
