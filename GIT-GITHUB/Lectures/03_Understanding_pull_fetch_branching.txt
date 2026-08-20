@@ -1,0 +1,4 @@
+TOPIC FOR THE DAY -> understanding commands such as git pull and git fetch and the diffference and then theory of branching
+
+
+// git pull origin main command ->  This commands download and merges the updated changes into your cloned repo
