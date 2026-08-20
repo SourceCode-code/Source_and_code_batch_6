@@ -1,0 +1,863 @@
+GIT & GITHUB — CLONING & .gitignore
+=====================================
+
+TOPIC OF THE DAY
+-----------------
+Today's topic:
+
+1. What is Git Clone?
+2. How to clone a repository from GitHub to local
+3. Understand Local vs GitHub
+4. What is .gitignore?
+5. How to create and use .gitignore
+6. What happens if a file is already pushed to GitHub?
+7. Practical Git workflow
+
+
+1. QUICK REVISION FROM YESTERDAY
+--------------------------------
+Yesterday we learned how to create a Git repository locally and push
+our code to GitHub.
+
+Basic flow:
+
+    WORKING DIRECTORY
+           |
+        git add .
+           |
+      STAGING AREA
+           |
+       git commit
+           |
+    LOCAL REPOSITORY
+           |
+        git push
+           |
+         GITHUB
+
+Important commands:
+
+    git init
+    git add .
+    git commit -m "message"
+    git branch -M main
+    git remote add origin <repository-url>
+    git push -u origin main
+
+
+2. WHAT IS GIT CLONE?
+---------------------
+Git cloning is the process of creating a local copy of an existing
+remote Git repository.
+
+Usually:
+
+    GitHub Repository
+           |
+       git clone
+           |
+           v
+    Local Computer
+
+Example:
+
+    GitHub
+    └── AutomationProject
+        ├── login.spec.js
+        ├── signup.spec.js
+        └── README.md
+
+After cloning:
+
+    Local Computer
+    └── AutomationProject
+        ├── login.spec.js
+        ├── signup.spec.js
+        ├── README.md
+        └── .git/
+
+
+3. IMPORTANT: WHAT DOES git clone ACTUALLY DO?
+----------------------------------------------
+git clone does more than simply download files.
+
+It creates:
+
+- A local copy of the project files
+- A local Git repository
+- Git history
+- A connection to the remote repository
+
+Example:
+
+    git clone <repository-url>
+
+After cloning, the local project already has a .git directory.
+
+Therefore, normally you DO NOT need to run:
+
+    git init
+
+again inside the cloned project.
+
+
+4. HOW TO CLONE A REPOSITORY
+----------------------------
+Step 1:
+Go to the GitHub repository URL.
+
+Step 2:
+Click the green "Code" button.
+
+Step 3:
+Copy the repository URL.
+
+Example:
+
+    https://github.com/username/project.git
+
+Step 4:
+Go to the folder/location on your computer where you want the
+repository to be cloned.
+
+Step 5:
+Open Git Bash in that location.
+
+On Windows:
+
+    Right click
+        ->
+    Show more options
+        ->
+    Git Bash Here
+
+Step 6:
+Run:
+
+    git clone <repository-url>
+
+Example:
+
+    git clone https://github.com/username/project.git
+
+Step 7:
+Open the cloned folder and check the files.
+
+Step 8:
+Run:
+
+    git status
+
+This confirms that the folder is now a Git working repository.
+
+
+5. WHAT HAPPENS AFTER git clone?
+--------------------------------
+Suppose GitHub contains:
+
+    GitHub
+    └── StudentProject
+        ├── login.js
+        ├── signup.js
+        └── README.md
+
+Run:
+
+    git clone <repository-url>
+
+Now your computer has:
+
+    Local Computer
+    └── StudentProject
+        ├── login.js
+        ├── signup.js
+        ├── README.md
+        └── .git/
+
+The .git directory contains Git's local repository information.
+
+
+6. LOCAL vs REMOTE
+------------------
+REMOTE:
+Usually the repository hosted on GitHub.
+
+LOCAL:
+The copy/repository available on your computer.
+
+Relationship:
+
+             GITHUB
+           REMOTE REPO
+              ↕
+       clone / pull / push
+              ↕
+           LOCAL
+        GIT REPOSITORY
+
+After cloning, you can work locally and synchronize changes with
+the remote repository.
+
+
+7. THE FULL GIT CYCLE
+---------------------
+Yesterday we mainly learned:
+
+    LOCAL
+      |
+     push
+      v
+    GITHUB
+
+Today we learn the reverse starting point:
+
+    GITHUB
+      |
+     clone
+      v
+    LOCAL
+
+Together:
+
+    GITHUB <--------------------> LOCAL
+              push / pull
+              clone
+
+
+IMPORTANT:
+"Clone" is generally used when getting the repository for the first
+time.
+
+For an existing clone that needs the latest changes, we commonly use:
+
+    git pull
+
+
+8. MODIFYING A CLONED REPOSITORY
+--------------------------------
+After cloning, you can modify the code.
+
+Example:
+
+    login.js
+    signup.js
+
+You modify:
+
+    login.js
+
+Check the changes:
+
+    git status
+
+Git may show:
+
+    modified: login.js
+
+Then:
+
+    git add login.js
+
+or:
+
+    git add .
+
+Then:
+
+    git commit -m "Updated login test"
+
+Then:
+
+    git push origin main
+
+Complete flow:
+
+    GitHub
+       |
+     clone
+       v
+    Local
+       |
+    modify code
+       |
+    git add
+       |
+    git commit
+       |
+    git push
+       |
+       v
+    GitHub
+
+
+9. QUICK REVISION: git add vs git add .
+---------------------------------------
+Specific file:
+
+    git add login.js
+
+Meaning:
+
+    Stage only login.js.
+
+All applicable changes under the current directory:
+
+    git add .
+
+Meaning:
+
+    Stage all applicable changed/untracked files under the current
+    directory.
+
+Important:
+
+    git add
+        -> Staging only
+
+    git commit
+        -> Creates a local checkpoint
+
+    git push
+        -> Sends commits to GitHub
+
+
+10. WHAT IS .gitignore?
+-----------------------
+.gitignore is a special file that tells Git which untracked files
+or directories should be ignored.
+
+Example:
+
+    .env
+
+If .env is listed in .gitignore, Git will normally not show that
+untracked file as something to add.
+
+Think of it as:
+
+    .gitignore
+          |
+          v
+    "Git, don't include these files in normal tracking."
+
+
+11. WHY DO WE USE .gitignore?
+-----------------------------
+We usually don't want to push certain files or folders to GitHub.
+
+Common examples:
+
+    .env
+    node_modules/
+    test-results/
+    playwright-report/
+    cypress/screenshots/
+    cypress/videos/
+
+Reasons include:
+
+- Secrets/passwords/API keys
+- Large dependency folders
+- Generated test reports
+- Temporary files
+- Machine-specific files
+- Build output
+
+
+12. HOW TO CREATE .gitignore
+----------------------------
+Step 1:
+Create a file named exactly:
+
+    .gitignore
+
+It should be in the project/repository root, normally where the .git
+directory exists.
+
+Example:
+
+    Project/
+    |
+    |-- .git/
+    |-- .gitignore
+    |-- login.js
+    |-- signup.js
+    `-- README.md
+
+
+13. HOW TO ADD FILES TO .gitignore
+----------------------------------
+Simply add the file name or path.
+
+Example:
+
+    .env
+
+This ignores a file named .env.
+
+Example:
+
+    node_modules/
+
+This ignores the node_modules directory.
+
+Example:
+
+    test-results/
+
+This ignores the test-results directory.
+
+Example .gitignore:
+
+    .env
+    node_modules/
+    test-results/
+    playwright-report/
+
+
+14. FILE NAME vs FILE PATH
+--------------------------
+You can ignore a specific file:
+
+    secret.txt
+
+Or a directory:
+
+    reports/
+
+Or a path:
+
+    config/local.json
+
+The pattern you write in .gitignore determines what Git ignores.
+
+
+15. PRACTICAL EXAMPLE
+---------------------
+Suppose your project contains:
+
+    AutomationProject/
+    |
+    |-- login.spec.js
+    |-- signup.spec.js
+    |-- .env
+    |-- node_modules/
+    |-- playwright-report/
+    `-- .gitignore
+
+Your .gitignore can contain:
+
+    .env
+    node_modules/
+    playwright-report/
+
+Now run:
+
+    git status
+
+The ignored files should not appear as normal untracked files.
+
+
+16. IMPORTANT QUESTION
+----------------------
+Question:
+
+"If a file is already uploaded to GitHub and I later add that file
+to .gitignore, will GitHub automatically remove it?"
+
+Answer:
+
+    NO.
+
+This is very important.
+
+.gitignore is mainly used to prevent UNTRACKED files from being added
+to Git.
+
+If a file is already tracked and committed, simply adding it to
+.gitignore does NOT remove it from GitHub.
+
+
+17. WHY?
+--------
+Think about the difference:
+
+UNTRACKED FILE:
+
+    File exists locally
+          |
+       .gitignore
+          |
+       Git ignores it
+          |
+    Not added/committed
+
+
+ALREADY TRACKED FILE:
+
+    File
+     |
+    git add
+     |
+    git commit
+     |
+    Git tracks it
+     |
+    Adding it to .gitignore later
+     |
+    Does NOT automatically remove tracking
+
+
+18. HOW TO STOP TRACKING AN ALREADY TRACKED FILE
+------------------------------------------------
+If a file has already been committed and you now want Git to stop
+tracking it, use:
+
+    git rm --cached filename
+
+Example:
+
+    git rm --cached .env
+
+Then add it to .gitignore:
+
+    .env
+
+Then commit:
+
+    git add .gitignore
+    git commit -m "Stop tracking env file"
+
+Then push:
+
+    git push origin main
+
+Important:
+
+    git rm --cached
+
+removes the file from Git's tracking/index but keeps the local file
+on your computer.
+
+
+19. EXAMPLE: .env FILE
+----------------------
+Suppose .env was accidentally committed.
+
+Step 1:
+Add it to .gitignore:
+
+    .env
+
+Step 2:
+Stop tracking it:
+
+    git rm --cached .env
+
+Step 3:
+Commit the change:
+
+    git add .gitignore
+    git commit -m "Stop tracking env file"
+
+Step 4:
+Push:
+
+    git push origin main
+
+Now Git will stop tracking the file.
+
+IMPORTANT SECURITY NOTE:
+If the .env file contained real passwords, API keys, tokens, or other
+secrets and was already pushed, adding it to .gitignore is NOT enough.
+The exposed secret should be rotated/revoked, because it may still
+exist in Git history.
+
+
+20. IMPORTANT DIFFERENCE: CLONE vs DOWNLOAD ZIP
+-----------------------------------------------
+Git Clone:
+
+    git clone <url>
+
+Creates:
+- Project files
+- .git directory
+- Git history
+- Remote connection
+
+Download ZIP:
+
+    Download ZIP
+
+Usually gives:
+- Project files only
+- No normal local Git history/repository connection
+
+Therefore, for Git-based development, cloning is normally preferred.
+
+
+21. IMPORTANT DIFFERENCE: git clone vs git pull
+-----------------------------------------------
+git clone:
+
+    Used to get a repository for the first time.
+
+Example:
+
+    git clone <repository-url>
+
+
+git pull:
+
+    Used to get the latest changes into an existing local clone.
+
+Example:
+
+    git pull
+
+Simple rule:
+
+    First time -> git clone
+
+    Already cloned -> git pull
+
+
+22. PRACTICAL STUDENT EXERCISE
+------------------------------
+Task:
+
+1. Open the GitHub repository.
+2. Copy the repository URL.
+3. Clone the repository.
+4. Open the cloned project.
+5. Run git status.
+6. Create/update a file.
+7. Create a .env file locally.
+8. Create .gitignore.
+9. Add .env to .gitignore.
+10. Run git status.
+11. Confirm .env is ignored.
+12. Add and commit the valid project changes.
+13. Push the changes to GitHub.
+
+Commands:
+
+    git clone <repository-url>
+
+    cd <project-folder>
+
+    git status
+
+    git add .
+
+    git commit -m "Updated project"
+
+    git push origin main
+
+
+23. PRACTICAL .gitignore EXAMPLE FOR AUTOMATION
+------------------------------------------------
+For a Playwright project, a simple example could be:
+
+    node_modules/
+    .env
+    test-results/
+    playwright-report/
+
+For a Cypress project:
+
+    node_modules/
+    .env
+    cypress/screenshots/
+    cypress/videos/
+
+
+24. COMPLETE REAL-WORLD WORKFLOW
+--------------------------------
+A developer receives an existing project:
+
+    GitHub
+       |
+    git clone
+       |
+       v
+    Local Repository
+       |
+    Write/modify code
+       |
+    git status
+       |
+    git add .
+       |
+    git commit -m "message"
+       |
+    git push
+       |
+       v
+    GitHub
+
+
+If some files should not be tracked:
+
+    Local Project
+       |
+    .gitignore
+       |
+       +---- .env
+       +---- node_modules/
+       +---- reports/
+                  |
+                  v
+             Git ignores them
+
+
+25. COMMANDS TO REMEMBER TODAY
+------------------------------
+Clone a repository:
+
+    git clone <repository-url>
+
+Check status:
+
+    git status
+
+Check remote:
+
+    git remote -v
+
+Get latest changes:
+
+    git pull
+
+Stage one file:
+
+    git add filename
+
+Stage all applicable changes:
+
+    git add .
+
+Create a checkpoint:
+
+    git commit -m "message"
+
+Push commits:
+
+    git push origin main
+
+Stop tracking an already tracked file:
+
+    git rm --cached filename
+
+
+26. INTERVIEW QUESTIONS
+-----------------------
+Q1. What is git clone?
+
+A. git clone creates a local copy of an existing remote Git repository
+and also sets up the local Git repository and remote connection.
+
+
+Q2. What is .gitignore?
+
+A. .gitignore specifies files and directories that Git should ignore,
+so they are not normally added as untracked files.
+
+
+Q3. If I add an already committed file to .gitignore, will it be
+removed from GitHub?
+
+A. No. .gitignore does not automatically remove files that Git is
+already tracking.
+
+
+Q4. How do you stop Git from tracking an already tracked file?
+
+A. Use:
+
+    git rm --cached <filename>
+
+Then commit and push the change.
+
+
+Q5. What is the difference between git clone and git pull?
+
+A. git clone is generally used to create the first local copy of a
+repository. git pull is used to get new changes into an existing clone.
+
+
+Q6. Does git clone mean only downloading files?
+
+A. No. It creates a local Git repository containing the project files,
+Git history and remote configuration.
+
+
+27. GOLDEN RULE
+--------------
+Remember:
+
+    git clone
+    -> Get an existing GitHub repository locally.
+
+    git status
+    -> Check what changed.
+
+    .gitignore
+    -> Tell Git what should normally be ignored.
+
+    git add
+    -> Stage changes.
+
+    git commit
+    -> Create a local checkpoint.
+
+    git push
+    -> Send commits to GitHub.
+
+    git pull
+    -> Bring the latest remote changes into your existing local clone.
+
+
+FINAL FLOW
+----------
+
+                GITHUB
+                   |
+                git clone
+                   v
+          LOCAL GIT REPOSITORY
+                   |
+             Modify code
+                   |
+              git status
+                   |
+              git add .
+                   |
+              git commit
+                   |
+              git push
+                   |
+                   v
+                GITHUB
+
+
+AND FOR FILES TO IGNORE:
+
+          LOCAL PROJECT
+                |
+            .gitignore
+                |
+       +--------+---------+
+       |        |         |
+      .env   node_modules reports
+       |
+     IGNORED
+     (if not already tracked)
+
+
+KEY CONCEPT:
+
+    .gitignore prevents Git from normally tracking matching
+    untracked files. It does NOT automatically remove files that
+    are already tracked or erase them from Git history.
