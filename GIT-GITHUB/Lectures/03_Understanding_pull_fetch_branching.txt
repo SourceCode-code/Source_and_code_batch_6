@@ -1,4 +1,55 @@
 TOPIC FOR THE DAY -> understanding commands such as git pull and git fetch and the diffference and then theory of branching
 
+//COMMMAND 
 
-// git pull origin main command ->  This commands download and merges the updated changes into your cloned repo
+//1) git pull origin main ->  This commands download and merges the updated changes into your cloned repo
+
+//WHEN TO USE IT -> 
+
+// Before starting to code 
+
+
+//2) git fetch -> This commands is used to download the latest meta-data form the repo
+meta- data ->data  about data 
+
+//WHEN TO USE IT -> 
+
+//1 at the very first use git fetch  before git pull origin main
+// this is used only for braching 
+
+
+// BARANCHING -> 
+
+//CASE STUDY ->  currently 31 poeple are working on same 
+
+// everyone is pushing and pull changes at random 
+
+
+// user 1 makes the create file name changes.txt  and push to main branch 
+// user 2 without pulling again creates the same file add his changes and push to main 
+
+// issue 
+
+there will 2 files named changes and both will have different changes 
+
+
+
+// now there 3 user and he will see there 2 files with same name 
+// he will delete a file and push the changes 
+
+// the work of someone form 1 and 2 is wasted or lost 
+//
+
+so solution will be to add a reviewer layer 
+ we create a pull request 
+
+// now if i sumbit my task for reviewer and i need to start new task 
+now should i again clone the repo or wait till review is completd 
+
+
+so for this we will use 
+
+// BARANCHING ->  this will create a copy of the main branch and the changes in that will not affect the main branch 
+even its pushed 
+
+// you can create unlimitied  number branches 
