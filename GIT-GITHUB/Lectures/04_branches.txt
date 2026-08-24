@@ -35,6 +35,11 @@ hit following commands
   4 enter branch name 
   5 select source and click on create 
 
+// issues 
+ ui will change with platform 
+ 
+ 2 you need to mannual slect the branch 
+
 
 
  2  form terminal --> perfer this option 
