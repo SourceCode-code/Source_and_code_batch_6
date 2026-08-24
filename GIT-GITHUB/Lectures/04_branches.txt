@@ -46,3 +46,4 @@ hit following commands
  git checkout -b branching_lecture --> this is used to create a new branch (-b) this indaicate new branch 
 
 
+
