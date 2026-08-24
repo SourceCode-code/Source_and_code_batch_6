@@ -43,7 +43,16 @@ hit following commands
  way 2
  2  form terminal --> perfer this option 
 
- git checkout -b branching_lecture --> this is used to create a new branch (-b) this indaicate new branch 
+ git checkout -b branchname --> this is used to create a new branch (-b) this indaicate new branch 
+ git checkout branchname --> this is used to travel into the barnches 
 
+
+
+
+// how to push code in the branch
+
+step 1 -> git add . --> adds all the updated changes into branch 
+step 2 -> git commit -m "message" -> used to create a checkpoint 
+step 3 -> git push orgin branchname ->  this is used to push the code into your branch 
 
 
