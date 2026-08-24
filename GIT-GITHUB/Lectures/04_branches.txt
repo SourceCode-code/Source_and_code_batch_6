@@ -39,9 +39,28 @@ hit following commands
  ui will change with platform 
  
  2 you need to mannual slect the branch 
-
-
-
+ 
+ way 2
  2  form terminal --> perfer this option 
 
- git checkout -b branching_lecture
+ git checkout -b branchname --> this is used to create a new branch (-b) this indaicate new branch 
+ git checkout branchname --> this is used to travel into the barnches 
+
+
+
+
+// how to push code in the branch
+
+step 1 -> git add . --> adds all the updated changes into branch 
+step 2 -> git commit -m "message" -> used to create a checkpoint 
+step 3 -> git push orgin branchname ->  this is used to push the code into your branch 
+
+//command          branchname
+git push origin     main 
+
+
+
+// when ever your rasing a pull request always raise it in the ui -> 
+
+
+
