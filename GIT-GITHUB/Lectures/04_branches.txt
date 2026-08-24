@@ -1,0 +1,42 @@
+Branches in git --> used in git to avoid data loss of conflict issue 
+
+pull request --> the request we generate to merge the code to main is called as pull request.(PR)
+
+
+// how to create a branch 
+// how to push code in the branch
+// how to create a pull request 
+
+
+
+
+// question 1 -> how to create a branch 
+
+// a exact copy of a main is called branch  
+
+// step 1 make sure your code in the main is up to date 
+
+hit following commands 
+
+ git fetch 
+
+ git pull origin main 
+
+
+// step 2  -> now we will create a branch 
+
+ we have 2 options to create  branch 
+
+ 1 form github ui 
+
+  1 go to github ui 
+  2 click on branch 
+  3 click on new branch 
+  4 enter branch name 
+  5 select source and click on create 
+
+
+
+ 2  form terminal --> perfer this option 
+
+ git checkout -b branching_lecture
