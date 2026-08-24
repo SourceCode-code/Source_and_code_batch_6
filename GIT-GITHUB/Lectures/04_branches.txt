@@ -55,4 +55,12 @@ step 1 -> git add . --> adds all the updated changes into branch
 step 2 -> git commit -m "message" -> used to create a checkpoint 
 step 3 -> git push orgin branchname ->  this is used to push the code into your branch 
 
+//command          branchname
+git push origin     main 
+
+
+
+// when ever your rasing a pull request always raise it in the ui -> 
+
+
 
