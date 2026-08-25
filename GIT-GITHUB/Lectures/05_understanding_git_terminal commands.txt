@@ -21,7 +21,15 @@ git pull origin branch_name ->gets the latest updated changes to the barnch
 //----------------------STATUS and HISTORY ------------------------
 
 git status --> shows the current status of your working directory 
+
 if shown by brown color or  (M) its is modifed
 if showen by green color or (U) it is new creation
-if shown by red color or (D) it is deleted 
+if shown by red color or (D) it is deleted/conflict
+
+
+git log -> shows the commit history (detailed log)
+git log -p -> shows the most recent commit with details 
+git log --oneline --> shows a compact history of the commit 
+
+
 
