@@ -46,7 +46,7 @@ step 2 : push the changes to the branch by the following commands
 STEP 3 : Create a pull request to merge the code to the master branch --> always create this request by  git hub ui 
 ======================================================================================================
 
-Step 1 : go to the ui of the repo or visit the repo ("https://github.com/SourceCode-code/Source_and_code_batch_5")
+Step 1 : go to the ui of the repo or visit the repo ("https://github.com/SourceCode-code/Source_and_code_batch_6")
 Step 2 : select the branch in which you have pushed 
     a: click on the main button
     b: click on view all barnches button
