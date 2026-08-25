@@ -38,13 +38,13 @@ hit following commands
 // issues 
  ui will change with platform 
  
- 2 you need to mannual slect the branch 
+ 2 you need to manual select  the branch 
  
  way 2
- 2  form terminal --> perfer this option 
+ 2  form terminal --> prefer this option 
 
- git checkout -b branchname --> this is used to create a new branch (-b) this indaicate new branch 
- git checkout branchname --> this is used to travel into the barnches 
+ git checkout -b branchname --> this is used to create a new branch (-b) this indicate new branch 
+ git checkout branchname --> this is used to travel into the branches 
 
 
 
@@ -53,7 +53,7 @@ hit following commands
 
 step 1 -> git add . --> adds all the updated changes into branch 
 step 2 -> git commit -m "message" -> used to create a checkpoint 
-step 3 -> git push orgin branchname ->  this is used to push the code into your branch 
+step 3 -> git push origin branchname ->  this is used to push the code into your branch 
 
 //command          branchname
 git push origin     main 
@@ -61,6 +61,8 @@ git push origin     main
 
 
 // when ever your rasing a pull request always raise it in the ui -> 
+
+//Shubham Bhopale completed the task of raising a PR(MR)to the main branch....
 
 
 
