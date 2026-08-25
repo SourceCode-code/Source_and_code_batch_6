@@ -1,4 +1,25 @@
 This is GitPractice file. 
 Thank you!!!
 
+setting parameter
+
+Run
+
+  git config --global user.email "sachin.nagare3@gmail.com"
+  git config --global user.name "sachinnagare"
+
+
+Sachin@DESKTOP-1DANNGK MINGW64 /c/Sachin_Nagare/QA/Playwrite/SachinGItPractice/Source_and_code_batch_6 (sachinGitPractice)
+$  git config --global user.email "sachin.nagare3@gmail.com"
+
+Sachin@DESKTOP-1DANNGK MINGW64 /c/Sachin_Nagare/QA/Playwrite/SachinGItPractice/Source_and_code_batch_6 (sachinGitPractice)
+$ git config --global user.name "sachinnagare"
+
+Sachin@DESKTOP-1DANNGK MINGW64 /c/Sachin_Nagare/QA/Playwrite/SachinGItPractice/Source_and_code_batch_6 (sachinGitPractice)
+$ git commit -m "Sachin had added text file for practice"
+[sachinGitPractice 31b33a3] Sachin had added text file for practice
+ 1 file changed, 4 insertions(+)
+ create mode 100644 Sachin_GitPracticeTextFile.txt
+
+
 $ git checkout sachinGitPractice
