@@ -1,7 +1,27 @@
 
 //------------------------RESTORE THE LOCAL FILES -------------------------------
 
-git checkout -f --> this will restore your file to recent commit 
+git checkout -f --> this will all restore your file to recent commit 
+git checkout file_path -> this will restore a specific to recent commit
 
+//------------------------ CHECKING DIFFERENT  ------------------------------------------
 
-ikmujnyhbtgvrfecdwxsqzxwdcefvrgbthnyjuimyjnhtbgrvfecdwx
+git diff   --> this commands shows the difference between your last commit and current changes 
+
+// -----------------------BRACHING --------------------------------------
+
+git checkout branch name -> this command is used to travel in between the barnches 
+git checkout -b new_branch_name -> this command is used to create a new branch 
+
+//------------------------updating branch ---------------------------
+
+git fetch -> used to get or pull  latest meta data 
+git pull origin branch_name ->gets the latest updated changes to the barnch 
+
+//----------------------STATUS and HISTORY ------------------------
+
+git status --> shows the current status of your working directory 
+if shown by brown color or  (M) its is modifed
+if showen by green color or (U) it is new creation
+if shown by red color or (D) it is deleted 
+
