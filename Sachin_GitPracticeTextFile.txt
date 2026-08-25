@@ -1,0 +1,4 @@
+This is GitPractice file. 
+Thank you!!!
+
+$ git checkout sachinGitPractice
