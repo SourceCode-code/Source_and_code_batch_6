@@ -33,3 +33,10 @@ git log --oneline --> shows a compact history of the commit
 
 
 
+Day05: Understanding Git Terminal Commands - 25th August 2026, Tuesday
+
+
+Completed the assignment by: 
+Created a new branch for the assignment
+Pushed the changes with a commit message
+Raised a Pull Request for review
