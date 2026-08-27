@@ -33,3 +33,28 @@ git log --oneline --> shows a compact history of the commit
 
 
 
+//---------------------------------------------------------------------
+
+
+git reset 
+git clean -f
+git reflog
+git reset 
+git blame 
+git restore
+
+
+// git clean -f  -> this command will delete all the untrack files 
+
+// git reset -> this will  bring back the file form stagging to untracked 
+// git reset filename/path  -> this will only bring back a single file form stagging to untrack
+
+// where this commands is used 
+
+// if your adding some code 
+// and you realise after hitting git add . --> there a mistake 
+
+
+
+// git restore filename --> this will discard all the changes 
+
