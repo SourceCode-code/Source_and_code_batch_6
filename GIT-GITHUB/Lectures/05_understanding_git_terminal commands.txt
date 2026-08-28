@@ -58,3 +58,13 @@ git reflog
 //git blame filepath  --> this is used to check who has changed which line 
 
 // git reflog --> its shows a map or history 
+
+
+========
+
+Day06: Git Commands - 27th August 2026, Thursday
+
+Completed the assignment by:
+Created a new branch for the assignment
+Pushed the changes with a commit message
+Raised a Pull Request for review
