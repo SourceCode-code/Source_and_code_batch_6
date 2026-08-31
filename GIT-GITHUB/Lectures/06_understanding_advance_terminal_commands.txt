@@ -1,0 +1,6 @@
+
+1 git stash --> this  helps you to temporaliy remove the changes you have made  for 
+allowing to work on another task 
+
+2 git stash apply -> this helps you to bring back all the changes that has been stash away 
+
