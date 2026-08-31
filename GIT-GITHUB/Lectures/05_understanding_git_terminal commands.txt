@@ -1,0 +1,62 @@
+
+//------------------------RESTORE THE LOCAL FILES -------------------------------
+
+git checkout -f --> this will all restore your file to recent commit 
+git checkout file_path -> this will restore a specific to recent commit
+
+//------------------------ CHECKING DIFFERENT  ------------------------------------------
+
+git diff   --> this commands shows the difference between your last commit and current changes 
+
+// -----------------------BRACHING --------------------------------------
+
+git checkout branch name -> this command is used to travel in between the barnches 
+git checkout -b new_branch_name -> this command is used to create a new branch 
+
+//------------------------updating branch ---------------------------
+
+git fetch -> used to get or pull  latest meta data 
+git pull origin branch_name ->gets the latest updated changes to the barnch 
+
+//----------------------STATUS and HISTORY ------------------------
+
+git status --> shows the current status of your working directory 
+
+if shown by brown color or  (M) its is modifed
+if showen by green color or (U) it is new creation
+if shown by red color or (D) it is deleted/conflict
+
+
+git log -> shows the commit history (detailed log)
+git log -p -> shows the most recent commit with details 
+git log --oneline --> shows a compact history of the commit 
+
+
+
+//---------------------------------------------------------------------
+
+
+git reset 
+git clean -f
+git blame 
+git restore
+git reflog
+
+// git clean -f  -> this command will delete all the untrack files 
+
+// git reset -> this will  bring back the file form stagging to untracked 
+// git reset filename/path  -> this will only bring back a single file form stagging to untrack
+
+// where this commands is used 
+
+// if your adding some code 
+// and you realise after hitting git add . --> there a mistake 
+
+// git restore filename --> this will discard all the changes 
+
+
+//git blame filepath  --> this is used to check who has changed which line 
+
+// git reflog --> its shows a map or history 
+
+// justa demo change
