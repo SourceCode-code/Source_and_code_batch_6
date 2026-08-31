@@ -5,3 +5,6 @@ allowing to work on another task
 2 git stash apply -> this helps you to bring back all the changes that has been stash away 
 
 3 git cherry-pick commitid -> this commands helps you ton copy changes form one barnch to another branch 
+
+4 git cherry-pick --abort this commands will stop the copy of the changes 
+
