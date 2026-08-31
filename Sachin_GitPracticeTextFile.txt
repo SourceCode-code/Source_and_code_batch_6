@@ -1,6 +1,14 @@
 This is GitPractice file. 
 Thank you!!!
 
+=============
+Git Stash practice - 31st Aug 2026
+
+
+
+
+
+=================
 setting parameter
 
 Run
