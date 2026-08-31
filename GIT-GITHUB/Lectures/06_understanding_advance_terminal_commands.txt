@@ -8,3 +8,8 @@ allowing to work on another task
 
 4 git cherry-pick --abort this commands will stop the copy of the changes 
 
+5 git show commit-id  --> shows the details information about the commit 
+
+
+
+// now i have take or copya commit id form my terminal
