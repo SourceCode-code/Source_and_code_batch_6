@@ -10,6 +10,3 @@ allowing to work on another task
 
 5 git show commit-id  --> shows the details information about the commit 
 
-
-
-// now i have take or copya commit id form my terminal
