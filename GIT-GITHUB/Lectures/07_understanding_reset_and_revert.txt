@@ -22,7 +22,20 @@ GIT REVERT COOMITID
 // NOW AS MANAGER/ARCHIETURE  -> WE HAVE TO SUGGEST OR HELP THEM -> 
 
 
-//DEMO --> 
 
+
+steps for using git reset --hard commitid 
+
+1 to go github or in logs get the commit id you need to go back your barnch to 
+
+2 hit git reset --hard commitid 
+
+3 now changes are gone 
+
+4 git add .
+
+5 git commit -m "commit name"
+
+6 git push origin branchname -f   -> force push 
 
 
