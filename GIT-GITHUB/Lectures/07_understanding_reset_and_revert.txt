@@ -1,0 +1,28 @@
+// CASE -> 
+
+
+
+// CASE 1 ->
+
+person 1 -> 
+
+
+created a branch -> changes added -> commit -> push -> changes password is displayed (open api key) -> commit 
+
+GIT RESET HARD - COMMITID
+
+// CASE 2 -> 
+
+person 2
+
+created a branch -> changes added -> commit 1-> push working fine   -> commit 2 -> broken system ->  COMMIT 1
+
+
+GIT REVERT COOMITID
+// NOW AS MANAGER/ARCHIETURE  -> WE HAVE TO SUGGEST OR HELP THEM -> 
+
+
+//DEMO --> 
+
+
+
