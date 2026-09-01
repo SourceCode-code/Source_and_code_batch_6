@@ -39,3 +39,33 @@ steps for using git reset --hard commitid
 6 git push origin branchname -f   -> force push 
 
 
+
+
+
+//BEFORE 
+
+COMMIT 1 -> COMMIT 2 -> COMMIT 3 -> COMMIT 4
+                                        | HEAD 
+
+
+
+WE HAVE DONE A RESET AT COMMAND  2 
+
+AFTER RESET --HARD 
+
+
+COMMIT 1 -> COMMIT 2
+                | HEAD 
+
+
+
+
+
+
+
+
+
+
+
+
+
