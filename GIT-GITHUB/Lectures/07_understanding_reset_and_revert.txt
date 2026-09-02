@@ -57,8 +57,6 @@ AFTER RESET --HARD
 COMMIT 1 -> COMMIT 2
                 | HEAD 
 
-                wronh
-
 
 
 
