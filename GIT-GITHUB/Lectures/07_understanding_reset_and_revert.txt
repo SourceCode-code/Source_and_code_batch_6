@@ -60,14 +60,11 @@ COMMIT 1 -> COMMIT 2
 
 
 
-                pass
 
 
 
 
-
-
-
+CASE 2 -> learning revert -> 
 
 
 
