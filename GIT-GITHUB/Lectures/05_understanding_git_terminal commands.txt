@@ -58,5 +58,3 @@ git reflog
 //git blame filepath  --> this is used to check who has changed which line 
 
 // git reflog --> its shows a map or history 
-
-// justa demo change
