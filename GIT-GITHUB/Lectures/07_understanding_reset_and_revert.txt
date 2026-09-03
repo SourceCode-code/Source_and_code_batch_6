@@ -1,0 +1,73 @@
+// CASE -> 
+
+
+
+// CASE 1 ->
+
+person 1 -> 
+
+
+created a branch -> changes added -> commit -> push -> changes password is displayed (open api key) -> commit 
+
+GIT RESET HARD - COMMITID
+
+// CASE 2 -> 
+
+person 2
+
+created a branch -> changes added -> commit 1-> push working fine   -> commit 2 -> broken system ->  COMMIT 1
+
+
+GIT REVERT COOMITID
+// NOW AS MANAGER/ARCHIETURE  -> WE HAVE TO SUGGEST OR HELP THEM -> 
+
+
+
+
+steps for using git reset --hard commitid 
+
+1 to go github or in logs get the commit id you need to go back your barnch to 
+
+2 hit git reset --hard commitid 
+
+3 now changes are gone 
+
+4 git add .
+
+5 git commit -m "commit name"
+
+6 git push origin branchname -f   -> force push 
+
+
+
+
+
+//BEFORE 
+
+COMMIT 1 -> COMMIT 2 -> COMMIT 3 -> COMMIT 4
+                                        | HEAD 
+
+
+
+WE HAVE DONE A RESET AT COMMAND  2 
+
+AFTER RESET --HARD 
+
+
+COMMIT 1 -> COMMIT 2
+                | HEAD 
+
+
+
+
+
+
+
+
+CASE 2 -> learning revert -> 
+
+
+
+commit 2 broken link 
+
+
