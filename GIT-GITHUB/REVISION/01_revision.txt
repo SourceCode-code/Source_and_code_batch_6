@@ -93,3 +93,12 @@ to go ui and raise the pull request a) add proper title b) add all reviewer c) a
 
 
 80-85 % 
+
+
+
+Day07: Git and GitHub Workflow - 30th August 2026 Sunday 7PM To 8PM
+
+Learned the complete Git and GitHub workflow including repository creation, cloning, updating, and pushing code.
+Learned how to create and work with branches following the industry SOP (STANDARD OPERTAING PROCESS) 
+Practiced git fetch, git pull, git add, git commit, and git push commands.
+Created a branch, pushed the changes, and raised a Pull Request for review.
