@@ -71,3 +71,12 @@ CASE 2 -> learning revert ->
 commit 2 broken link 
 
 
+Revised Git and GitHub concepts from Day01 to Day07
+
+Topics revised:
+Git basics, GitHub, clone, .gitignore, fetch, pull, branching,
+Pull Requests, checkout, diff, status, log, reset, restore,
+clean, blame, reflog, revert, stash, cherry-pick, and git show.
+
+Created a branch akshaypawar_pull_request_5
+pushed the changes, and raised a Pull Request for review
