@@ -27,6 +27,6 @@ console.log(num_20)
 const name = "Parmeshwar";
 
 name = "Rahul";  // ❌ Error
-console.log(name)
+console.log(name) // output -->> it will show an error
 
 // var varible code -->> same as let variable code
