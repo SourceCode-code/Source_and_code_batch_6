@@ -33,6 +33,7 @@ git log --oneline --> shows a compact history of the commit
 
 
 
+<<<<<<< HEAD
 //---------------------------------------------------------------------
 
 
@@ -60,3 +61,8 @@ git reflog
 // git reflog --> its shows a map or history 
 
 // justa demo change
+=======
+sdfvks
+
+
+>>>>>>> 7966d2b635f54bdbd1fa1c82c59f8f22f31bcb63
