@@ -28,21 +28,21 @@ Engineer.
 
 //Veriables - 1.Let 
 
-let testName = loginPage
+let testName = "loginPage";
 console.log("testName");
 
 // updateing the testNAme 
 
-testName = seachPage
+testName = "searchPage";
 console.log("testName");
 
 
 //Veriables - 2.const
 
-const testId = TC_LOGIN_001
+const testId = "TC_LOGIN_001";
 console.log("testId");
 
 // updateing the testId
 
-testId = TC_LOGIN_002
+testId = "TC_LOGIN_002";
 console.log("testId");
