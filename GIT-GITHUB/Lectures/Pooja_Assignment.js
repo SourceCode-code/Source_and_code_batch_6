@@ -36,6 +36,7 @@ console.log("testName");
 testName = seachPage
 console.log("testName");
 
+
 //Veriables - 2.const
 
 const testId = TC_LOGIN_001
