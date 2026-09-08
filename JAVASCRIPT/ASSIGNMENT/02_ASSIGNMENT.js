@@ -36,3 +36,19 @@ console.log(last_name)
 console.log(marital_status)
 console.log(country)
 console.log(age)
+
+// Declare variables to store your first name, last name, marital status, country and age in a single line
+let first_name1 = "Ankit", Last_name1 = "Randive", marital_status1 = "Married", country1 = "India", age1 = 29
+
+console.log(first_name1)
+console.log(Last_name1)
+console.log(marital_status1)
+console.log(country1)
+console.log(age1)
+
+// Declare two variables myAge and yourAge and assign them initial values and log to the console.
+let myage = 29 
+let yourage = 30
+
+console.log(myage)
+console.log(yourage)
