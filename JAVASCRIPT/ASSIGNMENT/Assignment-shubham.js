@@ -11,3 +11,7 @@ let maritalStatus;
 maritalStatus = 'Single';
 let country ;
 country = 'India';
+
+//introducing myself using variables
+let age = 22;
+console.log('My name is ' + firstName + ' ' + lastName + '. I am ' + age + ' years old. I am ' + maritalStatus + ' and I live in ' + country + '.');
