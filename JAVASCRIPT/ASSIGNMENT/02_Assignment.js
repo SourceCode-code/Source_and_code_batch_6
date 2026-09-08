@@ -23,3 +23,5 @@ let country = "India";
 console.log(firstName);
 console.log(lastName);
 console.log(country);
+
+
