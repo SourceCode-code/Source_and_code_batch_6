@@ -44,7 +44,7 @@ hit following commands
  2  form terminal --> prefer this option 
 
  git checkout -b branchname --> this is used to create a new branch (-b) this indicate new branch 
- git checkout branchname --> this is used to travel into the branches 
+ git checkout branchname --> this is used to travel into the branches. 
 
 
 

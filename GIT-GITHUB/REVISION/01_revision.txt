@@ -1,0 +1,95 @@
+
+// GIT AND GITHUB --> BOTH ARE USED FOR FOR FACTLING TEAM COLLABRTION BY MAINATING OR SHARING THE CODE OR IMPORANT INFORMATION
+
+// THERE 2 COMPONENTS 
+// GIT    --> GIT IS VERSION CONTROL TOOL/SOFTWARE
+// GITHUB --> GIT HUB IS HOSTING PLATFROM  
+AELRNATIVE FOR GITHUB -> (BITBUCKET, GITLAB,AZURE, AWS)
+EVEN IF THE HOSTING THE COMMANDS OR PROCESS IS ONE AND THE SAME 
+
+
+
+BY USING GIT AND GITHUB WE STORE OUR CODE AND DUE THIS OUR FILES ALWAYS FLOW THIS PROCESS
+// the file travels thorugh this path 
+
+// local folder --> GIT STAGING --> LOCAL GIT REPOSITORY  -->GO LIVE ON GITHUB
+
+
+// NOTE IF YOU WANT TO PUSH YOUR CODE TO GIHUB THERE ARE 2 CONDITION 
+
+
+//1 PUSHING CODE FOR THE FIRST TIME IN A NEW REPO  ( PUSH NEW FRESH CODE)
+
+BEFORE PUSHING THE CODE WE NEED TO LEARN FEW THING OR FEW TERMININOLGY 
+
+//1 REPO -> REPOSITORY -> A UNIQUE PATH OR WEBADDRESS CREATED TO STORE YOUR CODE  - (THIS WILL ONLY HAPPEN IN 2-3 PERCENT IN WORKING)
+
+HERE IS PORCESS OR COMMANDS 
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SourceCode-code/DUMMY_REPO.git
+git push -u origin main
+
+
+
+
+//2 PUSHING CODE INTO ALREADY EXSITING (UPDATE THE CODE AND PUSH) - THIS PROCESS IS DONE EVERYDAY 
+
+git add .
+git commit -m "message"
+git push orgin branchname 
+
+
+
+
+
+// NOW IF WE WANT TO COPY A ALREADY CREATED REPO FORM GITHUB TO LOCAL 
+
+git clone repo_url
+
+
+
+// NEXT QUESTION 
+
+EVERYDAY TO GET THE UPDATED CHANGES DO I HAVE TO CLONE MY REPO 
+
+TO GET THE UPDATED VERSION ONCE YOU HAVE THE REPO CLONNED 
+
+1  git fetch -> downloads all meta data 
+2 git pull origin main or branchname -> this will get all the updated code in your system 
+
+
+// 70 % 
+// 1 creation of repo 
+// 2 updating a repo 
+// 3 cloneing a repo 
+// 4 geting updated changes in cloned repo 
+
+
+//  THERE IS SOP IN INDUSTRY (STANDARD OPERTAING PROCESS)
+
+// IF THERE ARE 25 POEPLE WORKING ON SAME REPO 
+AND ALL ARE PUSHING AT THE SAME TIME 
+THE REPOSITORY MIGHT BREAK OR LOSE SOME DATA 
+
+TO AVOID THIS WE FOLLOW A SOP 
+
+FOR THAT WE CREATE BRANCH -> 
+WHAT IS BARNCH -> A COPY OF MAIN REPO THAT IS USED TO PERFORM A TASK OR UPDATING BRANCH 
+
+//SOP STEPS 
+
+//1 GO TO MAIN ->  git checkout main 
+//2 UPDATE THE REPO -> a) git fetch   b) git pull origin main
+//3 creation of branch -> git checkout -b branch_name 
+//4 add changes to branch and push it -> a) git add . b)git commit -m "message" c) git push origin branchname
+//5 to merge your work raise a pull request -> through ui process
+to go ui and raise the pull request a) add proper title b) add all reviewer c) add assigne to your self
+//6 GO TO MAIN ->  git checkout main 
+//7 UPDATE THE REPO -> a) git fetch   b) git pull origin main
+
+
+80-85 % 
