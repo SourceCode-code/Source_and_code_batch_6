@@ -29,20 +29,20 @@ Engineer.
 //Veriables - 1.Let 
 
 let testName = "loginPage";
-console.log("testName");
+console.log(testName);
 
 // updateing the testNAme 
 
 testName = "searchPage";
-console.log("testName");
+console.log(testName);
 
 
 //Veriables - 2.const
 
 const testId = "TC_LOGIN_001";
-console.log("testId");
+console.log(testId);
 
 // updateing the testId
 
 testId = "TC_LOGIN_002";
-console.log("testId");
+console.log(testId);
