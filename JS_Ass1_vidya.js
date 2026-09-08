@@ -9,13 +9,13 @@
 
 
 //1. Variable declararion for "Let"
-let num1 = 10          //used to delacre a vlaue that can be updated in the future
+let num1 = 10          //let: used to delacre a vlaue that can be updated in the future
 let num2 = 20
 console.log(num1+num2)
 num1 = 5               //reassigning value is possible 
 console.log(num1+num2)
 
 //2. Variable declararion for "const"
-const marks = 78.25     //used to delcare a constant variable
+const marks = 78.25     //const: used to delcare a constant variable
 console.log(marks)
-//marks = 80            //cannot reassign value- will through an error
+//marks = 80            //cannot reassign value- will through an error.
