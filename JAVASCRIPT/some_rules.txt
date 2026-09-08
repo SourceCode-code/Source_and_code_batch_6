@@ -1,0 +1,66 @@
+/*
+
+it if dont practices -> 
+
+everyday there -> 
+45 -1 hour session -> teaching session 
+
+you get 2-3 assignement ->
+
+it is based ? -> 
+
+its based on 1 concept ! imporve 
+its based on logical thinking !  --> 
+its is interview based --> 
+
+3-4 -> 
+
+1 -> support session -> you ask question for assignemnt ? discussion ? more examples or interview question 
+or topic question 
+
+
+
+JS 
+1 day  -> not clearty 
+1 week -> out loop ( string ?)
+1 month -> no connection  ? you will updated market  (your logicakl thinking will be disteryed )
+1 year  ->  no where 
+
+this takes years to built  3-4year
+
+we dont have time 
+
+
+
+MANNUAL TESTING 
+
+1 day   -> RELAX 
+1 week  -> domain knowledge application knowleage 
+1 month -> bug effetcive 50 
+1 year  -> out scope -> 
+
+2-3 months ->
+
+
+GIT
+
+1 day -> commands syntax forget 
+1 week -> confusion (pr ) start question your ability 
+1 month -> git add and git commit 
+1 year  -> no connect 
+
+4-5 months 
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
