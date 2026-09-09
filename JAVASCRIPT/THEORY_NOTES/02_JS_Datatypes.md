@@ -3,7 +3,7 @@
 > These notes cover: Data Types in JS, Primitive vs Non-Primitive types, and the `typeof` operator.
 > Read these along with the lecture file `LECTURE/02_JS_Datatypes.js`.
 
----
+--- 
 
 ## 1. What is a Data Type?
 
