@@ -91,12 +91,12 @@ easy to reuse and informative
 
     {
         let first_Name = "Pooja", last_Name = "Dombe", marital_Status = "Married", Country = "India", Age = "29";
-        console.log(first_Name,last_Name,marital_Status,Country,age);
+        console.log(first_Name,last_Name,marital_Status,Country,Age);
 
     }
 
     {
-        let [first_Name, last_Name, marital_Status,Country,age] = ["Pooja", "Dombe", "Married", "India", "29" ];
+        let [first_Name, last_Name, marital_Status,Country,age] = ["Pooja", "Dombe", "Married", "India", "29"];
         console.log(first_Name,last_Name,marital_Status,Country,age);
 
     }
