@@ -16,7 +16,7 @@
     let testName = "Pooja" ;
     console.log(typeof testName);
 
-    let testStatus = True ;
+    let testStatus = true ;
     console.log(typeof testStatus);
 
     let testResult ;
@@ -42,7 +42,7 @@
     let isPass = true ; 
     let result ;
 
-    console.log(typeof city, marks, isPass, result);
+    console.log(typeof city, typeof marks, typeof isPass, typeof result);
 
 }
 
@@ -73,7 +73,7 @@
     // Answer - console.log(typeof v1) ---> object
 
     let v1 = null ;
-    console.log(v1);
+    console.log(typeof v1);
 
 }
 
@@ -87,8 +87,8 @@
 //       console.log(b)
 //       HINT -> primitives are copied by VALUE
 {
-    // Answer - console.log(a) ---> 10
-    // Answer - console.log(b) ---> 10
+    // Answer - console.log(a) ---> 20  ---> js execute line by line befor consol log value reassigned as 20
+    // Answer - console.log(b) ---> 10  ---> js execute line by line value of a=10 is assigned first to b and then a=20 value changed
 
     let a = 10;
     let b = a;
@@ -116,7 +116,7 @@
     
     // Example - 
     let userName ;
-    consol.log(typeof userName);
+    console.log(typeof userName);
 
     /*
     Null 
@@ -128,7 +128,7 @@
     // Example -
 
     let userId = null ;
-    consol.log(typeof userId);
+    console.log(typeof userId);
 
 }
 
