@@ -1,0 +1,138 @@
+# Git & GitHub — Understanding git pull, git fetch and Branching
+
+> Based on lecture: `Lectures/03_Understanding_pull_fetch_branching.txt`
+> Related notes: `04_Branches.txt` (step-by-step branching workflow)
+
+---
+
+## 1. git pull
+
+### Command
+
+```bash
+git pull origin main
+```
+
+**This command downloads and merges the updated changes into your cloned repo.**
+
+* `origin` → the remote repository (GitHub)
+* `main` → the branch you want to pull the changes from
+
+### When to use it
+
+* **Before starting to code** — always pull first so you have the latest code.
+* After teammates push new changes and you want to update your local repo.
+* Before creating a pull request (keeps your branch up to date).
+
+---
+
+## 2. git fetch
+
+### Command
+
+```bash
+git fetch
+```
+
+**This command is used to download the latest meta-data from the repo.**
+
+> **Meta-data → data about data.**
+> Git does not download the actual code changes — it downloads *information* about the changes (new branches, new commits, their history etc.).
+
+### When to use it
+
+1. At the very first, use `git fetch` **before** `git pull origin main`.
+2. This is used mainly for **branching** — after fetch, your terminal "knows" about the new branches created on GitHub, so you can switch to them with `git checkout branchname`.
+
+### Typical sequence
+
+```bash
+git fetch
+git pull origin main
+```
+
+---
+
+## 3. git fetch vs git pull (Difference)
+
+| Point | git fetch | git pull origin main |
+|-------|-----------|----------------------|
+| What it downloads | Only **meta-data** (info about changes, branches) | Actual **code changes** |
+| Does it merge? | ❌ No — it never touches your code | ✅ Yes — downloads AND merges into your branch |
+| Safe? | 100% safe — changes nothing locally | Merges code, may cause conflicts |
+| Main use | To see/learn about new branches | To update local code |
+
+**Easy way to remember:**
+
+```text
+git fetch = only LOOK (get info)
+git pull  = LOOK + TAKE (get info + get code)
+```
+
+---
+
+## 4. Branching — Why do we need it?
+
+### Case Study (why branching exists)
+
+Currently **31 people are working on the same repo**, everyone pushing and pulling changes at random.
+
+What happens without branching:
+
+1. **User 1** creates a file named `changes.txt` and pushes to main branch.
+2. **User 2** — without pulling first — creates the SAME file `changes.txt`, adds his changes, and pushes to main.
+3. **Issue:** now there are 2 files named `changes.txt` with different changes (conflict!).
+4. **User 3** sees 2 files with the same name, deletes one, and pushes.
+5. **Result:** the work of User 1 or User 2 is **wasted / lost**.
+
+### Solution → add a REVIEWER layer
+
+Instead of everyone pushing directly to main:
+
+* We create a **Pull Request (PR)** — you submit your task for review.
+* A reviewer checks your code, and only then it gets merged into main.
+* Nobody breaks main by mistake.
+
+---
+
+## 5. What is Branching?
+
+**Branching creates a copy of the main branch — changes made in that copy will NOT affect the main branch, even after being pushed.**
+
+```text
+main:        A --- B --- C
+                          \
+branch:                    D --- E   (your copy, your changes stay here)
+```
+
+* Each developer/task works on its **own branch**.
+* Main branch always stays clean and safe.
+* When work is finished → create a Pull Request → reviewer approves → merge to main.
+
+### Key points
+
+* You can create an **unlimited number of branches**.
+* Every branch is an independent line of work.
+* Branch name should have **no spaces or special characters** (e.g. `testcase_login_page`).
+* Full step-by-step branching workflow is in `04_Branches.txt`.
+
+---
+
+## 7. Extra points from the lecture
+
+### Pull Request flow (how branching is used daily)
+
+```text
+create branch -> make changes -> push to YOUR branch ->
+open Pull Request (GitHub UI) -> reviewer checks -> merge to main
+```
+
+### Interview Questions
+
+1. Difference between `git fetch` and `git pull`? *(fetch = meta-data only, pull = download + merge)*
+2. When should you use `git pull origin main`? *(before starting to code)*
+3. What is meta-data in git fetch?
+4. Why do we need branching? *(explain the case study — parallel work without breaking main)*
+5. How many branches can we create? *(unlimited)*
+6. What is a Pull Request and why do we add a reviewer?
+
