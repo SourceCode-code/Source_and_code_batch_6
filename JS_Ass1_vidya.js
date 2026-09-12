@@ -18,4 +18,4 @@ console.log(num1+num2)
 //2. Variable declararion for "const"
 const marks = 78.25     //const: used to delcare a constant variable
 console.log(marks)
-//marks = 80            //cannot reassign value- will through an error.
+//marks = 80            //cannot reassign value- will throw an error.
