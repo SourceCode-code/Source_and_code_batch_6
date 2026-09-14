@@ -358,7 +358,7 @@ console.log("Total      : Rs. " + total.toFixed(2));
 console.log("Discount   : " + randomPercent.toFixed(1) + "%");
 console.log("Final Bill : Rs. " + finalAmount.toFixed(2));
 
-
+// completed
 // ============================================
 // SUBMISSION CHECKLIST
 // 1. every "predict" question has your guess written BEFORE you ran the code
