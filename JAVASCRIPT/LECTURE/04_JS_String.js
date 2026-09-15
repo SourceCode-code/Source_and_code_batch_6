@@ -83,3 +83,5 @@ console.log(fullName_1)
 let fullName_backtick = `my fullname is ' ${firstName} ${middleName} ${lastName} '`
 
 console.log(fullName_backtick)
+
+
