@@ -219,17 +219,57 @@ if (total === 12) {
 //        Print it as "Your OTP is : XXXX"
 //        HINT -> use the golden formula from Q11 with min = 1000, max = 9999
 
+// Formula: Math.floor(Math.random() * (max - min + 1) + min)
+// Generate a random number between 1000 and 9999
+let otp = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000)
+console.log("Your OTP is : " + otp)
+
 //Q15 --> Write a program to generate a random INDIAN mobile number.
 //        Rules -> total 10 digits, first digit must be 6, 7, 8 or 9.
 //        Print it as a single readable string like "9876543210"
 //        HINT -> split in 2 parts like the lecture : firstDigit (6-9) + remaining 9 digits.
 //        Challenge -> how do you JOIN two numbers so they print as ONE string, not "6 987654321" ?
 
+// Formula: Math.floor(Math.random() * (max - min + 1) + min)
+// Generate the first digit between 6 and 9
+let firstDigit = Math.floor(Math.random() * (9 - 6 + 1) + 6)
+
+// Generate the remaining 9 digits between 100000000 and 999999999
+let remainingDigits = Math.floor(Math.random() * (999999999 - 100000000 + 1) + 100000000)
+
+// Join both numbers as one string
+let mobileNumber = "" + firstDigit + remainingDigits
+
+console.log("Indian Mobile Number : " + mobileNumber)
+
 //Q16 --> Given the number below, write code to round it to 2 decimal places
 //        and store the RESULT as an actual NUMBER (not a string).
 //        let amount = 1234.56789    // expected output -> 1234.57
 //        HINT -> one way : multiply by 100, round it, then divide by 100.
 //        Then compare your result with amount.toFixed(2) using typeof - what is the difference ?
+
+let amount = 1234.56789
+
+// Multiply by 100, round the number, then divide by 100
+let roundedAmount = Math.round(amount * 100) / 100
+
+console.log(roundedAmount)
+
+// Compare with toFixed(2)
+let fixedAmount = amount.toFixed(2) // 1234.57
+
+console.log(fixedAmount)
+
+console.log(typeof roundedAmount) // 1234.57 - number
+console.log(typeof fixedAmount) // 1234.57 - string 
+
+// Answer
+// 1234.57
+// 1234.57
+// number
+// string
+// Math.round(amount * 100) / 100 = number
+// amount.toFixed(2) = string
 
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
