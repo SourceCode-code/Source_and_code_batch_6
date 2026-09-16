@@ -163,3 +163,109 @@ console.log(method_TrimEnd.length)
 
 console.log(method_TrimEnd.trimEnd())
 console.log(method_TrimEnd.trimEnd().length)
+
+
+//NOTE: - 
+/**
+ * EVERY METHOD THAT WE USE HAS 
+ * 1 ACTION      -> THE ACTION EXPECTED TO PERFORM
+ * 2 RETURN TYPE -> THE DATATYPE OF THAT OUTPUT
+ */
+
+
+//Substr()   -> this method is used to get a part of the given string
+// substr syntax -> 
+// str.Substr("starting index", number of character)
+
+// example 
+
+let dummy_str_1 = "hello this string is used to show substr and substring"
+
+// substr example 
+
+let hello_str = dummy_str_1.substr(0,5)
+console.log(hello_str)
+
+
+
+//Substring()-> this method is used to get a part of the given string  ( this pefered )
+//substring sytanx 
+// str.subString("starting index","ending index") // this will not show the ending index in the output 
+
+// example 
+
+let hello_dummy = dummy_str_1.substring(0,4) 
+console.log(hello_dummy) //hell // beacuse this doesnt include ending index 
+
+
+//split() -> the method is used to convert a string into array 
+//        -> this is used to convert a single string into multiple string 
+
+//syntax -> in this 
+//(the value at which you need seprate)
+let single_char_string = dummy_str_1.split("")
+let sapce_char_string = dummy_str_1.split(' ')
+let is_char_sep = dummy_str_1.split('and')
+
+
+console.log(single_char_string)
+
+console.log(sapce_char_string)
+console.log(is_char_sep)
+/**
+ * [
+  'h', 'e', 'l', 'l', 'o', ' ', 't', 'h',
+  'i', 's', ' ', 's', 't', 'r', 'i', 'n',
+  'g', ' ', 'i', 's', ' ', 'u', 's', 'e',
+  'd', ' ', 't', 'o', ' ', 's', 'h', 'o',
+  'w', ' ', 's', 'u', 'b', 's', 't', 'r',
+  ' ', 'a', 'n', 'd', ' ', 's', 'u', 'b',
+  's', 't', 'r', 'i', 'n', 'g'
+]
+
+
+
+[
+  'hello',  'this',
+  'string', 'is',
+  'used',   'to',
+  'show',   'substr',
+  'and',    'substring'
+]
+
+[ 'hello th', ' string ', ' used to show substr and substring' ]
+
+[ 'hello this string is used to show substr ', ' substring' ]
+ */
+
+
+//inculdes() -> this method is used to check wehater a string contains a particular substring or not  // this case sentive method 
+// the output/ retrun type -> boolean 
+
+
+let into_str = "hello is my name is siddhant"
+
+console.log(into_str.includes("siddhant")) //true
+console.log(into_str.includes("sidddhant"))  //false
+console.log(into_str.includes("Siddhant")) //false 
+
+
+// replace() -> this method is used to replace character in string
+//syntax
+// stringname.replace("charctcer to be replaced","word to replace with")
+
+//example
+
+let basic_str = " hello i am leanrning javascript and javascript is a very intersting lang"
+
+let py_str = basic_str.replace("javascript","python") //hello i am leanrning python and javascript is a very intersting lang
+
+console.log(py_str)
+
+// replaceAll() --> this method is used to replace all the instances of the character in string
+//syntax
+// stringname.replace("charctcer to be replaced","word to replace with")
+
+let py_str2 = basic_str.replaceAll("javascript","java")
+
+console.log(py_str2) // hello i am leanrning java and java is a very intersting lang
