@@ -1,0 +1,222 @@
+# Git — Understanding Terminal Commands
+
+> Based on lecture: `Lectures/05_understanding_git_terminal commands.txt`
+> These commands are used for restoring files, checking differences, branching, updating branches, status/history and undoing mistakes.
+
+---
+
+## 1. Restore the Local Files
+
+### 1.1 git checkout -f
+
+```bash
+git checkout -f
+```
+
+**This will restore ALL your files to the recent commit.**
+
+* Use when your working directory is a mess and you want everything back to the last commit.
+* ⚠️ Warning: all uncommitted changes will be lost.
+
+### 1.2 git checkout file_path
+
+```bash
+git checkout path/to/file.js
+```
+
+**This will restore a SPECIFIC file to the recent commit.**
+
+* Use when only one file is wrong and the rest of your changes are good.
+
+---
+
+## 2. Checking Differences
+
+### git diff
+
+```bash
+git diff
+```
+
+**This command shows the difference between your last commit and your current changes.**
+
+* Shows line-by-line what was added (`+` green) and what was removed (`-` red).
+* Use it to review your own changes BEFORE `git add` and `git commit`.
+
+---
+
+## 3. Branching Commands
+
+### 3.1 Travel between branches
+
+```bash
+git checkout branch_name
+```
+
+**This command is used to travel (switch) in between the branches.**
+
+### 3.2 Create a new branch
+
+```bash
+git checkout -b new_branch_name
+```
+
+**This command is used to create a new branch AND switch to it in one step.**
+
+> Remember: `-b` = "bring me a new branch".
+
+---
+
+## 4. Updating Branch
+
+```bash
+git fetch                    -> used to get / pull the latest meta data
+git pull origin branch_name  -> gets the latest updated changes to the branch
+```
+
+* `git fetch` first → gets info about the remote.
+* `git pull origin main` → downloads and merges actual changes into your branch.
+* Do this **every time before you start working**.
+
+---
+
+## 5. Status and History
+
+### 5.1 git status
+
+```bash
+git status
+```
+
+**Shows the current status of your working directory.**
+
+How to read the output:
+
+| Color / Symbol | Meaning |
+|----------------|---------|
+| Brown color or **(M)** | file is **Modified** (changed, not yet committed) |
+| Green color or **(U)** | file is a **new creation** (untracked → will be added) |
+| Red color or **(D)** | file is **deleted / conflict** |
+
+---
+
+## 6. History Commands
+
+### 6.1 git log
+
+```bash
+git log
+```
+
+**Shows the commit history (detailed log)** — commit id, author, date, message.
+
+### 6.2 git log -p
+
+```bash
+git log -p
+```
+
+**Shows the most recent commit(s) with details** — the actual code changes of each commit.
+
+### 6.3 git log --oneline
+
+```bash
+git log --oneline
+```
+
+**Shows a compact history of the commits** — one line per commit (short id + message).
+
+```text
+git log           → full details (long)
+git log -p        → details + code changes
+git log --oneline → one line per commit (quick view)
+```
+
+---
+
+## 7. Undo / Fixing Mistakes
+
+### 7.1 git reset
+
+```bash
+git reset
+```
+
+**This will bring back the files from staging to untracked.**
+
+```bash
+git reset filename/path
+```
+
+**This will bring back only a SINGLE file from staging to untracked.**
+
+**Where is this used?**
+
+* You are adding some code.
+* After hitting `git add .` you realise there is a mistake — you don't want it staged yet.
+* `git reset` unstages everything → now you can fix the mistake first.
+
+```text
+staging area  --git reset-->  untracked (back to before git add)
+```
+
+### 7.2 git restore
+
+```bash
+git restore filename
+```
+
+**This will discard all the changes in the file** — the file goes back to how it was in the last commit.
+
+* Use when you made wrong edits inside a file and want to throw them away.
+* ⚠️ Warning: discarded changes cannot be recovered.
+
+### 7.3 git clean -f
+
+```bash
+git clean -f
+```
+
+**This command will DELETE all the untracked files** (files that Git is not tracking at all — never added/committed).
+
+### 7.4 git blame
+
+```bash
+git blame filepath
+```
+
+**This is used to check WHO changed WHICH line** — shows author + commit id for every line of the file.
+
+* Very useful in a team: find out who wrote/changed a line and in which commit.
+
+### 7.5 git reflog
+
+```bash
+git reflog
+```
+
+**It shows a map / history of everywhere your HEAD has moved** — every commit, checkout, reset you did, even "lost" ones.
+
+* Use it to find a commit id when you want to go back to an earlier state.
+
+---
+
+## 8. Quick Revision
+
+```text
+git checkout -f               -> restore ALL files to recent commit
+git checkout file_path        -> restore ONE file to recent commit
+git diff                      -> difference between last commit and current changes
+git checkout branch_name      -> switch to another branch
+git checkout -b branch_name   -> create new branch + switch to it
+git fetch                     -> get latest meta data
+git pull origin branch_name   -> get + merge latest changes
+git status                    -> current status (M = modified, U = new, D = deleted/conflict)
+git log / -p / --oneline      -> history (detailed / with changes / compact)
+git reset [file]              -> unstage (staging -> untracked)
+git restore file              -> discard changes in a file
+git clean -f                  -> delete untracked files
+git blame file                -> who changed which line
+git reflog                    -> history map of HEAD movements
+```
+

@@ -1,0 +1,126 @@
+# Git — Understanding Advanced Terminal Commands
+
+> Based on lecture: `Lectures/06_understanding_advance_terminal_commands.txt`
+> These are power commands used when you work on multiple tasks at the same time or need to copy single commits between branches.
+
+---
+
+## 1. git stash
+
+### Command
+
+```bash
+git stash
+```
+
+**This helps you to TEMPORARILY remove the changes you have made, so you can work on another task.**
+
+### When to use it
+
+* You are working on a task (code is half-done, not ready to commit).
+* Suddenly you need to switch to another urgent task/branch.
+* You don't want to commit half-done work → **stash it away**.
+* Your working directory becomes clean (changes are saved safely in the stash area).
+
+```text
+your changes -> saved in stash -> working directory becomes clean
+```
+
+---
+
+## 2. git stash apply
+
+### Command
+
+```bash
+git stash apply
+```
+
+**This helps you to bring back all the changes that were stashed away.**
+
+* After you finish the urgent task, come back and apply the stash.
+* Your half-done work comes back exactly as you left it.
+
+### Typical flow
+
+```bash
+git stash           # hide my changes, working dir clean
+# ...do the urgent task / switch branch...
+git stash apply     # welcome back, my half-done changes
+```
+
+> Bonus: `git stash list` shows all saved stashes, `git stash pop` = apply + remove from stash list.
+
+---
+
+## 3. git cherry-pick
+
+### Command
+
+```bash
+git cherry-pick commitid
+```
+
+**This command helps you to COPY changes from one branch to another branch** (by picking one specific commit).
+
+### When to use it
+
+* A fix/commit was made on the wrong branch, and you need that same change on your branch.
+* You want only ONE specific commit — not the whole branch merge.
+
+### Get the commit id from:
+
+```bash
+git log --oneline
+```
+
+---
+
+## 4. git cherry-pick --abort
+
+### Command
+
+```bash
+git cherry-pick --abort
+```
+
+**This command will STOP the copy of the changes** (cancels the cherry-pick and brings everything back to how it was before).
+
+* Use when a cherry-pick goes wrong or you picked the wrong commit.
+
+---
+
+## 5. git show
+
+### Command
+
+```bash
+git show commit-id
+```
+
+**Shows the detailed information about the commit** — author, date, message AND the actual code changes in that commit.
+
+* `git log` shows the list of commits.
+* `git show <id>` shows the FULL detail of one commit.
+
+---
+
+## 6. Quick Revision
+
+```text
+git stash                 -> temporarily remove/save your changes, work on another task
+git stash apply           -> bring back the stashed changes
+git cherry-pick commitid  -> copy one commit's changes from one branch to another
+git cherry-pick --abort   -> stop / cancel the cherry-pick
+git show commit-id        -> detailed information of one commit
+```
+
+---
+
+## 7. Interview Questions
+
+1. What is `git stash` used for? Give a real scenario.
+2. Difference between `git stash` and `git stash apply`?
+3. What does `git cherry-pick` do and how is it different from merging a branch?
+4. How do you cancel a cherry-pick?
+5. Difference between `git log` and `git show`?
