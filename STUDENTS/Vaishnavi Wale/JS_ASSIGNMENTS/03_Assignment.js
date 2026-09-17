@@ -230,9 +230,27 @@ console.log(typeof amount.toFixed(2))   //Output : string beccause toFixed() met
 //        Then answer : why is Math.floor(-4.2) NOT -4 ?
 //        HINT -> "-4.2 rounded down" means moving AWAY from zero, not towards it.
 
+//ANSWER:
+Math.floor(-4.2) // -5  --> Math.floor() always rounds down to the nearest integer, which means it moves away from zero. -4.2 is between -4 and -5 so it round down to -5
+Math.ceil(-4.8)  // -4 --> Math.ceil() always rounds up to the nearest integer, which means it moves towards zero. -4.8 is between -4 and -5 so it round up to -4
+Math.round(-4.5) // -4 --> Math.round() rounds to the nearest integer. When exactly halfway, it rounds away from zero. -4.5 is exactly halfway between -4 and -5, so it rounds away from zero to -5.
+
+//Then answer : why is Math.floor(-4.2) NOT -4 ?
+//Answer: Math.floor(-4.2) is NOT -4 because Math.floor() always rounds down to the nearest integer, which means it moves away from zero. -4.2 is between -4 and -5 so it round down to -5
+
 //Q18 --> INTERVIEW QUESTION -> what is the output range of Math.random() ?
 //        Write in comments : minimum value, maximum value, and whether it can ever reach the maximum.
 //        Also mention any 3 real-world uses of Math.random() (from the lecture).
+
+//ANSWER:
+
+// The output range of Math.random is from 0 to 0.9999...
+// minimum value = 0 , Maximum value = 0.9999... , it can never reach the maximum value because Math.random() generates a floating point number between 0 and 1, but it never includes 1.
+
+// 3. real-world uses of Math.random() are:
+// 1. Generating random numbers for games.
+// 2. Generating a random test data for testing purposes.
+// 3. Generating random passwords or OTPs for security purposes.
 
 
 //Q19 --> INTERVIEW QUESTION (CLASSIC) -> predict the output of the below code and explain why :
@@ -242,6 +260,15 @@ console.log(typeof amount.toFixed(2))   //Output : string beccause toFixed() met
 //        stored exactly in binary. How would you FIX the comparison ? (one line, use a method
 //        you learned in this lecture)
 
+//ANSWER:
+
+console.log(0.1 + 0.2)  // OUTPUT : 0.30000000000000004
+console.log(0.1 + 0.2 === 0.3)  // OUTPUT : false
+
+// Explanation: The output of 0.1 + 0.2 is not exactly 0.3 due to the way floating-point numbers are represented in binary. Some decimal numbers cannot be stored exactly in binary, leading to small rounding errors. Therefore, the comparison 0.1 + 0.2 === 0.3 evaluates to false.
+
+// To fix the comparison, we can use the toFixed() method to round the result to a certain number of decimal places before comparing:
+
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
 //Q20 --> BONUS -> generate a random Aadhaar number in the EXACT format "XXXX XXXX XXXX".
@@ -249,6 +276,14 @@ console.log(typeof amount.toFixed(2))   //Output : string beccause toFixed() met
 //        Print it as one single string. Example -> "4821 9057 3364"
 //        HINT -> each block must be a 4-DIGIT number (1000 to 9999) so it never shows 3 digits,
 //        then JOIN the 3 blocks with spaces.
+
+// ANSWER:
+
+let block1 = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000)
+let block2 = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000)
+let block3 = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000)
+
+console.log(`${block1} ${block2} ${block3}` )
 
 //Q21 --> BONUS (MINI PROJECT - BILLING RECEIPT) ->
 //        A customer buys 3 items with these prices : 199.99, 449.50, 89.75
@@ -260,6 +295,36 @@ console.log(typeof amount.toFixed(2))   //Output : string beccause toFixed() met
 //           Discount   : 10.0%
 //           Final Bill : Rs. 665.32
 //        HINT -> discount = total * (randomPercent / 100). Round at the END, not in between.
+
+// ANSWER:
+
+let item1 = 199.99
+let item2 = 449.50
+let item3 = 89.75
+let total = item1 + item2 + item3
+console.log(`Rs. ${total}`)                                      
+
+let randomPercent = Math.floor(Math.random()* (15 - 5 +1) + 5) 
+console.log(`Discount : ${randomPercent}%`)
+
+let discount = total * (randomPercent / 100)
+let finalBill = total - discount
+console.log(`Final Bill : Rs. ${finalBill.toFixed(2)}`)
+
+// OUTPUT:
+ 
+// 1. Rs. 739.24
+//    Discount : 10%
+//    Final Bill : Rs. 665.32
+
+/** 2.
+ * Rs. 739.24
+ * Discount : 15%
+ * Final Bill : Rs. 628.35
+ */
+
+
+
 
 // ============================================
 // SUBMISSION CHECKLIST
