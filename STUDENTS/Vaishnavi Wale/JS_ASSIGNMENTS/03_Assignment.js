@@ -177,12 +177,23 @@ console.log(randomFloatValue.toFixed(1))
 //        HINT -> Math.round() rounds to the nearest INTEGER. how do you make 5 behave like 1 ?
 //        (divide by 5 first, round, then ...?)
 
+//ANSWER: 
 
+function roundTo5(num){
+    return Math.round(num / 5)* 5
+}
+let roundTo5Value = roundTo5(37)
+console.log(roundTo5Value)            // OUTPUT : 30
 
 //Q14 --> Write a program to generate a random 4-digit OTP.
 //        Rules -> OTP must be between 1000 and 9999 (never 3 digits).
 //        Print it as "Your OTP is : XXXX"
-//        HINT -> use the golden formula from Q11 with min = 1000, max = 9999
+//        HINT -> use the golden formula from Q11 with min = 1000, max = 9999 
+
+//ANSWER:
+
+let OTP = Math.floor(Math.random() * (9999 - 1000 + 1) +1000)
+console.log(`Your OTP is : ${OTP}`)
 
 //Q15 --> Write a program to generate a random INDIAN mobile number.
 //        Rules -> total 10 digits, first digit must be 6, 7, 8 or 9.
@@ -190,11 +201,27 @@ console.log(randomFloatValue.toFixed(1))
 //        HINT -> split in 2 parts like the lecture : firstDigit (6-9) + remaining 9 digits.
 //        Challenge -> how do you JOIN two numbers so they print as ONE string, not "6 987654321" ?
 
+//ANSWER:
+
+let firstDigit = Math.floor(Math.random() * 4) + 6
+let remainingNumbers = Math.floor(Math.random()*1000000000)
+console.log(`${firstDigit}${remainingNumbers}`)
+
 //Q16 --> Given the number below, write code to round it to 2 decimal places
 //        and store the RESULT as an actual NUMBER (not a string).
 //        let amount = 1234.56789    // expected output -> 1234.57
 //        HINT -> one way : multiply by 100, round it, then divide by 100.
 //        Then compare your result with amount.toFixed(2) using typeof - what is the difference ?
+
+//ANSWER:
+
+let amount = 1234.56789
+let roundAmount = Math.round(amount *100)/100
+console.log(roundAmount)
+
+//Then compare your result with amount.toFixed(2) using typeof - what is the difference ?
+console.log(typeof roundAmount)         //Output : number because we have rounded the number and stored it in roundAmount variable.
+console.log(typeof amount.toFixed(2))   //Output : string beccause toFixed() method returns a string. 
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
