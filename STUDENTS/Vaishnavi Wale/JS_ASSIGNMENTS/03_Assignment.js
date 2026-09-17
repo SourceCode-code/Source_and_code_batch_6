@@ -125,11 +125,37 @@ console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))    //OUTPUT : 10.
 //        If the total is 12, also print "DOUBLE SIX!".
 //        HINT -> each dice = Math.floor(Math.random() * 6) + 1
 
+// ANSWER :
+
+let dice1 = Math.floor(Math.random() * 6) + 1
+let dice2 = Math.floor(Math.random() * 6) + 1
+
+console.log("dice 1 :" + dice1)
+console.log("dice 2 :" + dice2)
+console.log( `combined total : ${dice1 + dice2}` )
+if (dice1 + dice2 == 12) {
+    console.log("DOUBLE SIX!")
+}
+
 //Q11 --> Write a function randomBetween(min, max) that returns a random INTEGER
 //        between min and max (both included). Test it 3 times with (10, 20).
 //        HINT -> lecture golden formula -> Math.floor(Math.random() * (max - min + 1)) + min
 //        Challenge -> explain in comments WHY we use (max - min + 1) and not (max - min) ?
 //        (what would go wrong at the highest end if we removed the +1 ?)
+
+//ANSWER: 
+function randomBetween(min , max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let randomFunction = randomBetween(10, 20);
+console.log(randomFunction);
+
+//Challenge -> explain in comments WHY we use (max - min + 1) and not (max - min) ?
+
+// Answer: We use (max - min +1) because we want to include the max value in the range of random numbers generated. 
+// If we only used (max - min), the maximum value would never be included, as Math.random() generates a number from 0 to 0.999... By adding 1, we ensure that the maximum value is included in the possible outcomes.
+
+
 
 //Q12 --> Write a function randomFloat(min, max) that returns a random FLOAT between min and max,
 //        rounded to 1 decimal place.
@@ -137,10 +163,21 @@ console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))    //OUTPUT : 10.
 //        HINT -> here you do NOT need Math.floor... think WHY floats must stay as they are,
 //        and which method is used at the END to fix the decimal places.
 
+// ANSWER:
+
+function randomFloat(min , max){
+    return  Math.random() * (max - min+1) + min
+}
+let randomFloatValue = randomFloat(5.5, 9.3)
+console.log(randomFloatValue.toFixed(1))
+
+
 //Q13 --> Write a function roundTo5(num) that rounds ANY number to the NEAREST multiple of 5.
 //        Example -> roundTo5(28) -> 30 | roundTo5(32) -> 30 | roundTo5(37) -> 35
 //        HINT -> Math.round() rounds to the nearest INTEGER. how do you make 5 behave like 1 ?
 //        (divide by 5 first, round, then ...?)
+
+
 
 //Q14 --> Write a program to generate a random 4-digit OTP.
 //        Rules -> OTP must be between 1000 and 9999 (never 3 digits).
