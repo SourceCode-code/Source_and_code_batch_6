@@ -63,16 +63,32 @@ console.log(Math.floor(10.9), Math.ceil(10.9), Math.round(10.9))   // 10 11 11
 //       HINT -> floor and ceil do NOT care about "closeness". floor always goes to the LOWER
 //       integer, ceil always goes to the HIGHER integer. Think on a number line, not by size.
 
+//ANSWER :
+
+console.log(Math.floor(-4.2))     // -5
+console.log(Math.ceil(-4.8))      // -4
+console.log(Math.round(-4.5))     // -4
+
 //Q6 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       let price = 99.99
 //       console.log(Math.floor(price), Math.ceil(price), Math.round(price), price.toFixed(1))
 //       HINT -> one of these four outputs is NOT a number. which one ? how can you tell from the console ?
+
+//ANSWER: 
+
+console.log(Math.floor(price), Math.ceil(price), Math.round(price), price.toFixed(1))     // OUTPUT: 99 , 100 , 100, "99.9"
 
 //Q7 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       let x = 10.658912355
 //       console.log(x.toFixed(2))
 //       console.log(x)
 //       HINT -> does toFixed() CHANGE the original variable or only give back a new value ?
+
+//ANWER: 
+
+let x = 10.658912355
+console.log(x.toFixed(2))  // OUTPUT: 10.66
+console.log(x)             // OUTPUT: 10.658912355
 
 //Q8 --> A student writes this line to generate a random number between 1 and 10 :
 //       console.log(Math.floor(Math.random() * 10) + 1)
@@ -82,11 +98,25 @@ console.log(Math.floor(10.9), Math.ceil(10.9), Math.round(10.9))   // 10 11 11
 //       c) can Math.random() itself ever return exactly 1 ? why not ?
 //       HINT -> Math.random() gives 0 to 0.999..., multiply by 10 -> 0 to 9.999...
 
+// ANSWER:
+
+console.log(Math.floor(Math.random() * 10) + 1)
+//       Answer in comments :
+//       a) what is the SMALLEST value it can ever print ?               // ANSWER : 1
+//       b) what is the LARGEST value it can ever print ?                // ANSWER: 10
+//       c) can Math.random() itself ever return exactly 1 ? why not ?   
+          // No, because math.random() generates a floating point number between o to 0.9999 and it never reachs to 1.
+
+
+
 //Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))
 //       HINT -> what does the + symbol do when BOTH sides are strings ?
 //       (this one catches even experienced developers)
 
+// ANSWER: 
+
+console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))    //OUTPUT : 10.6610.66. 
 
 // ------------------- SECTION C : LOGIC BUILDING -------------------
 
