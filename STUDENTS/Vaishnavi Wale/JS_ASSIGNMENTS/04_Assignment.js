@@ -102,12 +102,28 @@ console.log(lang[lang.length - 5])   //c
 //       console.log('hello ${name}')
 //       HINT -> ${} placeholders work ONLY in one type of quotes. which one and why ?
 
+//ANSWER:
+
+let name = "Siddhant"
+console.log(`hello ${name}`)     //hello Siddhant --> ${} placeholders work ONLY in backticks because backticks allow for string interpolation.
+console.log("hello ${name}")     //hello ${name}  --> ${} placeholders not work in double qoutes because double quotes treat everything inside as a string literal
+console.log('hello ${name}')     //hello ${name}  --> ${} placeholders not work in single qoutes because single quotes treat everything inside as a string literal
+
+
 //Q7 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       let str = "JavaScript"
 //       console.log(str.includes("script"))
 //       console.log(str.includes("Script"))
 //       console.log(str.includes("java"))
 //       HINT -> includes(), startsWith(), endsWith() are ALL ______ sensitive methods.
+
+//Answer:
+
+let str = "JavaScript"
+console.log(str.includes("script"))    // false
+console.log(str.includes("Script"))    // true
+console.log(str.includes("java"))      // false
+
 
 //Q8 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       let greeting = "hello"
@@ -116,12 +132,24 @@ console.log(lang[lang.length - 5])   //c
 //       HINT -> STRINGS ARE ______ in javascript. what does toUpperCase() actually RETURN
 //       and where does that returned value go in this code ?
 
+//ANSWER:
+
+let greeting = "hello"
+greeting.toUpperCase()
+console.log(greeting)   // hello --> strings are immutable in js. toUpperCse() returns a new string but does not change the original string. so greetings remains hello.
+
 //Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log("HelloWorld".toUpperCase().length)
 //       console.log("HelloWorld".toLowerCase().charAt(0))
 //       console.log("HelloWorld".length.toLowerCase())   // <- this one ERRORS. why ?
 //       HINT -> chaining works only when the output of the first method is a VALID INPUT
 //       to the second method. what datatype does .length give ?
+
+//ANSWER:
+
+console.log("HelloWorld".toUpperCase().length)    //10
+console.log("HelloWorld".toLowerCase().charAt(0)) // h
+//console.log("HelloWorld".length.toLowerCase())  // ERROR --> .length gives a number, and numbers do not have a toLowerCase() method. so it errors out. chaining works only when the output of the first method is a valid input to the second method.
 
 //Q10 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        let str = "JavaScript"
@@ -132,6 +160,13 @@ console.log(lang[lang.length - 5])   //c
 //        characters, slice with one argument goes till the END of the string.
 //        all 3 should print the same word here - are they ? why ?
 
+//ANSWER:
+
+let strr = "JavaScript"
+console.log(strr.substring(4, 10))  //Script --> substring takes the starting index (4) and the ending index (10, not included), so it starts from 4 to 9.
+console.log(strr.substr(4, 6))      //Script --> substr takes the starting index (4) and the number of characters (6), so it starts from 4 and takes 6 characters.
+console.log(strr.slice(4))          //Script --> slice with one argument goes till the END of the string.
+
 //Q11 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        let fruit = "banana apple banana"
 //        console.log(fruit.indexOf("a"))
@@ -139,6 +174,13 @@ console.log(lang[lang.length - 5])   //c
 //        console.log(fruit.indexOf("mango"))
 //        HINT -> indexOf = FIRST instance, lastIndexOf = LAST instance,
 //        and when the value is NOT found the answer is always ______ ?
+
+//ANSWER:
+
+let fruit = "banana apple banana"
+console.log(fruit.indexOf("a"))       //1. --> gives the index of the FIRST instance of the a character
+console.log(fruit.lastIndexOf("a"))   //18 --> gives the index of the LAST instance of the a character
+console.log(fruit.indexOf("mango"))   // -1 --> when the value is not found, indexOf returns -1.
 
 //Q12 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        let messy = "   JS   "
@@ -148,6 +190,14 @@ console.log(lang[lang.length - 5])   //c
 //        console.log(messy.length)
 //        HINT -> count the spaces carefully. trim removes start AND end,
 //        trimStart removes ONLY start, trimEnd removes ONLY end.
+
+//ANSWER:
+
+let messy = "   JS   "
+console.log(messy.trim().length)        //2
+console.log(messy.trimStart().length)   //5
+console.log(messy.trimEnd().length)     //5
+console.log(messy.length)               //8
 
 //Q13 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        console.log("a,b,c".split(",").length)
