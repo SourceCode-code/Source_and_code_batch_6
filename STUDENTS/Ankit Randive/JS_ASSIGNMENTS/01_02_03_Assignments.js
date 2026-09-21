@@ -545,5 +545,7 @@ const item3 = 89.75
 
 //Total bill
 const toatal = item1 + item2 + item3;
-//random discount between 5% and 15%
+//random discount between 5% and 15% 
+//
+//
 
