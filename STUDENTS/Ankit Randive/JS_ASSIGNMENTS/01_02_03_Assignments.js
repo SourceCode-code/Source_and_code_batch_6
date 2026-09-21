@@ -369,34 +369,90 @@ console.log("DOUBLE SIX!");
 //        HINT -> lecture golden formula -> Math.floor(Math.random() * (max - min + 1)) + min
 //        Challenge -> explain in comments WHY we use (max - min + 1) and not (max - min) ?
 //        (what would go wrong at the highest end if we removed the +1 ?)
+// Answer :
+//        function randomeBetween(min, max)
+//      Genarates a random integer where both min and max are inclusive
+function randomBetween(min, max) {
+       // +1 makes the maximum value inclusive.
+       return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(randomBetween(10, 20));
+console.log(randomBetween(10, 20));
+console.log(randomBetween(10, 20));
+// Challenge
+/* why use (max - mini + 1) insted of (max - mini)?
+1.Math.randome() returns a float (0, 1) - inclosive of 0, but exclusive of1.
+2.For range (10, 20), (max - min) = 10.
+  - Math.random() * 10 gives range (0, 10)
+*/
 
 //Q12 --> Write a function randomFloat(min, max) that returns a random FLOAT between min and max,
 //        rounded to 1 decimal place.
 //        Example -> randomFloat(5.5, 9.3) can give 6.7, 8.2, etc.
 //        HINT -> here you do NOT need Math.floor... think WHY floats must stay as they are,
 //        and which method is used at the END to fix the decimal places.
+// Answer :
+function randomFloat(min, max) {
+  const randomValue = Math.random() * (max - min) + min;
+  return Math.round(randomValue * 10) / 10;
+}
+
+
 
 //Q13 --> Write a function roundTo5(num) that rounds ANY number to the NEAREST multiple of 5.
 //        Example -> roundTo5(28) -> 30 | roundTo5(32) -> 30 | roundTo5(37) -> 35
 //        HINT -> Math.round() rounds to the nearest INTEGER. how do you make 5 behave like 1 ?
 //        (divide by 5 first, round, then ...?)
+// Answer :
+function roundTo5(num) {
+  return Math.round(num / 5) * 5;
+}
+console.log(roundTo5(28));
+console.log(roundTo5(32));
+console.log(roundTo5(37));
 
 //Q14 --> Write a program to generate a random 4-digit OTP.
 //        Rules -> OTP must be between 1000 and 9999 (never 3 digits).
 //        Print it as "Your OTP is : XXXX"
 //        HINT -> use the golden formula from Q11 with min = 1000, max = 9999
+// Answer :
+let generateOTP = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+console.log("Your OTP is : " + generateOTP);
+//5272
+//3128
 
 //Q15 --> Write a program to generate a random INDIAN mobile number.
 //        Rules -> total 10 digits, first digit must be 6, 7, 8 or 9.
 //        Print it as a single readable string like "9876543210"
 //        HINT -> split in 2 parts like the lecture : firstDigit (6-9) + remaining 9 digits.
 //        Challenge -> how do you JOIN two numbers so they print as ONE string, not "6 987654321" ?
+// Answer:
+let generateINDIAN_Mobile_number = function () {
+  const validFirstDigits = [6, 7, 8, 9];
+  const firstDigit = validFirstDigits[Math.floor(Math.random() * validFirstDigits.length)];
+// Generates a 9 digit number between 100000000 and 999999999
+  const remainingDigits = Math.floor(100000000 + Math.random() * 900000000);
+// Convert number to string
+  return String(firstDigit) + String(remainingDigits);
+};
+console.log(generateINDIAN_Mobile_number())
+
 
 //Q16 --> Given the number below, write code to round it to 2 decimal places
 //        and store the RESULT as an actual NUMBER (not a string).
 //        let amount = 1234.56789    // expected output -> 1234.57
 //        HINT -> one way : multiply by 100, round it, then divide by 100.
 //        Then compare your result with amount.toFixed(2) using typeof - what is the difference ?
+// Answer :
+let amount = 1234.56789;
+let rondedAmount = Math.round(amount * 100) / 100;
+
+console.log(rondedAmount); // Output: 1234.57
+// Compareing
+console.log(typeof roundedAmount);     // Output: "number"
+console.log(typeof amount.toFixed(2)); // Output: "string"
+
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
@@ -404,10 +460,36 @@ console.log("DOUBLE SIX!");
 //        Math.floor(-4.2) , Math.ceil(-4.8) , Math.round(-4.5)
 //        Then answer : why is Math.floor(-4.2) NOT -4 ?
 //        HINT -> "-4.2 rounded down" means moving AWAY from zero, not towards it.
+// Answer :
+/*
+// Math.floor(-4.2) -> "-5"
+   Math.floor() Always round down
+   At the -4.2 the small is -5
+// Math.ceil(-4.8)  -> "-4"
+   Math.ceil() Always round up
+   At the -4.8 the larger is -4
+// Math.round(-4.5) -> "-4"
+   Math.round() Always round the value.
+   At the -4.5 the round is -4
+*/
+
+
 
 //Q18 --> INTERVIEW QUESTION -> what is the output range of Math.random() ?
 //        Write in comments : minimum value, maximum value, and whether it can ever reach the maximum.
 //        Also mention any 3 real-world uses of Math.random() (from the lecture).
+// Answer :
+// Range of Math.randome():
+// Minimum value : 0 (inclusive)
+// Maximum Value : 1 (exclusive)
+// It can not reach maximum,it can be 0 but will never reach 1 (it goes up to 0.9999999)
+
+/*
+Real world uses
+1.OTP genaration.
+2.Mobile number genaration.
+3.Probability of dice roll game
+*/
 
 
 //Q19 --> INTERVIEW QUESTION (CLASSIC) -> predict the output of the below code and explain why :
@@ -416,6 +498,12 @@ console.log("DOUBLE SIX!");
 //        HINT -> JS follows IEEE-754 (binary floating point). some decimal numbers CANNOT be
 //        stored exactly in binary. How would you FIX the comparison ? (one line, use a method
 //        you learned in this lecture)
+// Answer : 
+console.log(0.1 + 0.2)  // Output : 0.30000000000000004
+console.log(0.1 + 0.2 === 0.3) // Output : false
+
+
+
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
@@ -424,6 +512,19 @@ console.log("DOUBLE SIX!");
 //        Print it as one single string. Example -> "4821 9057 3364"
 //        HINT -> each block must be a 4-DIGIT number (1000 to 9999) so it never shows 3 digits,
 //        then JOIN the 3 blocks with spaces.
+// Answer :
+function genarateAdhaarNumber() {
+  // generate a 4 digit  number between 1000 to 9999
+  const getblock = () => Math.floor(1000 + Math.random()) * 9000;
+
+  const block1 = getBlock();
+  const block2 = getBlock();
+  const block3 = getBlock();
+// join three block
+  return `${block1} ${block2} ${block3}`;
+}
+
+console.log(genarateAdhaarNumber()); 
 
 //Q21 --> BONUS (MINI PROJECT - BILLING RECEIPT) ->
 //        A customer buys 3 items with these prices : 199.99, 449.50, 89.75
@@ -435,3 +536,14 @@ console.log("DOUBLE SIX!");
 //           Discount   : 10.0%
 //           Final Bill : Rs. 665.32
 //        HINT -> discount = total * (randomPercent / 100). Round at the END, not in between.
+
+// Answer :
+// Item Proces
+const item1 = 199.99;
+const item2 = 449.50;
+const item3 = 89.75
+
+//Total bill
+const toatal = item1 + item2 + item3;
+//random discount between 5% and 15%
+
