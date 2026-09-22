@@ -28,3 +28,5 @@ console.log(typeof city);
 console.log(typeof marks);
 console.log(typeof isPass);
 console.log(typeof result);
+
+
