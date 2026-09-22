@@ -61,14 +61,19 @@ console.log(typeof number.toString()) //7020400749
 
 
 
-//QUESTION FOR YOU FOR ASSIOGNEMNT
+//QUESTION FOR YOU FOR ASSIGNEMNT
 
-console.log(5+5)
-console.log(5+"5")
-console.log("5"-5)
-console.log(5-"5")
-console.log("5"*5)
-console.log("5"-true)
-console.log("5"-false)
-console.log("5"+true)
-console.log("5"+false)
+console.log(5+5)            //10 
+console.log(5+"5")         //55  STRING
+console.log("5"-5)         // 0  
+console.log(5-"5")         // 0
+console.log("5"*5)         //25 
+// console.log("5"-true)
+// console.log("5"-false)
+// console.log("5"+true)
+// console.log("5"+false)
+
+// NOTE :-  
+// IF BOTH DATA TYPES ARE NUMBER THEN + WILL ACT AS ARITHMATIC OPERATOR
+// IF BOTH DATATYPES ARE DIFFERENT THEN + WILL ACT AS CONCAT 
+// ANY OTHER SIGN THAN + WILL ACT AS ATRMTIMATIC 
