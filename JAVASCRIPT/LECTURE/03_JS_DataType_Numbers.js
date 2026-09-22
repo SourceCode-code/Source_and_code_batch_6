@@ -133,7 +133,7 @@ console.log(Math.random()*100) // lowest number 0 and highest number is 99.9999
 //
 console.log(Math.round(Math.random()*100)) 
 
-
+// -- example 
 
 // Q1 Create a random mobile number 
 
@@ -158,7 +158,7 @@ let Reamining_Numbers = Math.floor(Math.random()*1000000000)
 console.log(firstDigit,Reamining_Numbers)
 //6 775510257
 //6 964722464
-
+console.log(`${firstDigit}${Reamining_Numbers}`)
 
 //2 PROBLEM - generate a program to simulate the the throw of dice 
 
@@ -231,7 +231,5 @@ let digit_2 = Math.floor(Math.random()*(10000-1000)+1000)
 let digit_3 = Math.floor(Math.random()*(10000-1000)+1000)
 
 console.log(digit_1, " " ,digit_2, " ", digit_3)
-
-
 
 console.log(digit_1, " " ,digit_1, " ", digit_1)
