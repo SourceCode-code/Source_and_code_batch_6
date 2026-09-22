@@ -1,0 +1,14 @@
+introduction of Rahul Shinde
+Good morning, and thank you for giving me the opportunity to introduce myself.
+
+My name is Rahul Shinde. I have experience in software testing, mainly in functional testing, test case preparation, defect identification, and validating end-to-end business workflows.
+
+In my current role, I work as a Senior Executive in testing, where I am involved in QA activities such as understanding requirements, preparing and executing test cases, regression testing, identifying and reporting defects, and coordinating with developers and business teams for issue resolution. I have worked on modules related to port calls, DA and CMS workflows, payments, invoices, approvals, notifications, and integrations.
+
+I am also familiar with different environments such as QA, UAT, and Production, and I have experience validating data and workflows across systems. Along with manual testing, I am currently improving my technical skills in JavaScript, Git, and GitHub, with the goal of expanding my automation and technical testing capabilities.
+
+My strengths are attention to detail, understanding business requirements, finding edge cases, and following issues through to resolution. I am also comfortable learning new tools and technologies.
+
+I am now looking for an opportunity where I can use my testing experience, strengthen my technical skills, and contribute to a team while continuing to grow professionally.
+
+Thank you.
