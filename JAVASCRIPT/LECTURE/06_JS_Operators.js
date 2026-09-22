@@ -1,172 +1,247 @@
-// OPERTAIORS -  symbols in code that are used to perfrom operation
+// ============================================================
+// 06 - JAVASCRIPT : OPERATORS
+// ============================================================
+
+// SECTION 1 -> WHAT ARE OPERATORS ?
+
+// OPERATORS -> symbols in code that are used to perform operations on values (operands)
 
 /**
- * DIFFERENT OPERTORS 
- * 
- * 1 ARTHMATIC OPERATORS -> USED TO PERFROM ARTHMATICS ( + - * / %)
- * 2 ASSIGNMENT OPERATORS -> USED TO ASSIGN VALUES TO VARAIBLES ( = += , -=)
- * 3 COMPRASION OPERATORS -> USED TO COMPARE TWO VALUES AND RETURN BOOLEAN ( > < >= , <= ,== ,===)
- * 4 LOGICAL OPERATORS -> USED TO PERFROM LOGICAL OPERTIONS ( & || !)
- * 5 INCREMENT AND DRECEMENT -> USED TO INCREASE OR DERCRES VALUE  
- * 6 TERNANRY OPERATORS -> USED WHEN CONDITION ARE OF IF ESLE  
- * 7 TYPE OF OPERATORS -> USED TO CHECK THE DATATYPE OF VARIBALE
- * 
- * 
+ * DIFFERENT OPERATORS
+ *
+ * 1 ARITHMETIC OPERATORS   -> used to perform maths           ( + - * / % ** )
+ * 2 ASSIGNMENT OPERATORS   -> used to assign values to variables ( = += -= *= /= %= )
+ * 3 COMPARISON OPERATORS   -> used to compare two values, return boolean ( > < >= <= == === != !== )
+ * 4 LOGICAL OPERATORS      -> used to combine/flip conditions ( && || ! )
+ * 5 INCREMENT & DECREMENT  -> used to increase or decrease a value by 1 ( ++ -- )
+ * 6 TERNARY OPERATOR       -> shortcut for if/else condition  ( ? : )
+ * 7 TYPE OPERATORS         -> used to check the datatype of a variable ( typeof )
+ *
  */
 
+// ============================================================
+// SECTION 2 -> ARITHMETIC OPERATORS
+// ============================================================
 
 /**
- * ---------------------------------ARTHMATIC OPERATORS -------------------
- * 
- * + -> ADDITION
- * - -> SUBSTRACTION
- * * -> MULTIPICATION
- * / -> DIVISION
- * %  -> MODULUS  ( REMINDER)
- * ** -> EXPONENTIATION 
- * 
+ * +  -> ADDITION
+ * -  -> SUBTRACTION
+ * *  -> MULTIPLICATION
+ * /  -> DIVISION
+ * %  -> MODULUS (REMAINDER after division)
+ * ** -> EXPONENTIATION (power)
+ *
  */
 
-console.log(2+2) // 4
+console.log(2 + 2)  // 4   -> addition
+console.log(10 - 4) // 6   -> subtraction
+console.log(6 * 3)  // 18  -> multiplication
 
+// NOTE -> JS division does NOT cut decimals, it gives the FULL decimal result
 
-//------------------------------ASSIGNMENT OPERATORS ---------------------------
+console.log(10 / 2) // 5
+console.log(10 / 3) // 3.3333333333333335
 
-// = -> simple assignment 
+// % (modulus) -> gives the REMAINDER (very useful for even/odd checks)
 
-// let a = 10 // here = is assignment operator
-// let b = a
+console.log(10 % 3) // 1  -> 10 = (3 * 3) + 1  -> remainder is 1
+console.log(15 % 2) // 1  -> remainder 1 means ODD number
+console.log(16 % 2) // 0  -> remainder 0 means EVEN number
 
-// +=  --> add and assignment  
+// ** (exponentiation) -> power
 
-let c = 5 
-let d = 10 
-// c = c+d
-c += d     // c = c+d
-console.log(c) //15
+console.log(2 ** 3) // 8   -> 2 * 2 * 2
+console.log(5 ** 2) // 25  -> 5 * 5
 
-//-=  --> subtract assignment 
+// ============================================================
+// SECTION 3 -> ASSIGNMENT OPERATORS
+// ============================================================
 
-let e = 100 
+// = -> simple assignment
+
+let a = 10 // here = is the assignment operator
+let b = a  // b also becomes 10
+
+// SHORTCUT ASSIGNMENTS -> shorthand of "value = value operator something"
+
+// +=  -> add and assign
+
+let c = 5
+let d = 10
+
+// c = c + d   (long way)
+c += d       // c = c + d  -> 5 + 10
+console.log(c) // 15
+
+// -= -> subtract and assign
+
+let e = 100
 let f = 10
 
- f-=e
-f = f-e
- console.log(f) //-90
+// f = f - e   (long way)
+f -= e       // f = f - e  -> 10 - 100
+console.log(f) // -90
 
-// --------------------------------COMPARSION OPERATORS --------------
+// EXTRA -> the same pattern works for ALL arithmetic operators
 
-/**
- * >   --> GREATER THAN
- * <   --> LESSER THAN
- * >=  --> GREATER THAN EQUAL TO 
- * <=  --> LESS THAN EQUAL TO
- * ==  --> EQUAL( VALUE)
- * === --->EQUAL VALUE AND EQUAL DATATYPE
- * !=  --> NOT EQUAL 
- * !=== --> NOT EQUAL VALUE AND DATATYPE  
- */
+let g = 10
+g *= 3       // g = g * 3  -> 10 * 3
+console.log(g) // 30
 
+let h = 10
+h /= 5       // h = h / 5  -> 10 / 5
+console.log(h) // 2
 
-console.log(4=="4") // two will always just check value  (true) 
+let i = 10
+i %= 3       // i = i % 3  -> remainder of 10 / 3
+console.log(i) // 1
 
-console.log(4==="4") // three signs will check value as well as datatype  (false)
+// ============================================================
+// SECTION 4 -> COMPARISON OPERATORS
+// ============================================================
 
-console.log(!true) // false
+// Comparison operators compare two values and ALWAYS return a boolean (true / false)
 
+let x = 10
+let y = 5
 
+console.log(x > y)   // true   -> 10 > 5
+console.log(x < y)   // false  -> 10 < 5
+console.log(x >= 10) // true   -> greater than or EQUAL
+console.log(x <= 5)  // false  -> less than or equal
 
-//------------------------------------------------LOGICAL OPERATORS ----------------------------
+// == vs === -> IMPORTANT difference (interview favourite)
 
-/**
- * WE HAVE TOTAL OF 3 LOGICAL OPERATORS IN JS 
- * AND (&&)
- * OR (||)
- * NOT (!)
- */
+// ==  (loose comparison)  -> compares only the VALUE
+// === (strict comparison) -> compares VALUE + DATATYPE (always prefer this)
 
-//AND --> ( COMBINATION COMBINATION)-->
-// IF WE HAVE 2 CONDITION 
-// 
+console.log(10 == 10)    // true
+console.log(10 === 10)   // true
 
-// SIMPLE 
+console.log(10 == "10")  // true  -> only value is compared (number vs string)
+console.log(10 === "10") // false -> datatype is different (number vs string)
 
-/*
-T  && T --> TRUE
-T  && F --> FALSE
-F  && T --> FALSE
-F  && F --> FALSE
+console.log(5 != 5)      // false -> not equal (loose)
+console.log(5 !== "5")   // true  -> value or datatype is different (strict)
 
-*/
+// NOTE -> === is STRICT -> JS developers always use === and !==
 
-console.log(3000<5000 && 10 >5) // true 
-console.log(3000<5000 && 10 <5)// false
+console.log(10 > 5, 10 < 5) // can compare numbers
+console.log("b" > "a")      // can compare strings (alphabet order)
 
-//OR (||) --> IF ANYONE OF THE CONDITION IS TRUE THEN RESULT WILL BE TRUE 
+// ============================================================
+// SECTION 5 -> LOGICAL OPERATORS
+// ============================================================
 
-console.log("------------------------OR-------------")
-/*
-T  || T --> TRUE
-T  || F --> TRUE
-F  || T --> TRUE
-F  || F --> FALSE
-
-*/
-
-console.log(3000<5000 || 10 >5) // true 
-console.log(3000<5000 || 10 <5)//true 
-
-// NOT (!) -> THIS WILL REVERSE THE OUTPUT
-
-//!T --> F
-//!F ==>T
-
-
-//------------------------------------INCREMENT AND DECREMENT OPERATORS  --------------------------
-
-// INCREMENT OPERATORS  (++)
+// Logical operators combine or flip boolean conditions
 
 /**
- 
-
- PRE INCREMENT  ( ++ VARIBALE) --> THIS WILL FIRST INCREACE THE VALUE AND THEN SHOW THE OUTPUT
-
- POST INCREMENT ( VARIBALE ++) --> THIS WILL FIRST SHOW THE VALUE AND THEN INCREACE THE VALUE 
-
- PRE DRECEMENT ( -- VARIBALE) --> THIS WILL FIRST DECREASE THE VALUE AND THEN SHOW THE OUTPUT
-
- POST DRECEMENT ( VARIBALE --) -->THIS WILL FIRST SHOW THE VALUE AND THEN DECREASE THE VALUE
-
+ * && -> AND  -> true only if BOTH sides are true
+ * || -> OR   -> true if AT LEAST ONE side is true
+ * !  -> NOT  -> flips the condition
+ *
  */
 
+let num1 = 10
 
+// && -> AND
 
- let pre_num = 10
- console.log(++pre_num) // 11
+console.log(num1 > 5 && num1 < 20)  // true  -> BOTH conditions are true
+console.log(num1 > 5 && num1 < 8)   // false -> second condition is false
 
+// || -> OR
 
- let post_num = 0
- console.log(post_num++) //0
- console.log(post_num) //1
+console.log(num1 > 5 || num1 < 8)   // true  -> first condition is true
+console.log(num1 > 50 || num1 < 8)  // true  -> second condition is true
+console.log(num1 > 50 || num1 > 80) // false -> NEITHER condition is true
 
+// ! -> NOT (flips the boolean)
 
- // -----------------------------------TERNARY OPERATORS --------------
+console.log(!true)      // false
+console.log(!false)     // true
+console.log(!(num1 > 5)) // false -> num1 > 5 is true, flipped -> false
 
- // SYNTAX --> (CONDITION)?"POSTIVE OUTPUT":NEGATIVE OUTPUT
+// ============================================================
+// SECTION 6 -> INCREMENT & DECREMENT OPERATORS
+// ============================================================
 
-let age = 5
+// ++ -> increases a value by 1
+// -- -> decreases a value by 1
 
- let drive = (age>=18)?"he can drive":"HE CANNOT DRIVE"
+let count = 5
 
- console.log(drive)
+// count = count + 1  (long way)
+// count += 1         (shortcut)
+// ++count / count++  (operator way)
 
+console.log(++count) // 6 -> PRE-increment: increase FIRST, then print
 
+let step = 5
 
+console.log(step--) // 5 -> POST-decrement: print FIRST, then decrease
+console.log(step)   // 4 -> value is now 4
 
- // find the number is even or odd 
+// NOTE -> pre (++x) changes the value before use, post (x--) uses the old value first
 
- let num = 15
+// ============================================================
+// SECTION 7 -> TERNARY OPERATOR (? :)
+// ============================================================
 
- let find_even_odd= (num%2==0)?"number is even ":"number is odd"
+// TERNARY -> shortcut for if/else
 
- console.log(find_even_odd)
+/**
+ * condition ? value_if_true : value_if_false
+ *
+ */
+
+let num2 = 15
+
+// long way (if/else)
+/**
+ * if (num2 % 2 === 0) {
+ *   console.log("even")
+ * } else {
+ *   console.log("odd")
+ * }
+ *
+ */
+
+// ternary way
+
+console.log(num2 % 2 === 0 ? "even" : "odd") // odd -> condition is false, so "odd"
+
+let age = 20
+
+console.log(age >= 18 ? "can vote" : "cannot vote") // can vote
+
+// ============================================================
+// SECTION 8 -> TYPE OPERATOR (typeof)
+// ============================================================
+
+// typeof -> returns the datatype of a value (as a string)
+
+console.log(typeof 10)          // number
+console.log(typeof "10")        // string
+console.log(typeof true)        // boolean
+console.log(typeof undefined)   // undefined
+
+// useful check -> connects back to the comparison section
+
+console.log(10 === "10")              // false
+console.log(typeof 10 === typeof "10") // false -> number vs string
+
+// ============================================================
+// QUICK SUMMARY
+// ============================================================
+
+/**
+ * ARITHMETIC  + - * / % **           -> maths
+ * ASSIGNMENT  = += -= *= /= %=       -> assign + shortcut maths
+ * COMPARISON  > < >= <= == === != !== -> compare, return boolean
+ * LOGICAL     && || !                -> combine/flip conditions
+ * INC/DEC     ++ --                  -> +1 / -1
+ * TERNARY     ? :                    -> shortcut if/else
+ * TYPE        typeof                 -> check datatype
+ *
+ */
+
