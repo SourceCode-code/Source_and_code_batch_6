@@ -320,11 +320,45 @@ console.log(`Your OTP is : ${otp}`)                                 //Your OTP i
 //        c) so how do you "change" a string in real projects ? what must you do with
 //           the value returned by the method ?
 
+//ANSWER:
+//  a) explain this statement in 2-3 lines
+
+//  ANSWER: 
+//  Strings are immutable in JavaScript means once string is created , we can not change or modify the character in that string.
+//  Any method that seems to modify a string actually returns a NEW string — the original stays unchanged.
+
+//  b) PROVE it with a small code example (change a string with a method,
+//     then print the original and show it is unchanged)
+let meth_str = "I am learning a JavaScript"
+console.log(meth_str.toUpperCase())         // I AM LEARNING A JAVASCRIPT
+console.log(meth_str)                       // I am learning a JavaScript
+
+//  c) so how do you "change" a string in real projects ? what must you do with
+//     the value returned by the method ?
+//ANSWER:
+let name1 = "vaishnavi"
+name1.toUpperCase()
+console.log(name1);          //vaishnavi --> The string did not change because we did not store the returned value.
+
+let myName = "vaishnavi"
+name = myName.toUpperCase()
+console.log(name)           //VAISHNAVI --> toUpperCase() returns a new string, and we assign that new value back to name.
+
+
 //Q22 --> INTERVIEW QUESTION -> write the difference between substring(), substr() and slice()
 //        in the form of a table in comments (minimum 3 points).
 //        Think about : what the 2nd argument means, end index included or not,
 //        negative index support, and which one is deprecated.
 //        Also write WHICH one you would use in a real project and why.
+
+//ANSWER:
+
+//| Method                  | 2nd argument means   | End index included? | Negative index? | Status      |
+//|-------------------------|----------------------|---------------------|-----------------|-------------|
+//| `substr(start, count)`  | NUMBER of characters | takes count instead | Not Allowed     | deprecated  |
+//| `substring(start, end)` | ENDING index.        |  not included       | Not Allowed     | preferred   |
+//| `slice(start, end)`     | ENDING index         |  not included       |  Allowed        | most used   |
+
 
 //Q23 --> INTERVIEW QUESTION (CLASSIC) -> predict and explain :
 //        console.log("5" + 5)
@@ -333,9 +367,23 @@ console.log(`Your OTP is : ${otp}`)                                 //Your OTP i
 //        works on numbers only. revise datatype conversion from lecture 02 + 03.
 //        then answer : why do the two lines give DIFFERENT types of output ?
 
+//ANSWER:
+console.log("5" + 5)    // 55 --> In JS + oerator joins strings like concatenation 
+console.log("5" - 5)    // 0 --> In JS - operator works on numbers only . they treated string a number thats why here output is 0
+
 //Q24 --> INTERVIEW QUESTION -> what is the difference between a PROPERTY and a METHOD ?
 //        Answer with one string example of each, and explain the syntax difference
 //        (brackets vs no brackets).
+
+//answer:
+// METHOD : 1) Methods means an action to perform. 
+//          2) Example: toUpperCase() , trim()
+//          3) Use Brackets --> str.toUpperCase()
+//
+//
+//PROPERTY :1) Property means some information attached to data
+//          2) Example: length
+//          3) No Brackets --> str.length
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
@@ -346,6 +394,24 @@ console.log(`Your OTP is : ${otp}`)                                 //Your OTP i
 //        HINT -> reuse the random alphabet logic from class 4 times
 //        (4 separate picks stored in 4 variables), then join with template literal.
 //        NOTE -> real passwords mix cases, this is just the beginner version :)
+
+// ANSWER:
+let chars = "abcdefghijklmnopqrstuvwxyz0123456789"
+
+let token1 = Math.floor(Math.random() * chars.length)
+let random_token1 = chars[token1]
+
+let token2 = Math.floor(Math.random() * chars.length)
+let random_token2 = chars[token2]
+
+let token3 = Math.floor(Math.random() * chars.length)
+let random_token3 = chars[token3]
+
+let token4 = Math.floor(Math.random() * chars.length)
+let random_token4 = chars[token4]
+
+let finalPass = random_token1 + random_token2 + random_token3 + random_token4
+console.log(finalPass)                      // Output: xq0s
 
 //Q26 --> BONUS (MINI PROJECT - USERNAME & EMAIL GENERATOR) ->
 //        Given the details below :
@@ -361,6 +427,42 @@ console.log(`Your OTP is : ${otp}`)                                 //Your OTP i
 //           Email   : sidgad73@gmail.com
 //        HINT -> slice() for the name parts, golden formula for the random number,
 //        toLowerCase() for the username, template literal to join everything.
+
+//ANSWER:
+let firstName = "Siddhant"
+let lastName = "Gadakh"
+// a) generate a username -> first 3 letters of firstName (lowercase)
+//    + first 3 letters of lastName (lowercase) + a random 2-digit number (10 to 99)
+//    Example -> "sidgad73"
+let firstDemo = firstName.slice(0 , -5).toLowerCase()
+let lastDemo = lastName.slice(0 , -3).toLowerCase()
+let digit = Math.floor(Math.random()*(99 - 10+1)+ 10)
+//console.log(digit)
+let userID = firstDemo + lastDemo + digit
+console.log(userID)                         // OUTPUT : sidgad97
+
+// b) generate the email -> username + "@gmail.com"
+
+let mailDemo = "@gmail.com"
+let email = userID + mailDemo
+console.log(email)                          // OUTPUT : sidgad27@gmail.com
+
+// c) print a small ID CARD in EXACTLY this format (use template literals) :
+//    Name    : Siddhant Gadakh
+//    User ID : sidgad73
+//    Email   : sidgad73@gmail.com
+ console.log("---- ID CARD ---- ")
+let fullName = firstName + lastName
+console.log(`Name    : ${fullName}`)       
+console.log(`User ID : ${userID}`)
+console.log(`Email   : ${email}`)
+
+//OUTPUT
+/*  ----- ID CARD ---- 
+    Name    : SiddhantGadakh
+    User ID : sidgad27
+    Email   : sidgad27@gmail.com
+*/
 
 // ============================================
 // SUBMISSION CHECKLIST
