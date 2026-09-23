@@ -32,23 +32,64 @@ console.log(typeof result);
 
 console.log("==================================");
 //Q3 --> What is the output of the below code ? write the answer as a comment and then run to verify
-let x;
-console.log(x)
-console.log(typeof x)
+let xy;
+console.log(xy)
+console.log(typeof xy)
 // js will not assigne any value to x so it will be undefined and the type of x will also be undefined
 
 console.log("==================================");
 //Q4 --> What is the output of the below code ? write the answer as a comment and then run to verify
 let v1 = null;
-console.log(typeof v1);
+console.log(typeof v1);  //OUTPUT : object 
 
 
 // ------------------- SECTION B : PREDICT THE OUTPUT -------------------
-
+console.log("==================================");
 //Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
-//       let a = 10
-//       let b = a
-//       a = 20
-//       console.log(a)
-//       console.log(b)
-//       HINT -> primitives are copied by VALUE
+let a = 10
+console.log(a);
+let b = a
+a = 20
+console.log(a);
+console.log(b);
+
+// a will be 20 and b will be 10 because primitives are copied by value
+
+console.log("==================================");
+//Q10 --> INTERVIEW QUESTION -> write the difference between undefined and null in comments (minimum 2 points)
+//        and show one example code of each
+
+//==============UNDEFINED ================
+/**
+ * 1. UNDEFINED is a value automatically assigned by javascript 
+ *    when a variable is declared but value is not assigned 
+ * 2. javascript will asign the value as undedefined 
+ */
+let q;
+console.log(a);  //OUTPUT : undefined
+
+//==============NULL=================
+/**
+ * 1. NULL is an international empty value assigned by the programmer 
+ * 2. The programmer explicitly sets the value to null 
+ *    when programmer wnat to represent an empty value 
+ */
+let w = null;
+console.log(w);  //OUTPUT : null 
+
+console.log("==================================");
+//Q13 --> INTERVIEW QUESTION -> predict the output of the below code and explain why in a comment
+let x;      //OUTPUT : undefined
+let y = null;   //OUTPUT : object
+let z = "25";   //OUTPUT : string 
+console.log(typeof x, typeof y, typeof z)
+//OUTPUT : undefined object string
+/**
+ * UNDEFINED : X is declared but no value is assigned 
+ *             JavaScript automatically assigns undefined value 
+ * OBJECT : in JavaScript typesof null reutrns "object"
+ *          this is historical bug in JavaScript
+ * STRING : z contains "25" in double quotes.
+ *          even though it is number but it is stored as a string 
+ * 
+ */
