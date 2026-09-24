@@ -74,6 +74,19 @@ console.log(typeof v1)
 //       console.log(b)
 //       HINT -> primitives are copied by VALUE
 
+/* Answer would be-
+20
+20
+*/
+
+let a=10
+let b= a
+a=20 
+console.log(a)
+console.log (b)
+
+
+
 
 //Q10 --> INTERVIEW QUESTION -> write the difference between undefined and null in comments (minimum 2 points)
 //        and show one example code of each
