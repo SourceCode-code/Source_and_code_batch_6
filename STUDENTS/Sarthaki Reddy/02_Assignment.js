@@ -45,7 +45,13 @@ console.log("DataType of result is :", typeof result)
 //       let x;
 //       console.log(x)
 //       console.log(typeof x)
-//       HINT -> what value does JS give when we dont assign anything ?
+//       HINT -> what value does JS give when we dont assign anything ?\\
+//Answer-
+//output guess is "undefined"
+let x;
+console.log(x)
+console.log(typeof x)
+
 
 
 //Q4 --> What is the output of the below code ? write the answer as a comment and then run to verify
