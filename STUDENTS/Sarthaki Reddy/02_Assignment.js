@@ -76,7 +76,7 @@ console.log(typeof v1)
 
 /* Answer would be-
 20
-20
+10
 */
 
 let a=10
@@ -92,6 +92,12 @@ console.log (b)
 //        and show one example code of each
 //        HINT -> who sets the value, JS or the programmer ?
 
+/*Answer-
+Difference between undefined and null as follows 
+undefined -variable is decalred but not assigned any value then its return as undefined and 
+null- if variable does not have value then it returns as null or Object
+*/
+
 
 // ------------------- SECTION C : BONUS CHALLENGE -------------------
 
@@ -100,4 +106,14 @@ console.log (b)
 //        let y = null;
 //        let z = "25";
 //        console.log(typeof x, typeof y, typeof z)
+/*
+Answer- 
+undefined
+object
+string
 
+Reason- 
+1)for x we does not assign the value so its output would be undefined
+2) for y the value is assigned as null so its output would be object
+3) for z we have assigned value as 25 but in double code so its type would be string
+*/
