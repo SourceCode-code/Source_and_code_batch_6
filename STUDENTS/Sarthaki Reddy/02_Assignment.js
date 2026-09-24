@@ -58,7 +58,11 @@ console.log(typeof x)
 //       let v1 = null
 //       console.log(typeof v1)
 //       HINT -> this is a famous bug in js (check theory notes section 5)
+//Answer
+// outout would be="Object instead of null"
 
+let v1=null
+console.log(typeof v1)
 
 // ------------------- SECTION B : PREDICT THE OUTPUT -------------------
 
