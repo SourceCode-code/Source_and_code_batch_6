@@ -14,13 +14,13 @@ let Number= 1
 let string_1= "Sarthaki"
 let value= true
 let Pune
-let book=null
+let var_1 = NULL
 
 console.log (typeof Number)
 console.log (typeof string_1)
 console.log (typeof value)
-console.log (typeof value)
-console.log (typeof book)
+console.log (typeof Pune)
+console.log (typeof var_1)
 
 //Q2 --> Write a code to check and print the datatype of the below variables using typeof operator
 //       let city = "Pune"
