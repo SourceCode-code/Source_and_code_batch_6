@@ -14,7 +14,7 @@ let Number= 1
 let string_1= "Sarthaki"
 let value= true
 let Pune
-let var_1 = NULL
+let var_1 = null
 
 console.log (typeof Number)
 console.log (typeof string_1)
@@ -28,6 +28,17 @@ console.log (typeof var_1)
 //       let isPass = true
 //       let result
 //       HINT -> typeof is an operator, example -> console.log(typeof city)
+
+let city = "Pune"
+let marks = 92.5
+let isPass = true
+let result
+
+console.log("DataType of city is :", typeof city)
+console.log("DataType of marks is :", typeof marks)
+console.log("DataType of isPass is :", typeof isPass)
+console.log("DataType of result is :", typeof result)
+
 
 
 //Q3 --> What is the output of the below code ? write the answer as a comment and then run to verify
