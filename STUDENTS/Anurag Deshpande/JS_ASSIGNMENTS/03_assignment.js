@@ -106,4 +106,28 @@ console.log(x.toFixed(2))   //OUTPUT : 10.66
 // it will reduce the value to 2 decimal places 
 console.log(x)  //OUTPUT : 10.658912355
 
+console.log("================================");
+//Q8 --> A student writes this line to generate a random number between 1 and 10 :
+console.log("Q8");
+console.log(Math.floor(Math.random() * 10) + 1);
+//       Answer in comments :
+//       a) what is the SMALLEST value it can ever print ?
+//          SMALLEST value is = 1
+//       b) what is the LARGEST value it can ever print ?
+//          LARGEST value = 10
+//       c) can Math.random() itself ever return exactly 1 ? why not ?
+//          no Math.random() returns a value greater or equal to 0 and strictly less than 1 
 
+
+console.log("================================");
+//Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
+console.log("Q9");
+
+console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))
+//OUTPUT : 10.6610.66
+//REASON : 
+/**
+ * the 1st and 2nd returns the string 
+ * the + operator joins the 2 strings insted of adding them as number 
+ * so result will be 10.66 + 10.66 = 10.6610.66 
+ */
