@@ -19,8 +19,8 @@ let book=null
 console.log (typeof Number)
 console.log (typeof string_1)
 console.log (typeof value)
-console.log (typeof Pune)
-console.log (typeof null)
+console.log (typeof value)
+console.log (typeof book)
 
 //Q2 --> Write a code to check and print the datatype of the below variables using typeof operator
 //       let city = "Pune"
