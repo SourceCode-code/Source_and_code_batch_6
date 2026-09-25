@@ -189,15 +189,38 @@ console.log(NaN === NaN)            // false
 //        so the result becomes exactly 10, and print the result + its typeof.
 //        HINT -> which method ROUNDS to nearest (revision -> lecture 03) ?
 
+//ANSWER:
+let priceStr = "9.8"
+console.log(parseFloat(priceStr))
+let roundPrice = Math.round(priceStr)
+console.log(roundPrice)                 // 10
+console.log(typeof roundPrice)          // number
+
 //Q13 --> let mobileStr = "  9876543210  "
 //        Clean the extra spaces, convert it to a NUMBER, and print the number + its typeof.
 //        HINT -> chaining -> trim() first (lecture 04), then convert (this lecture).
+
+//ANSWER:
+let mobileStr = "  9876543210  "
+console.log(mobileStr.trim())
+let mobileNum = Number(mobileStr)   
+console.log(mobileNum)              // 9876543210
+console.log(mobileNum)              // 9876543210
+console.log(typeof mobileNum)       // number
 
 //Q14 --> let amountStr = "199.99"
 //        Convert it to a number, add 18% GST on it, and print the final amount
 //        in exact 2 decimal format.
 //        HINT -> Number() to convert, arithmetic to add tax,
 //        .toFixed(2) to format (revision -> lecture 03).
+
+//Answer:                                     
+
+let amountStr = "199.99"
+let amountNum = Number(amountStr)
+console.log(amountNum)
+console.log(amountNum + 18/ 100 * 100)
+
 
 //Q15 --> let otp = 483920
 //        Convert this NUMBER to a STRING and print it using a template literal
