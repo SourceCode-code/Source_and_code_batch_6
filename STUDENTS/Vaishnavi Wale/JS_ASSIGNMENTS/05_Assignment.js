@@ -218,9 +218,10 @@ console.log(typeof mobileNum)       // number
 
 let amountStr = "199.99"
 let amountNum = Number(amountStr)
-console.log(amountNum)
-console.log(amountNum + 18/ 100 * 100)
-
+console.log(amountNum)                  // 199.99
+let gstAmount = amountNum * 18/ 100
+let finalAmount = gstAmount + amountNum
+console.log(finalAmount.toFixed(2))     // 235.99
 
 //Q15 --> let otp = 483920
 //        Convert this NUMBER to a STRING and print it using a template literal
@@ -228,12 +229,27 @@ console.log(amountNum + 18/ 100 * 100)
 //        Then print the length of the OTP (how do you get length of a number ?)
 //        HINT -> String(otp) first, then .length works.
 
+//Answer:
+let otp = 483920
+let otpStr = String(otp)
+console.log(`Your OTP is: ${otpStr}`)   // Your OTP is: 483920
+console.log(otpStr.length)              // 6
+
 //Q16 --> let email = "siddhant.gadakh@gmail.com"
 //        a) check if the email contains "@" (print true/false)
 //        b) find the index of "@"
 //        c) extract the username part (everything BEFORE the @) using slice()
 //        HINT -> includes() + indexOf() + slice() -> all from lecture 04,
 //        and the conversion here is only mental : everything is already a string :)
+
+//ANSWER:
+let email = "siddhant.gadakh@gmail.com"
+// a) check if the email contains "@" (print true/false)
+console.log(email.includes("@")? "True" : "False")          //True
+// b) find the index of "@"
+console.log(email.indexOf("@"))                             // 15
+// c) extract the username part (everything BEFORE the @) using slice()
+console.log(email.slice(0, -10 ))                           // siddhant.gadakh
 
 //Q17 --> let val1 = "5"
 //        let val2 = "10"
@@ -243,9 +259,32 @@ console.log(amountNum + 18/ 100 * 100)
 //        Now CONVERT properly and print the CORRECT sum (15) and difference (-5).
 //        HINT -> one line joins, the other line does maths. why ?
 
+//Answer:
+let val1 = "5"
+let val2 = "10"
+console.log(val1 + val2)        // 510
+console.log(val1 - val2)        // -5
+
+let val1Num = Number(val1)
+let val2Num = Number(val2)
+let addVal = val1Num + val2Num
+let subVal = val1Num - val2Num 
+console.log(addVal)             // 15
+console.log(subVal)             // -5
+
 //Q18 --> WRITE 3 statements that give a TRUTHY value and 3 statements that give
 //        a FALSY value. Prove each one using Boolean(...) in console.log.
 //        HINT -> revise the falsy list from the lecture.
+
+//ANSWER:
+console.log(Boolean("Hello")); // true
+console.log(Boolean(100));     // true
+console.log(Boolean([]));      // true
+
+console.log(Boolean(false));   // false
+console.log(Boolean(0));       // false
+console.log(Boolean(""));      // false
+
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
