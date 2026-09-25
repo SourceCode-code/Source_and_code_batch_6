@@ -1,0 +1,9 @@
+console.log(5+5)    //10
+console.log(5+"5")  //55
+console.log("5"-5)  //0
+console.log(5-"5")  //0
+console.log("5"*5)  //25
+console.log("5"-true)   //4
+console.log("5"-false)  //5
+console.log("5"+true)   //5true
+console.log("5"+false)  //5false
