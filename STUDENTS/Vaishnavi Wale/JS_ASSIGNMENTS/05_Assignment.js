@@ -293,6 +293,10 @@ console.log(Boolean(""));      // false
 //        HINT -> NaN means the result of FAILED number maths. it is still a number
 //        that failed. comparison with NaN can never be true -> what method solves this ?
 
+//ANSWER:
+//why is typeof NaN === "number" ?
+
+
 //Q20 --> INTERVIEW QUESTION -> Number("") gives 0 but Number(undefined) gives NaN.
 //        Explain the difference between an EMPTY STRING and UNDEFINED.
 //        HINT -> "" is a real value (empty box), undefined means the box does not exist.
