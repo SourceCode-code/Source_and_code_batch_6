@@ -179,16 +179,28 @@ console.log("apple" < "banana")     // true
 let myAge = 21
 let yourAge = 25
 let diffAge = yourAge -  myAge
-console.log(`Age difference is : ${diffAge} years`)
-console.log((myAge > yourAge) ? "I am older" : "You are older")
+console.log(`Age difference is : ${diffAge} years`)                 // Age difference is : 4 years
+console.log((myAge > yourAge) ? "I am older" : "You are older")     // You are older
+
 //Q11 --> let birthYear = 2004
 //        Calculate the age (assume current year 2026, use arithmetic),
 //        then use the TERNARY operator to print "can drive" or "cannot drive"
 //        (driving age is 18).
 //        HINT -> (age >= 18) ? ... : ...
 
+//Answer:
+let birthYear = 2004
+let currentYear = 2026
+let calAge = currentYear - birthYear
+console.log(calAge)                                                      // 22
+console.log((calAge >= 18 ) ? "You can drive" : "You cannot drive")      // You can drive
+
 //Q12 --> Using the ternary operator, check if the year 2024 is EVEN or ODD.
 //        HINT -> % 2 === 0
+
+//ANSWER:
+let year = 2024
+console.log((year % 2 == 0) ? `${year} is even` : `${year} is odd`)     // 2024 is even
 
 //Q13 --> let firstName = "siddhant"
 //        let lastName = "gadakh"
@@ -196,6 +208,15 @@ console.log((myAge > yourAge) ? "I am older" : "You are older")
 //        b) use the ternary to print which name is longer :
 //           "first name is longer" / "last name is longer"
 //        HINT -> .length (lecture 04) + comparison (this lecture).
+
+//ANSWER:
+let firstName = "siddhant"
+let lastName = "gadakh"
+// a) compare BOTH lengths using > and print the boolean
+console.log(firstName.length > lastName.length )            // true
+// b) use the ternary to print which name is longer :
+//    "first name is longer" / "last name is longer"
+console.log((firstName.length > lastName.length )? `firstName is longer` : `lastName is longer`)     // firstName is longer
 
 //Q14 --> let word1 = "python"
 //        let word2 = "jargon"
