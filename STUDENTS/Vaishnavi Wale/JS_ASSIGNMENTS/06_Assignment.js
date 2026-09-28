@@ -224,21 +224,47 @@ console.log((firstName.length > lastName.length )? `firstName is longer` : `last
 //        Print the final true/false.
 //        HINT -> includes() (lecture 04) combined with && (this lecture).
 
+//ANSWER:
+let word1 = "python"
+let word2 = "jargon"
+console.log(word1.includes("on") && word2.includes("on"))   // true
+
 //Q15 --> let base = 10
 //        let height = 6
 //        Calculate the area of the triangle (formula -> (base * height) / 2)
 //        and print it like "Area of triangle is : 30".
 //        OPTIONAL -> try it with prompt() for user input (works in the BROWSER console only).
 
+//ANSWER:
+let base = 10
+let height = 6
+let area = (base * height) / 2
+console.log(`Area of triangle is : ${area}`)    // Area of triangle is : 30
+
 //Q16 --> let length = 12
 //        let width = 8
 //        Calculate the AREA (length * width) and PERIMETER (2 * (length + width))
 //        of the rectangle. Print both in a readable format using template literals.
 
+//ANSWER:
+let length = 12
+let width = 8
+let totArea = length * width 
+let perimeter = 2 * (length + width )
+console.log(`Area of rectangle is : ${totArea}`)            // Area of rectangle is : 96
+console.log(`Perimeter of rectangle is : ${perimeter}`)     // Perimeter of rectangle is : 40
+
 //Q17 --> let radius = 7
 //        Calculate the AREA (Math.PI * radius ** 2) and CIRCUMFERENCE
 //        (2 * Math.PI * radius) of the circle. Round both to 2 decimals with toFixed().
 //        HINT -> Math.PI is a PROPERTY (no brackets) -> revision lecture 03.
+
+//ANSWER:
+let radius = 7
+let circleArea = Math.PI * radius ** 2
+let circumference = 2 * Math.PI * radius
+console.log(`Area of circle is : ${circleArea.toFixed(2)}`)              // Area of circle is : 153.94
+console.log(`Circumference of circle is :${circumference.toFixed(2)}`)   // Circumference of circle is :43.98
 
 //Q18 --> let salary = 25000
 //        Using ONLY assignment shortcuts, do these steps in order :
@@ -248,11 +274,26 @@ console.log((firstName.length > lastName.length )? `firstName is longer` : `last
 //        Print the final salary.
 //        HINT -> golden formula (lecture 03) for the random part.
 
+//ANSWER:
+let salary = 25000
+// a) add a bonus of 5000        (+=)
+salary += 5000
+// b) deduct 10% tax             (*= 0.9)
+salary *= 0.9
+// c) add a random incentive between 500 and 1500   (+= with Math.random)
+let incSalary = Math.random() * (1500 - 500 + 1) + 500
+console.log(incSalary)
+salary += incSalary
+//    Print the final salary.
+console.log(`Salary : ${salary.toFixed(2)}`)      // 28157.18
+
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
 //Q19 --> INTERVIEW QUESTION (CLASSIC) -> what is the difference between =, == and === ?
 //        Write ONE line for each with a small example.
 //        HINT -> assignment | loose comparison | strict comparison.
+
+//ANSWER:
 
 //Q20 --> INTERVIEW QUESTION -> why do JS developers ALWAYS prefer === over == ?
 //        Give one real example where == gives a SURPRISING result.
@@ -266,6 +307,12 @@ console.log((firstName.length > lastName.length )? `firstName is longer` : `last
 //        console.log(x)
 //        HINT -> solve LEFT to RIGHT : x++ gives the OLD value first,
 //        then ++x increases BEFORE using. track x at every step.
+
+//ANSWER
+let x = 5
+let y = x++ + ++x   // 5 + 7
+console.log(y)      // 12
+console.log(x)      // 7
 
 //Q22 --> INTERVIEW QUESTION -> what does the % (modulus) operator do ?
 //        Write 3 real-world uses of % (from the lecture + your own thinking).
