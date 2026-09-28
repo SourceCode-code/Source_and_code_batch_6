@@ -295,11 +295,26 @@ console.log(Boolean(""));      // false
 
 //ANSWER:
 //why is typeof NaN === "number" ?
+let num4 = "Hello"-5
+console.log(num4)           // NaN
+console.log(typeof num4)    // number 
+//Q. why is NaN === NaN false ? and what is the CORRECT way to detect NaN ?
+// NaN stands for Not-a-Number, but it is still a value of the Number data type in JavaScript. 
+// That's why typeof NaN returns "number". NaN === NaN is false because NaN is a special value that is not equal to itself.
 
+// comparison with NaN can never be true -> what method solves this ?
+console.log(Number.isNaN(num4))     // true --> The correct way to check whether a value is NaN is Number.isNaN()
 
 //Q20 --> INTERVIEW QUESTION -> Number("") gives 0 but Number(undefined) gives NaN.
 //        Explain the difference between an EMPTY STRING and UNDEFINED.
 //        HINT -> "" is a real value (empty box), undefined means the box does not exist.
+//Answer:
+let emptyStr = Number("")
+let undefNum = Number(undefined)
+console.log(emptyStr)       // 0
+console.log(undefNum)       // NaN 
+// An empty string is an actual string value containing zero characters, and when JavaScript converts it to a number, it becomes 0
+//undefined means that no value has been assigned, so it cannot be converted to a valid number and results in NaN
 
 //Q21 --> INTERVIEW QUESTION (CLASSIC) -> what is the difference between
 //        parseInt("12.9") and Math.floor(12.9) ?
@@ -308,10 +323,24 @@ console.log(Boolean(""));      // false
 //        console.log(Math.floor(-12.9))
 //        HINT -> parseInt CUTS towards ZERO, Math.floor goes DOWN on the number line.
 //        on negative numbers these are NOT the same !
+//Answer:
+console.log(parseInt("12.9"))   // 12
+console.log(Math.floor(12.9))   // 12
+
+console.log(parseInt("-12.9"))      // 12
+console.log(Math.floor(-12.9))      // 12
+//parseInt() --> parseInt CUTS towards ZERO
+// Math.floor() --> Math.floor goes DOWN on the number line.
+// nut for negative number this are not same . 
 
 //Q22 --> INTERVIEW QUESTION -> what is the difference between IMPLICIT and EXPLICIT conversion ?
 //        Give one example of each from this lecture.
 //        HINT -> implicit = JS converts automatically ("5" - 5), explicit = YOU convert (Number("5")).
+//ANSWER:
+console.log("10"-5)        // 5
+// This is the implicit conversion which means JS convert string 10 to number ten and then do substraction of two number .
+console.log(Number("14"))       // 14
+// This is a explicit conversion which means we convert string 5 to number 5 with the help applying Number() method. 
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
@@ -322,6 +351,17 @@ console.log(Boolean(""));      // false
 //        sum (30), difference (-10), product (200) -> all as NUMBERS, not "1020" !
 //        Print using template literals like "Sum : 30".
 //        HINT -> convert once, store in new variables, then do clean maths.
+//ANSWER:
+let numA = "10"
+let numB = "20"
+let numAInt = Number(numA)
+let numBInt = Number(numB)
+let sum = numAInt + numBInt
+console.log(`Sum : ${sum}`)
+let diff = numAInt - numBInt
+console.log(`Difference : ${diff}`)
+let product = numAInt * numBInt
+console.log(`Product : ${product}`)
 
 //Q24 --> BONUS (MINI PROJECT - TYPE INSPECTOR REPORT) ->
 //        Declare one value of each type :
@@ -334,6 +374,29 @@ console.log(Boolean(""));      // false
 //           null       -> ???
 //        HINT -> one line will SURPRISE you. typeof null is NOT "null".
 //        write the real output + explain in comments (famous JS interview quirk!).
+
+//ANSWER:
+let str = "abc"
+let valNum = 123
+let boolVal = true
+let token
+let nullVal = null
+
+console.log(`${str} ${"         --> "} ${typeof str}`)
+console.log(`${valNum}   ${ "       --> "} ${typeof valNum}`)
+console.log(`${boolVal}   ${ "      --> "} ${typeof boolVal}`)
+console.log(`${token}    ${ "--> "} ${typeof token}`)
+console.log(`${nullVal}   ${ "      --> "} ${typeof nullVal}`)
+
+//OUTPUT:
+
+/**
+ * abc          -->  string
+ * 123          -->  number
+ * true         -->  boolean
+ * undefined    -->  undefined
+ * null         -->  object      // This is a bug in JS thats why typeof null return object . 
+*/
 
 // ============================================
 // SUBMISSION CHECKLIST
