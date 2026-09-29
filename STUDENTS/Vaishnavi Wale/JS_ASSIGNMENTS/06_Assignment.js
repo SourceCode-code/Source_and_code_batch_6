@@ -41,6 +41,7 @@ console.log(2 ** 4)     // 16
 //Q3 --> Using % and the ternary operator, check EVEN or ODD for these numbers :
 //       15, 22, 0
 //       HINT -> (num % 2 === 0) ? "even" : "odd"
+
 let num1 = 15
 let num2 = 22 
 let num3 = 0
@@ -294,6 +295,21 @@ console.log(`Salary : ${salary.toFixed(2)}`)      // 28157.18
 //        HINT -> assignment | loose comparison | strict comparison.
 
 //ANSWER:
+// what is the difference between =, == and === ?
+/**
+ * = is used for assign the value
+ * == is used for checking the value is same or not 
+ * === is used for check both value and datatype
+ */ 
+
+// Write ONE line for each with a small example.
+let myname = "Vaishnavi"
+let surname = "Wale"
+console.log(myname)             // Vaishnavi
+
+console.log(5 == "5")  // true
+
+console.log(5 === "5")   // false
 
 //Q20 --> INTERVIEW QUESTION -> why do JS developers ALWAYS prefer === over == ?
 //        Give one real example where == gives a SURPRISING result.
@@ -301,6 +317,16 @@ console.log(`Salary : ${salary.toFixed(2)}`)      // 28157.18
 //        write the results, and explain the surprise.
 
 //ANSWER:
+// JavaScript developers generally prefer === because it does not perform automatic type conversion. 
+// This makes comparisons more predictable and helps avoid unexpected results.
+
+console.log(0 == "0")           // true
+console.log("" == 0)            // true
+console.log(null == undefined)  // true
+
+console.log("0" === 0);          // false
+console.log("" === 0);           // false
+console.log(null === undefined); // false
 
 //Q21 --> INTERVIEW QUESTION -> what is the output of the below code ? explain step by step.
 //        let x = 5
@@ -321,7 +347,15 @@ console.log(x)      // 7
 //        HINT -> even/odd check is one. what about checking divisibility by 5 ? or cycles ?
 
 //ANSWER:
+// what does the % (modulus) operator do ?
+// ANS: % operator gives reminder 
 
+// Write 3 real-world uses of % 
+/**
+ * 1. check number is even or odd
+ * 2. check number whether it is divisible by 10
+ * 3. check number is prime or not with the help of number is not divisible by 2 
+ */
 
 //Q23 --> INTERVIEW QUESTION -> what is operator precedence ?
 //        Predict WITHOUT running, then confirm :
@@ -332,7 +366,7 @@ console.log(x)      // 7
 //        brackets () always win.
 
 //ANSWER:
-// what is operator precedence ? --> OPE
+// what is operator precedence ? --> OPERATOR PRFCEDENCE : * / % + -
 console.log(2 + 3 * 4)      // 14
 console.log((2 + 3) * 4)    // 20
 console.log(10 - 4 % 3)     // 9
@@ -348,6 +382,18 @@ console.log(10 - 4 % 3)     // 9
 //        HINT -> a = a + b  ->  b = a - b  ->  a = a - b
 //        track the values on paper step by step, then explain WHY it works in comments.
 
+//ANSWER:
+let v = 3
+let w = 8
+console.log(v)      // 3
+console.log(w)      // 8
+v += w
+w = v - w
+console.log(w)      // 8
+v = v - w
+console.log(v)      // 3
+
+
 //Q25 --> BONUS (MINI PROJECT - SHOPPING BILL) ->
 //        let price = 499
 //        let quantity = 3
@@ -362,6 +408,43 @@ console.log(10 - 4 % 3)     // 9
 //           Final Bill: Rs. 1347.30
 //        HINT -> ternary gives you the discount AMOUNT (0 or total * 0.1),
 //        toFixed(2) for the money format (revision lecture 03).
+
+//ANSWER:
+let price = 499
+let quantity = 3
+
+// a) calculate the total (use *= on a total variable)
+let total = price * quantity
+console.log(total.toFixed(2))                          // 1497.00
+                                          
+// b) apply a 10% discount ONLY IF the total is more than 1000
+//    (use a ternary to decide, then arithmetic to apply)
+let discount = total * 10 / 100
+console.log(discount.toFixed(2))                  //    149.70
+let finalBill = total - discount
+console.log(finalBill.toFixed(2))                 //    1347.30
+console.log((total > 1000) ? `${finalBill.toFixed(2)}` : `${total}`)     // 1347.30
+
+// c) print the receipt in EXACTLY this format :
+//           Price     : Rs. 499
+//           Quantity  : 3
+//           Total     : Rs. 1497.00
+//           Discount  : Rs. 149.70
+//           Final Bill: Rs. 1347.30
+console.log(`Price      : Rs. ${price}`)
+console.log(`Quantity   : ${quantity}`)
+console.log(`Total      : Rs. ${total.toFixed(2)}`)
+console.log(`Discount   : Rs. ${discount.toFixed(2)}`)
+console.log(`Final Bill : Rs. ${finalBill.toFixed(2)}`)
+
+/**
+ * 
+ * Price      : Rs. 499
+ * Quantity   : 3
+ * Total      : Rs. 1497.00
+ * Discount   : Rs. 149.70
+ * Final Bill : Rs. 1347.30
+ */
 
 // ============================================
 // SUBMISSION CHECKLIST
