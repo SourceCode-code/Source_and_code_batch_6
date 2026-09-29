@@ -300,6 +300,8 @@ console.log(`Salary : ${salary.toFixed(2)}`)      // 28157.18
 //        HINT -> "0" == 0, "" == 0, null == undefined -> try these in the console,
 //        write the results, and explain the surprise.
 
+//ANSWER:
+
 //Q21 --> INTERVIEW QUESTION -> what is the output of the below code ? explain step by step.
 //        let x = 5
 //        let y = x++ + ++x
@@ -318,6 +320,9 @@ console.log(x)      // 7
 //        Write 3 real-world uses of % (from the lecture + your own thinking).
 //        HINT -> even/odd check is one. what about checking divisibility by 5 ? or cycles ?
 
+//ANSWER:
+
+
 //Q23 --> INTERVIEW QUESTION -> what is operator precedence ?
 //        Predict WITHOUT running, then confirm :
 //        console.log(2 + 3 * 4)
@@ -325,6 +330,12 @@ console.log(x)      // 7
 //        console.log(10 - 4 % 3)
 //        HINT -> * / % are calculated BEFORE + - (like BODMAS maths).
 //        brackets () always win.
+
+//ANSWER:
+// what is operator precedence ? --> OPE
+console.log(2 + 3 * 4)      // 14
+console.log((2 + 3) * 4)    // 20
+console.log(10 - 4 % 3)     // 9
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
