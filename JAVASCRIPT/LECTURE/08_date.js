@@ -113,6 +113,93 @@ console.log(current_date_time) //29/09/2026, 09:44 pm
 
 
 // TOMMORROW --> how manipulates 
-
-
 // 29 +5 ==> 34
+
+
+//HOW MANIPLUATE THE DATE setDate() setMonth()  setYear()
+
+//NOTE : when we use the set methods it manipulated the delacred the date object 
+
+let change_date = new Date()
+
+//change the date -> 
+
+// console.log(change_date.getDate())
+let todaysDate = change_date.getDate() //30 sept
+
+change_date.setDate(todaysDate+5)
+
+console.log(change_date.getDate()) //5 oct 
+
+// change the month
+
+let this_month = change_date.getMonth()+1
+
+let future_month = change_date.setMonth(this_month+4)
+
+console.log(change_date.getMonth())
+
+
+//how to change the year 
+let year_obj= new Date()
+let this_year = year_obj.getFullYear()
+
+console.log(this_year)
+
+let updated_year = year_obj.setFullYear(this_year-28)
+
+
+console.log(year_obj.getFullYear())
+
+
+console.log(`${year_obj.getDate()}/${year_obj.getMonth()+1}/${year_obj.getFullYear()}`) //30/9/1998
+
+// setHour
+//setMinutes
+//setSeconds
+
+
+let changed_timed = new Date()
+
+let current_time = changed_timed.getMinutes()
+let current_hour = change_date.getHours()
+
+let updated_hour = changed_timed.setHours(cur_hour+5)
+let updated_min = changed_timed.setMinutes(current_time+30)
+
+console.log(`${changed_timed.getHours()}:${changed_timed.getMinutes()}`) //3:5
+
+
+console.log(`${changed_timed.getDate()}/${changed_timed.getMonth()+1}/${changed_timed.getFullYear()}`) //1/10/2026
+
+
+
+let today_date = new Date()
+
+
+console.log(`${today_date.getDate()}/${today_date.getMonth()+1}/${today_date.getFullYear()}`) //30/9/2026
+
+
+
+// example --> 
+// 2 oct is holiday 
+
+
+let cutoff= new Date()
+
+let current_date_ = cutoff.getDate()
+
+console.log(current_date_) //30
+
+let oct_2 = cutoff.setDate(current_date_+2)
+
+console.log(cutoff.getDate()) //2
+
+
+let Year_cur = cutoff.getFullYear()
+console.log(Year_cur)
+
+let next_year = cutoff.setFullYear(Year_cur+1)
+
+console.log(cutoff.getFullYear())
+
