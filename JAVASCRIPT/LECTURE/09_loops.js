@@ -115,3 +115,5 @@ for (let i = 0; i < count_str.length; i++) {
 console.log(word_count)
 
 
+// count the number vowels in any given given string ("aeiou")
+
