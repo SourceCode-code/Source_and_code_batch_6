@@ -2,7 +2,7 @@
 // 06_ASSIGNMENT -> TOPIC : JS OPERATORS (+ revision of datatypes, numbers & strings)
 // BASED ON : LECTURE/06_JS_Operators.js  +  THEORY_NOTES/06_JS_Operators.md
 //
-// HOW TO RUN : open terminal -> node 06_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 06_ASSIGNMENT_JS_OPERATORS.js
 // RULES -> for every "predict the output" question, FIRST write your answer as a comment,
 //          THEN write the code, run it and verify. Write your final answer + reason in comments.
 // ============================================
@@ -205,6 +205,6 @@
 // SUBMISSION CHECKLIST
 // 1. every "predict" question has your guess written BEFORE you ran the code
 // 2. every Q has its verified answer in comments
-// 3. file runs without any error -> node 06_ASSIGNMENT.js
+// 3. file runs without any error -> node 06_ASSIGNMENT_JS_OPERATORS.js
 // ============================================
 

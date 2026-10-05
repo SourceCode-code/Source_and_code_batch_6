@@ -2,7 +2,7 @@
 // 04_ASSIGNMENT -> TOPIC : JS STRINGS (+ revision of basics, datatypes & numbers)
 // BASED ON : LECTURE/04_JS_String.js  +  THEORY_NOTES/04_JS_String.md
 //
-// HOW TO RUN : open terminal -> node 04_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 04_ASSIGNMENT_JS_STRINGS.js
 // RULES -> for every "predict the output" question, FIRST write your answer as a comment,
 //          THEN write the code, run it and verify. Write your final answer + reason in comments.
 // ============================================
@@ -196,6 +196,6 @@
 // SUBMISSION CHECKLIST
 // 1. every "predict" question has your guess written BEFORE you ran the code
 // 2. every Q has its verified answer in comments
-// 3. file runs without any error -> node 04_ASSIGNMENT.js
+// 3. file runs without any error -> node 04_ASSIGNMENT_JS_STRINGS.js
 // ============================================
 

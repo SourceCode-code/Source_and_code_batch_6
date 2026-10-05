@@ -1,7 +1,7 @@
 // ============================================
 // 02_ASSIGNMENT -> TOPIC : JS DATA TYPES (primitive, non-primitive, typeof)
 // BASED ON : LECTURE/02_JS_Datatypes.js  +  THEORY_NOTES/02_JS_Datatypes.md
-// HOW TO RUN : open terminal -> node 02_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 02_ASSIGNMENT_JS_DATA_TYPES.js
 // ============================================
 
 // ------------------- SECTION A : PRIMITIVE DATA TYPES -------------------

@@ -2,7 +2,7 @@
 // 07_ASSIGNMENT -> TOPIC : JS CONDITIONS ( if | if...else | else if | ternary | switch case )
 // BASED ON : LECTURE/07_conditions.js  +  THEORY_NOTES/07_JS_Conditions.md
 //
-// HOW TO RUN : open terminal -> node 07_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 07_ASSIGNMENT_JS_CONDITIONS.js
 // RULES -> prompt() works ONLY in the browser console -> we run files with node, so every
 //          "user input" is SIMULATED with a variable -> change its value, run the file again,
 //          and verify ALL the cases written in the question.
@@ -248,7 +248,7 @@ let birthYear = 1985
 // 2. every else if ladder is GAP free and OVERLAP free
 // 3. every switch -> stacked cases for shared output | break wherever needed | default last
 // 4. every answer/observation is written in comments
-// 5. file runs without any error -> node 07_ASSIGNMENT.js
+// 5. file runs without any error -> node 07_ASSIGNMENT_JS_CONDITIONS.js
 // ============================================
 
 

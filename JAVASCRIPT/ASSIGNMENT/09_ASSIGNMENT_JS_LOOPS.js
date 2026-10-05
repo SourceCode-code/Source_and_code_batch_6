@@ -2,7 +2,7 @@
 // 09_ASSIGNMENT -> TOPIC : JS LOOPS (+ revision of conditions, modulo & string methods)
 // BASED ON : LECTURE/09_loops.js  +  THEORY_NOTES/09_JS_Loops.md
 //
-// HOW TO RUN : open terminal -> node 09_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 09_ASSIGNMENT_JS_LOOPS.js
 // RULES -> prompt() works ONLY in the browser console -> we run files with node, so every
 //          "user input" is SIMULATED with a variable -> change its value, run the file again,
 //          and verify ALL the cases written in the question.
@@ -515,7 +515,7 @@ let g3 = 42
 // 5. no pattern uses a FIXED inner-loop count for every row ( spaces + digit counts change )
 // 6. every while / do...while has something inside that moves the condition towards false
 // 7. every fixed bug has the REASON of the bug written in a comment ( not only the fix )
-// 8. file runs without any error and without hanging -> node 09_ASSIGNMENT.js
+// 8. file runs without any error and without hanging -> node 09_ASSIGNMENT_JS_LOOPS.js
 // ============================================
 
 

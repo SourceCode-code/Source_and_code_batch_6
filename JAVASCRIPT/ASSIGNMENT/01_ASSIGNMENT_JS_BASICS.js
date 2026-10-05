@@ -1,7 +1,7 @@
 // ============================================
 // 01_ASSIGNMENT -> TOPIC : JS BASICS (variables, comments, console.log)
 // BASED ON : LECTURE/01_JS_BASIC.js  +  THEORY_NOTES/01_JS_BASIC.md
-// HOW TO RUN : open terminal -> node 01_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 01_ASSIGNMENT_JS_BASICS.js
 // ============================================
 
 // ------------------- SECTION A : PRINT & COMMENTS -------------------
