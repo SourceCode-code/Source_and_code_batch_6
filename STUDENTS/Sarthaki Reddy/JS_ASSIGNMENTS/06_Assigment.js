@@ -23,6 +23,14 @@ console.log(a*b)//multiplication
 console.log(a/b)//division
 console.log(a%b)//modulus
 console.log(a**b)//exponentiation
+/*output
+13
+7
+30
+3.3333333333333335
+1
+1000
+*/
 
 //Q2 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(10 % 3)
@@ -31,10 +39,10 @@ console.log(a**b)//exponentiation
 //       console.log(2 ** 4)
 //       HINT -> % gives the REMAINDER. remainder 0 means the number divides perfectly.
 
-console.log(10 % 3)
-console.log(15 % 2)
-console.log(16 % 2)
-console.log(2 ** 4)
+console.log(10 % 3)//1000
+console.log(15 % 2)//1
+console.log(16 % 2)//0
+console.log(2 ** 4)//16
 
 //Q3 --> Using % and the ternary operator, check EVEN or ODD for these numbers :
 //       15, 22, 0
