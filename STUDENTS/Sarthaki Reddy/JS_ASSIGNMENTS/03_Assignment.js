@@ -12,6 +12,11 @@
 //Q1 --> Declare one integer variable and one floating (decimal) variable of your choice.
 //       Print both values AND their datatypes using typeof.
 //       HINT -> in JS there is NO separate int/float. what does typeof give for BOTH ?
+let int1 = 10
+let float = 5.12254465186465318964861
+
+console.log(typeof int1)
+console.log(typeof float)
 
 //Q2 --> A shopkeeper wants to display a price in exact 2 decimal places.
 //       let price = 499.5
