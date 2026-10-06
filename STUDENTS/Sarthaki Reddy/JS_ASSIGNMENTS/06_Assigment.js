@@ -31,6 +31,11 @@ console.log(a**b)//exponentiation
 //       console.log(2 ** 4)
 //       HINT -> % gives the REMAINDER. remainder 0 means the number divides perfectly.
 
+console.log(10 % 3)
+console.log(15 % 2)
+console.log(16 % 2)
+console.log(2 ** 4)
+
 //Q3 --> Using % and the ternary operator, check EVEN or ODD for these numbers :
 //       15, 22, 0
 //       HINT -> (num % 2 === 0) ? "even" : "odd"
