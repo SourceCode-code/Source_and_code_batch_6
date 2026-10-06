@@ -23,6 +23,8 @@ console.log(typeof float)
 //       Print the price in 2 decimal format, and ALSO print the datatype of that formatted value.
 //       HINT -> which method formats decimals ? and what datatype does it RETURN ?
 //       (getting the datatype wrong here is the most common mistake students make)
+let price = 499.5
+console.log(price.toFixed(2));
 
 //Q3 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(Math.floor(10.2), Math.ceil(10.2), Math.round(10.2))
@@ -30,10 +32,25 @@ console.log(typeof float)
 //       console.log(Math.floor(10.9), Math.ceil(10.9), Math.round(10.9))
 //       HINT -> floor = down, ceil = up, round = nearest (.5 and above goes UP)
 
+console.log(Math.floor(10.2), Math.ceil(10.2), Math.round(10.2))//10 11 10
+console.log(Math.floor(10.5), Math.ceil(10.5), Math.round(10.5))//10 11 11
+console.log(Math.floor(10.9), Math.ceil(10.9), Math.round(10.9))// 10 11 11
+
 //Q4 --> INTERVIEW QUESTION -> Math.round() and .toFixed() BOTH look like they "round".
 //       Write the difference between them in comments (minimum 3 points).
 //       Think about : prefix (Math. or not), return type, what each one is used for.
 
+/* Difference is :
+      1)Math.round()-Rounds the number to the nearest integer
+      .toFixed- Formats the number to a given number of decimal points 
+      
+      2)Math.round()- start with Math prefix
+      .to fixed- no need of  start prefix
+
+      3)Math.round()- Return type is Number
+      .to fixed- Return type is String
+
+*/
 // ------------------- SECTION B : PREDICT THE OUTPUT -------------------
 
 //Q5 --> Predict the output of the below code (write answer as comment, then run and verify)
@@ -43,16 +60,32 @@ console.log(typeof float)
 //       HINT -> floor and ceil do NOT care about "closeness". floor always goes to the LOWER
 //       integer, ceil always goes to the HIGHER integer. Think on a number line, not by size.
 
+console.log(Math.floor(-4.2))// -5
+console.log(Math.ceil(-4.8))// -4
+console.log(Math.round(-4.5))// -4
+
 //Q6 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       let price = 99.99
 //       console.log(Math.floor(price), Math.ceil(price), Math.round(price), price.toFixed(1))
 //       HINT -> one of these four outputs is NOT a number. which one ? how can you tell from the console ?
+
+let price1 = 99.99
+console.log(Math.floor(price1), Math.ceil(price1), Math.round(price1), price1.toFixed(1))
+//output- 99 100 100 100.0
+
 
 //Q7 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       let x = 10.658912355
 //       console.log(x.toFixed(2))
 //       console.log(x)
 //       HINT -> does toFixed() CHANGE the original variable or only give back a new value ?
+let x = 10.658912355
+console.log(x.toFixed(2))
+console.log(x)
+/* output
+10.66
+10.658912355
+*/
 
 //Q8 --> A student writes this line to generate a random number between 1 and 10 :
 //       console.log(Math.floor(Math.random() * 10) + 1)
@@ -62,11 +95,21 @@ console.log(typeof float)
 //       c) can Math.random() itself ever return exactly 1 ? why not ?
 //       HINT -> Math.random() gives 0 to 0.999..., multiply by 10 -> 0 to 9.999...
 
+console.log(Math.floor(Math.random() * 10) + 1)
+/*
+
+ a) what is the SMALLEST value it can ever print ?--> 1
+ b) what is the LARGEST value it can ever print ?---> 10.999...
+ c) can Math.random() itself ever return exactly 1 ? why not ?---> no because Math.random () gives values from 0 to 0.999
+ */
+
 //Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))
 //       HINT -> what does the + symbol do when BOTH sides are strings ?
 //       (this one catches even experienced developers)
 
+console.log(10.658912355.toFixed(2) + 10.658912355.toFixed(2))
+//output will be in string 10.6610.66
 
 // ------------------- SECTION C : LOGIC BUILDING -------------------
 
@@ -75,11 +118,35 @@ console.log(typeof float)
 //        If the total is 12, also print "DOUBLE SIX!".
 //        HINT -> each dice = Math.floor(Math.random() * 6) + 1
 
+
+let dice1= Math.floor(Math.random() * 6) + 1
+let dice2= Math.floor(Math.random() * 6) + 1
+let finaloutput= dice1+dice2
+console.log ( finaloutput)
+if (finaloutput==12){
+console.log("DoubleSix")
+}
+
 //Q11 --> Write a function randomBetween(min, max) that returns a random INTEGER
 //        between min and max (both included). Test it 3 times with (10, 20).
 //        HINT -> lecture golden formula -> Math.floor(Math.random() * (max - min + 1)) + min
 //        Challenge -> explain in comments WHY we use (max - min + 1) and not (max - min) ?
 //        (what would go wrong at the highest end if we removed the +1 ?)
+
+let number = Math.floor(Math.random() * (20 - 10 + 1)) + 10
+console.log(number)
+
+//Challenge -> explain in comments WHY we use (max - min + 1) and not (max - min) ?
+/**
+ possible number from 10, 20 are--
+ 10,11,12,13,14,15,16,17,18,19,20---total numbers are 11
+
+ so if  20-10+1
+      = 11
+
+max-min+1 is needed because 
+Math.random() never produces 1
+ */
 
 //Q12 --> Write a function randomFloat(min, max) that returns a random FLOAT between min and max,
 //        rounded to 1 decimal place.
