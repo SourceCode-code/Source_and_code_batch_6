@@ -154,15 +154,27 @@ Math.random() never produces 1
 //        HINT -> here you do NOT need Math.floor... think WHY floats must stay as they are,
 //        and which method is used at the END to fix the decimal places.
 
+let min= 5.5
+let max= 9.3
+let randomFloat = Math.random()*(max-min)+min
+console.log(randomFloat.toFixed(1))
+
 //Q13 --> Write a function roundTo5(num) that rounds ANY number to the NEAREST multiple of 5.
 //        Example -> roundTo5(28) -> 30 | roundTo5(32) -> 30 | roundTo5(37) -> 35
 //        HINT -> Math.round() rounds to the nearest INTEGER. how do you make 5 behave like 1 ?
 //        (divide by 5 first, round, then ...?)
 
+let num=28
+let printroundto5 =Math.round(num/5)*5
+console.log(printroundto5)
+
 //Q14 --> Write a program to generate a random 4-digit OTP.
 //        Rules -> OTP must be between 1000 and 9999 (never 3 digits).
 //        Print it as "Your OTP is : XXXX"
 //        HINT -> use the golden formula from Q11 with min = 1000, max = 9999
+
+let OTP = Math.floor(Math.random()*(9999-1000+1)+1000)
+console.log(` OTP is:`, OTP )
 
 //Q15 --> Write a program to generate a random INDIAN mobile number.
 //        Rules -> total 10 digits, first digit must be 6, 7, 8 or 9.
@@ -170,11 +182,23 @@ Math.random() never produces 1
 //        HINT -> split in 2 parts like the lecture : firstDigit (6-9) + remaining 9 digits.
 //        Challenge -> how do you JOIN two numbers so they print as ONE string, not "6 987654321" ?
 
+let firstDigit = Math.floor(Math.random()*4) + 6
+let secondDigits = Math.floor(Math.random()*1000000000)
+//console.log(firstDigit)
+//console.log(secondDigits)
+console.log(`${firstDigit}${secondDigits}`)
+
 //Q16 --> Given the number below, write code to round it to 2 decimal places
 //        and store the RESULT as an actual NUMBER (not a string).
 //        let amount = 1234.56789    // expected output -> 1234.57
 //        HINT -> one way : multiply by 100, round it, then divide by 100.
 //        Then compare your result with amount.toFixed(2) using typeof - what is the difference ?
+
+let amount = 1234.56789
+let number2=Math.round( amount *100)/100
+console.log(number2)
+console.log(typeof(amount))
+console.log(amount.toFixed(2))
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
@@ -182,11 +206,21 @@ Math.random() never produces 1
 //        Math.floor(-4.2) , Math.ceil(-4.8) , Math.round(-4.5)
 //        Then answer : why is Math.floor(-4.2) NOT -4 ?
 //        HINT -> "-4.2 rounded down" means moving AWAY from zero, not towards it.
+    console.log(Math.floor(-4.2))// -5 MAth floor means round down nearest lower intger/float
+    console.log(Math.ceil(-4.8)) //-4
+    console.log(Math.round(-4.5)) //-4
 
 //Q18 --> INTERVIEW QUESTION -> what is the output range of Math.random() ?
 //        Write in comments : minimum value, maximum value, and whether it can ever reach the maximum.
 //        Also mention any 3 real-world uses of Math.random() (from the lecture).
-
+ /* 
+ Math.Random()---> generate the decimal numbers from 0 to 0.99999...
+ minimun value is 0 and max value would be 0.99999
+ Example-
+ i)  mobile number with random numbers
+ ii) adhar card numbers
+ iii) car nameplate
+*/
 
 //Q19 --> INTERVIEW QUESTION (CLASSIC) -> predict the output of the below code and explain why :
 //        console.log(0.1 + 0.2)
@@ -194,6 +228,10 @@ Math.random() never produces 1
 //        HINT -> JS follows IEEE-754 (binary floating point). some decimal numbers CANNOT be
 //        stored exactly in binary. How would you FIX the comparison ? (one line, use a method
 //        you learned in this lecture)
+
+console.log(0.1 + 0.2) // output : 0.300000
+console.log(0.1 + 0.2 === 0.3)//false
+console.log((0.1 + 0.2).toFixed(2)===(0.3).toFixed(2))
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
