@@ -371,7 +371,16 @@
 // b) switch is cleaner when you have ONE variable to compare against MANY values ( month, day, grade ).
 //    else if is better when you have MANY variables to compare against MANY values ( age, score, year ).
 // c) if you forget the break, the program will "fall through" and execute the next case(s) as well.
-
+//  example :
+// switch (day) {
+//     case "monday":
+//     case "mon":
+//         console.log("It's Monday!");
+//         break;
+//     default:
+//         console.log("It's not Monday.");
+// }
+// d) switch ( true ) allows you to use conditions in the case statements, which is not possible with normal case values.
 
 // ============================================
 // SUBMISSION CHECKLIST
