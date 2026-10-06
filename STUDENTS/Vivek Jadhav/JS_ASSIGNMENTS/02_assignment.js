@@ -1,4 +1,4 @@
-﻿// ============================================
+// ============================================
 // 02_ASSIGNMENT -> TOPIC : JS DATA TYPES (primitive, non-primitive, typeof)
 // BASED ON : LECTURE/02_JS_Datatypes.js  +  THEORY_NOTES/02_JS_Datatypes.md
 // HOW TO RUN : open terminal -> node 02_ASSIGNMENT.js
@@ -127,7 +127,6 @@ let varX;
 let varY = null;
 let varZ = "25";
 
-console.log("\n--- Q13: Bonus Datatype Prediction ---");
 console.log(typeof varX, typeof varY, typeof varZ);
 
 /*
