@@ -18,7 +18,11 @@
 let a =10
 let b= 3
 console.log(a+b)//addition
-
+console.log(a-b)//subtraction
+console.log(a*b)//multiplication
+console.log(a/b)//division
+console.log(a%b)//modulus
+console.log(a**b)//exponentiation
 
 //Q2 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(10 % 3)
