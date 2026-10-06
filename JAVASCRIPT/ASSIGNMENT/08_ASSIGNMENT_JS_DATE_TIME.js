@@ -2,7 +2,7 @@
 // 08_ASSIGNMENT -> TOPIC : JS DATE & TIME (+ revision of numbers, strings & conditions)
 // BASED ON : LECTURE/08_date.js  +  THEORY_NOTES/08_JS_Date.md
 //
-// HOW TO RUN : open terminal -> node 08_ASSIGNMENT.js
+// HOW TO RUN : open terminal -> node 08_ASSIGNMENT_JS_DATE_TIME.js
 // RULES -> prompt() works ONLY in the browser console -> we run files with node, so every
 //          "user input" is SIMULATED with a variable -> change its value, run the file again,
 //          and verify ALL the cases written in the question.
@@ -182,6 +182,6 @@ let age = 25 // TEST with -> 15 , 40 , 100
 // 2. every value is tested with ALL the cases written in the question ( change the variable , run again )
 // 3. leap year is tested for -> 2024 , 2025 , 2000 , 1900
 // 4. every answer / observation is written in comments
-// 5. file runs without any error -> node 08_ASSIGNMENT.js
+// 5. file runs without any error -> node 08_ASSIGNMENT_JS_DATE_TIME.js
 // ============================================
 
