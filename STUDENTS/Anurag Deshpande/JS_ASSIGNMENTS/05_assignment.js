@@ -16,3 +16,6 @@ console.log(typeof strTen === typeof numTen) // false
 let strTen1 = Number(strTen) 
 console.log(strTen1) // 10
 console.log(typeof strTen1 === typeof numTen) // true
+
+
+
