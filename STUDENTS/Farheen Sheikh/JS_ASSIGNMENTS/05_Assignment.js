@@ -16,6 +16,14 @@
 //       HINT -> typeof strTen === typeof numTen  -> what comes first time ?
 //       after Number(strTen) what changes ?
 //Answer:- 
+let strTen = "10" // String
+let numTen = 10   // number
+// Check if the typeof strTen is EXACTLY equal to typeof numTen.
+console.log(typeof strTen === typeof numTen)  // false
+
+// convert strTen to a number and check again
+strTen = Number(strTen)
+console.log(typeof strTen === typeof numTen)  // True
 
 
 //Q2 --> Predict the output of the below code (write answer as comment, then run and verify)
@@ -26,7 +34,11 @@
 //       console.log(Number(false))
 //       HINT -> empty string and null become 0, but undefined becomes NaN. why ?
 //Answer:- 
-
+console.log(Number(""))          //0 -Empty string represents no characters, so numeric conversion gives 0
+console.log(Number(null))        //0 -null represents an intentional absence of a value and converts to 0
+console.log(Number(undefined))   //NaN -undefined means the value has not been assigned, so it cannot be converted to a meaningful number
+console.log(Number(true))        //1 - Boolean true converts to 1
+console.log(Number(false))       //0 - Boolean false converts to 0
 
 
 //Q3 --> Predict the output of the below code (write answer as comment, then run and verify)
@@ -38,6 +50,16 @@
 //       HINT -> parseInt CUTS the decimal (no rounding), parseFloat keeps it,
 //       BOTH stop reading at the first character that is not a number.
 //Answer:- 
+console.log(parseInt("53841.5135"))   //53841
+console.log(parseFloat("53841.5135")) //53841.5135 
+console.log(parseInt("12.9abc"))      //12 character not print so stop
+console.log(parseFloat("12.9abc"))    //12.9 
+console.log(parseInt("abc12.9"))      //NaN - 
+//parseInt()   → integer → removes decimal
+//parseFloat() → decimal → keeps decimal
+// "12.9abc"  → 12 / 12.9
+// "abc12.9"  → NaN
+
 
 //Q4 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(Number("ASDFGHJKMNBVC"))
@@ -45,6 +67,9 @@
 //       HINT -> can letters become a number ? and what is the DATATYPE of that
 //       failed result ? (this is a trick question)
 //Answer:- 
+console.log(Number("ASDFGHJKMNBVC")) // NaN -no
+console.log(typeof Number("ASDFGHJKMNBVC")) // number
+
 
 //Q5 --> let number = 7020400749
 //       a) convert it to a string using String() and print the typeof
@@ -53,6 +78,22 @@
 //       what happens with String(null) and null.toString() ? (run the first one,
 //       the second one gives an ERROR -> write the error message in comments)
 //Answer:- 
+ let number = 7020400749
+//a) convert it to a string using String() and print the typeof
+let str  = String(number)
+console.log(str)        //7020400749
+console.log(typeof str) // string
+
+//b) convert it to a string using toString() and print the typeof
+let str1 = number.toString()
+console.log(str1)        //7020400749
+console.log(typeof str1) // string
+
+// What happens with null?
+console.log(String(null)); // "null"
+// null.toString();
+// ERROR: TypeError: Cannot read properties of null (reading 'toString')
+
 
 //Q6 --> Boolean() -> predict the output (write answer as comment, then run and verify)
 //       console.log(Boolean("hello"))
@@ -62,6 +103,27 @@
 //       THEN -> write the 6 falsy values of javascript in comments.
 //       HINT -> everything that is NOT in your list is TRUTHY.
 //Answer:- 
+console.log(Boolean("hello")) //true
+console.log(Boolean(""))      //false
+console.log(Boolean(0))       //true
+console.log(Boolean(100))     //false
+
+// 6 FALSY VALUES IN JAVASCRIPT:
+// 1. false
+// 2. 0
+// 3. -0
+// 4. 0n
+// 5. ""
+// 6. null
+// 7. undefined
+// 8. NaN
+/*
+Boolean("hello") // true
+Boolean("0")     // true  ← string is not empty
+Boolean(100)     // true
+Boolean([])      // true
+Boolean({})      // true
+*/
 
 // ------------------- SECTION B : PREDICT THE OUTPUT (COERCION) -------------------
 
@@ -74,6 +136,12 @@
 //       console.log("5" / 5)
 //       HINT -> + with ANY string = CONCATENATION. - * / ALWAYS convert to number first.
 //Answer:- 
+console.log(5 + 5)   //10
+console.log(5 + "5") //55
+console.log("5" - 5) //0
+console.log(5 - "5") //0
+console.log("5" * 5) //25
+console.log("5" / 5) //1
 
 //Q8 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log("5" - true)
@@ -83,6 +151,10 @@
 //       HINT -> true = 1 and false = 0 in maths.
 //       but + with a string does CONCAT, not maths. think twice for each line.
 //Answer:- 
+console.log("5" - true) //4 - 5-1 =4
+console.log("5" - false)//5 - 5-0 =1
+console.log("5" + true) //5true concate
+console.log("5" + false)//5false
 
 //Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log("10" + "5")
@@ -91,6 +163,11 @@
 //       console.log(1 - "1")
 //       HINT -> same operators, different behaviour. explain EACH result in one line.
 //Answer:- 
+console.log("10" + "5") //105 string concatination
+console.log("10" - "5") //5 → numeric conversion
+console.log(1 + "1")    //11+ with a string → concatenation
+console.log(1 - "1")    //0 → numeric conversion
+
 
 //Q10 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        console.log(+"5")
@@ -99,6 +176,14 @@
 //        console.log(typeof +"5")
 //        HINT -> UNARY + is the fastest string -> number conversion.
 //Answer:- 
+console.log(+"5") //5
+console.log(+"5.5") // 5.5
+console.log(+"abc") //NaN
+console.log(typeof +"5") //number
+
+
+
+
 
 //Q11 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        console.log(isNaN(Number("hello")))
