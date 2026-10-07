@@ -21,14 +21,24 @@
 //    test with -> age = 30, 18, 15, 1
 //    HINT -> this is either-or -> the perfect place for if...else.
 
-let age = 30
+let age = 1
+let X = 18 - age
+
+if(age >= 18) {console.log("You are old enough to drive.")}     
+else{console.log(`You are left with ${X} years to drive.`) }
 
 /**
  * age = 30
  * You are old enough to drive.
  *
+ * age = 18
+ * You are old enough to drive.
+ * 
  * age = 15
  * You are left with 3 years to drive.
+ * 
+ * age = 1
+ * You are left with 17 years to drive.
  */
 
 
@@ -40,7 +50,13 @@ let age = 30
 //    HINT -> the difference is a simple subtraction -> X = the difference.
 
 let myAge = 25
-let yourAge = 30
+let yourAge = 25
+let myOlder = myAge - yourAge 
+let youOlder = yourAge - myAge
+
+if(myAge > yourAge) {console.log(`I am ${myOlder} years older than you.`)}
+else if (yourAge > myAge){console.log(`You are ${youOlder} years older than me.`)}
+else{console.log("We are of the same age.")}
 
 /**
  * yourAge = 30
@@ -67,9 +83,13 @@ let b = 3;
 
 // (a) using if...else
 
+if( a > b) {console.log(`${a} is greater than ${b}.`)}
+else if(b > a){console.log(`${b} is greater than ${a}.`)}
+else{console.log(`${a} and ${b} are equal.`)}
 
 // (b) using ternary operator
 
+console.log(a > b ? `${a} is greater than ${b}` : ` ${b} is greater than ${a}.`)
 
 /**
  * 4 is greater than 3
@@ -81,7 +101,10 @@ let b = 3;
 //    HINT -> even means the number divides by 2 with 0 remainder -> number % 2 === 0.
 //    ( remember : % gives the remainder, a remainder of 0 means it divides perfectly )
 
-let number = 22
+let number = 99
+
+if(number % 2 == 0) {console.log(`${number} is an even number.`)}
+else{console.log(`${number} is an odd number.`)}
 
 /**
  * number = 22
@@ -89,6 +112,9 @@ let number = 22
  *
  * number = 99
  * 99 is an odd number.
+ * 
+ * number = 0
+ * 0 is an even number.
  */
 
 
@@ -108,14 +134,35 @@ let number = 22
 //    ( score >= 80 first ) -> then the && checks are not even needed.
 //    CAREFUL -> the ranges must never OVERLAP and never leave a GAP ( lecture 07 boundary lesson ).
 
-let score = 95
+let score = undefined
+
+if(score >= 80 ) {console.log("Student has receive A grade")}
+
+else if(score >= 70 && score <=79 ) {console.log("Student has receive B grade.")}
+
+else if(score >= 60 && score <=69 ) {console.log("Student has receive C grade.")}
+
+else if(score >= 50 && score <=59 ) {console.log("Student has receive D grade.")}
+
+else if(score >= 0 && score <=49 ) {console.log("Student has receive F grade (Failed).")}
+
+else{console.log("Invalid score -> The student was not present for the exam.")}
 
 /**
  * score = 95
- * Grade : A
+ * Student has receive A grade.
+ * 
+ * score = 80
+ * Student has receive A grade
  *
+ * score = 72
+ * Student has receive B grade.
+ * 
+ * score = 50
+ * Student has receive D grade.
+ * 
  * score = 33
- * Grade : F ( failed )
+ * Student has receive F grade (Failed).
  *
  * score = undefined
  * Invalid score -> the student was not present for the exam.
@@ -132,7 +179,32 @@ let score = 95
 //    HINT -> the cleanest tool here is switch -> group the month numbers with STACKED cases
 //    ( fall-through ) -> all the cases above the console.log share the same output.
 
-let monthNum = 12
+let monthNum = 7
+
+switch (monthNum) {
+    case 12:
+    case 1:
+    case 2: console.log(`Month ${monthNum} is a Winter Month`)
+        break
+
+    case 3:
+    case 4:
+    case 5: console.log(`Month ${monthNum} is a Summer Month`)
+         break
+
+    case 6:
+    case 7:
+    case 8:
+    case 9: console.log(`Month ${monthNum} is a Rainy Month`)
+        break
+
+    case 10:
+    case 11: console.log(`Month ${monthNum} is a Autumn Month`)
+        break
+
+    default: console.log("Invalid month -> please enter a number between 1 and 12.")
+
+}
 
 /**
  * monthNum = 12
@@ -161,14 +233,44 @@ let monthNum = 12
 //       case "sunday": console.log(...)   break
 //    BONUS -> also accept the short names ( sat, sun, mon, tue, wed, thu, fri ).
 
-let day = "Saturday"
+let day = "abc"
+let formatDay = day.toLowerCase()
+
+switch (formatDay){
+    case "monday":
+    case "mon": 
+    case "tuesday":
+    case "tues" :
+    case "wednesday":
+    case "wed":
+    case "thursday":
+    case "thurs":
+    case "friday":
+    case "fri": console.log(`${formatDay} is a working day.`)
+            break
+    case "saturday":
+    case "sat":
+    case "sunday":
+    case "sun": console.log(`${formatDay} is a weekend.`)
+            break
+
+    default : console.log("Invalid day -> please check the spelling.")
+
+}
 
 /**
  * day = "Saturday"
  * Saturday is a weekend.
  *
  * day = "FrIDAy"
- * Friday is a working day.
+ * friday is a working day.
+ * 
+ * day = "Sunday"
+ * sunday is a weekend.
+ * 
+ * day = "abc"
+ * Invalid day -> please check the spelling.
+ * 
  */
 
 
@@ -188,17 +290,57 @@ let day = "Saturday"
 //    use a switch with STACKED cases -> all 31-day months under ONE output,
 //    all 30-day months under another one -> do not forget break and the default.
 
-let month = "January"
+let month = "abc"
+let formatMonth = month.toLowerCase()
 
+switch (formatMonth) {
+    case "january":
+    case "jan":
+    case "march":
+    case "mar":
+    case "may":
+    case "july":
+    case "jul":
+    case "august":
+    case "aug":
+    case "october":
+    case "oct":
+    case "december":
+    case "dec": console.log(`${formatMonth} has 31 days.`)
+        break
+    
+    case "february":
+    case "feb": console.log(`${formatMonth} has 28 days.`)
+        break
+
+    case "april":
+    case "apr":
+    case "june":
+    case "jun":
+    case "september":
+    case "sept":
+    case "november":
+    case "nov": console.log(`${formatMonth} has 30 days.`)
+        break
+
+    default: console.log("Invalid month -> please check the spelling.")
+}
 /**
  * month = "January"
  * January has 31 days.
  *
  * month = "february"
  * february has 28 days.
+ * 
+ * month = "June"
+ * june has 30 days.
  *
  * month = "Febuary"
  * Invalid month -> please check the spelling.
+ * 
+ * month = "abc"
+ * Invalid month -> please check the spelling.
+ * 
  */
 
 
@@ -218,7 +360,36 @@ let month = "January"
 //    PART B -> rewrite the SAME program with  switch ( true )  -> every case becomes a condition.
 //    HINT -> case birthYear > 1980 && birthYear <= 1990: ...
 
+//A.
+
 let birthYear = 1985
+
+if(birthYear >= 1981 && birthYear <= 1990) {console.log("You belong to the Boomer generation.")}
+
+else if(birthYear >= 1991 && birthYear <= 2000) {console.log("You belong to the Millennial generation.")}
+
+else if(birthYear > 2000) {console.log("You belong to the Gen Z generation.")}
+
+else{console.log("Invalid birth year.")}
+
+
+//B. 
+
+switch(true) {
+
+    case birthYear >= 1981 && birthYear <= 1990: console.log("You belong to the Boomer generation.")
+            break
+
+    case birthYear >= 1991 && birthYear <= 2000: console.log("You belong to the Millennial generation.")
+            break
+
+    case birthYear > 2000 : console.log("You belong to the Gen Z generation.")
+            break
+
+    default: console.log("Invalid birth year.")
+    
+}
+
 
 /**
  * birthYear = 1985
@@ -229,6 +400,10 @@ let birthYear = 1985
  *
  * birthYear = 2010
  * You belong to the Gen Z generation.
+ * 
+ * birthYear = 1975
+ * Invalid birth year.
+ * 
  */
 
 
@@ -241,6 +416,114 @@ let birthYear = 1985
 //    d) what does the  switch ( true ) { case condition: ... }  pattern do ?
 //       when do you NEED it ( what can a normal case value NOT do ) ?
 
+
+// a) why does  case "monday" || "mon":  never work as expected ? what does || really return ?
+
+// ANSWER : We cannot use case "monday" || "mon" because || returns the first truthy value, so it becomes case "monday".
+
+//    what is the correct way to give the SAME output to several case values ?
+
+// ANSWER : To give same output to multiple values, use separate case labels one after another without break between them.
+
+let Day = "Monday"
+switch (Day){
+    case "Monday":
+    case "Mon": console.log("Start of the week")
+}
+
+//  b) when should you choose a switch over the else if ladder ? give one use case for each.
+
+// ANSWER : 1) Switch: Use it when one variable needs to be compared with multiple fixed values, such as different days of the week.
+// 2) Else-if: Use it when conditions involve ranges or different logical expressions, such as calculating grades from marks.
+
+let dayy = "Monday";
+
+switch (dayy) {
+    case "Monday":
+        console.log("Start of the week");
+        break;
+    case "Friday":
+        console.log("Almost weekend");
+        break;
+    case "Sunday":
+        console.log("Weekend");
+        break;
+}
+// Output: Start of the week
+
+let marks = 75;
+
+if (marks >= 90) {
+    console.log("Grade A");
+} else if (marks >= 75) {
+    console.log("Grade B");
+} else if (marks >= 50) {
+    console.log("Grade C");
+} else {
+    console.log("Fail");
+}
+
+// OUTPUT : Grade B
+
+
+// c) what happens when you FORGET the break inside a switch ? what is this behaviour called ?
+//    write a small example in comments.
+
+//ANSWER : If we forget break then after a match the cases below also run. This is called FALL-THROUGH
+
+let numVal = 10
+
+switch (numVal) {
+    case 10: console.log("Ten") // no break -> falls through -> "Eleven" also prints
+    case 11: console.log("Eleven")
+}
+/**
+ * Ten
+ * Eleven
+ * 
+ */
+
+// d) what does the  switch ( true ) { case condition: ... }  pattern do ?
+//    when do you NEED it ( what can a normal case value NOT do ) ?
+
+// ANSWER : switch (true) is a special pattern used when you want switch to work with conditions, not just exact values.
+
+// 1. Normal switch
+let markss = 80;
+
+switch (markss) {
+    case 80:
+        console.log("Exactly 80");      
+        break;
+    case 90:
+        console.log("Exactly 90");
+        break;
+}
+
+// OUTPUT : Exactly 80
+
+// 2. switch(true)
+
+let temperature = 35;
+
+switch (true) {
+    case temperature < 10:
+        console.log("Very Cold");
+        break;
+
+    case temperature < 25:
+        console.log("Cool");
+        break;
+
+    case temperature < 35:
+        console.log("Warm");
+        break;
+
+    default:
+        console.log("Hot");     
+}
+
+// OUTPUT : Hot
 
 // ============================================
 // SUBMISSION CHECKLIST
