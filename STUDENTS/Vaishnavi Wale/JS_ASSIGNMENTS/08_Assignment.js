@@ -208,10 +208,26 @@ console.log(`${DayName},${changed_time.getDate()} ${FullMonth} ${changed_time.ge
 //
 //        THINK -> what will the answer be when the target date is IN THE PAST ?
 
+//ANSWER:
+let date2 = new Date()
+console.log(date2)
+
+let target_date = "2026-12-31"
+
+let target_date_obj = new Date(target_date)
+
+let diff_ms = target_date_obj - date2
+console.log(diff_ms)
+
+let diff_days = Math.ceil(diff_ms / (1000 * 60 * 60 * 24))
+
+console.log(`Days lefft until ${target_date} : ${diff_days}`)
+
+
 /**
- * SAMPLE ( run on 30-09-2026 )
+ * SAMPLE ( run on 2026-10-06 )
  *
- * Days left until 2026-12-31 : 92
+ * Days lefft until 2026-12-31 : 86
  */
 
 
@@ -231,6 +247,16 @@ console.log(`${DayName},${changed_time.getDate()} ${FullMonth} ${changed_time.ge
 //        - print the message with a TERNARY ( lectures 06 + 07 )
 //        - TEST by changing the year variable -> 2024 ( leap ) , 2025 ( not ) ,
 //          2000 ( leap ) , 1900 ( NOT leap -> century rule )
+
+//  ANSWER:
+
+let year = new Date().getFullYear()
+console.log(year)
+
+let leapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+
+console.log(`${year} is ${leapYear ? " is a Leap Year" : "not a Leap Year"}`)
+
 
 /**
  * SAMPLE ( run in 2026 )
@@ -255,6 +281,28 @@ console.log(`${DayName},${changed_time.getDate()} ${FullMonth} ${changed_time.ge
  * Tomorrow -> 01/10/2026
  */
 
+// ANSWER:
+
+let tomDate = new Date()
+
+tomDate.setDate(tomDate.getDate() + 1)
+
+let cur_date = tomDate.getDate()
+let cur_month = tomDate.getMonth() + 1
+let cur_year = tomDate.getFullYear()
+
+let pad_date1 = cur_date < 10 ? `0${cur_date}` : cur_date
+let pad_month1 = cur_month < 3 ? `0${cur_month}` : cur_month
+
+console.log(`Tomorrow -> ${pad_date1}/${pad_month1}/${cur_year}`)
+
+/**
+ * OUTPUT:
+ * 
+ * Tomorrow -> 08/10/2026
+ * 
+ */
+
 //Q6 --> BONUS -> WEEKDAY OF THE TARGET DATE ->
 //        take the target date from exercise 3 -> "2026-12-31"
 //        print which weekday it is ->  "2026-12-31 is a Thursday"
@@ -269,6 +317,30 @@ console.log(`${DayName},${changed_time.getDate()} ${FullMonth} ${changed_time.ge
  * 2026-12-31 is a Thursday
  * 2026-12-31 is a Thu
  */
+
+//ANSWER:
+
+let date3 = new Date()
+
+let target_date1 = "2026-12-31"
+
+let target_date_obj1 = new Date(target_date1)
+
+let weekday = target_date_obj1.toLocaleString("en-gb", { weekday: "long" })
+let short_weekday = target_date_obj1.toLocaleString("en-gb", { weekday: "short" })
+
+console.log(`${target_date1} is a ${weekday}`)
+console.log(`${target_date1} is a ${short_weekday}`)
+
+
+/**
+ * OUTPUT:
+ * 
+ * 2026-12-31 is a Thursday
+ * 2026-12-31 is a Thu
+ * 
+ */
+
 
 
 // ============================================
