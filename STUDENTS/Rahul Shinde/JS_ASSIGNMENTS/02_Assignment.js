@@ -10,6 +10,18 @@
 //       and print all of them using console.log()
 //       HINT -> there are 5 primitive datatypes (check theory notes section 3)
 
+//Q1 ANSWER
+// let myNumber = 2210;
+// let myString = "my name is Rahul";
+// let myBoolean = true;
+// let myUndefined;
+// let myNull = null;
+// console.log(myNumber);
+// console.log(myString);
+// console.log(myBoolean);
+// console.log(myUndefined);
+// console.log(myNull);
+
 
 //Q2 --> Write a code to check and print the datatype of the below variables using typeof operator
 //       let city = "Pune"
@@ -18,6 +30,17 @@
 //       let result
 //       HINT -> typeof is an operator, example -> console.log(typeof city)
 
+// Q2 ANSWER:-
+// let city = "Pune";
+// let marks = 92.5;
+// let isPass = true;
+// let result;
+
+// console.log(typeof city);
+// console.log(typeof marks);
+// console.log(typeof isPass);
+// console.log(typeof result);
+
 
 //Q3 --> What is the output of the below code ? write the answer as a comment and then run to verify
 //       let x;
@@ -25,11 +48,19 @@
 //       console.log(typeof x)
 //       HINT -> what value does JS give when we dont assign anything ?
 
+// Answer :-
+// let x;
+// console.log(x) // undefined
+// console.log(typeof x) // undefined
 
 //Q4 --> What is the output of the below code ? write the answer as a comment and then run to verify
 //       let v1 = null
 //       console.log(typeof v1)
 //       HINT -> this is a famous bug in js (check theory notes section 5)
+
+// Answer :-
+// let v1 = null;
+// console.log(typeof v1) // object
 
 
 // ------------------- SECTION B : PREDICT THE OUTPUT -------------------
@@ -42,12 +73,23 @@
 //       console.log(b)
 //       HINT -> primitives are copied by VALUE
 
+// Answer :-
+// let a = 10;
+// let b = a;
+// a = 20;
+// console.log(a) // 20
+// console.log(b) // 10
+
 
 //Q10 --> INTERVIEW QUESTION -> write the difference between undefined and null in comments (minimum 2 points)
 //        and show one example code of each
 //        HINT -> who sets the value, JS or the programmer ?
 
-
+// Answer :-
+// 1. undefined is automatically assigned by JavaScript
+// 2. null is explicitly assigned by the programmer
+// 3. undefined means a variable has been declared but no value has been assigned to it.
+// 4. null means the programmer intentionally assigns an empty value to a variable.
 // ------------------- SECTION C : BONUS CHALLENGE -------------------
 
 //Q13 --> INTERVIEW QUESTION -> predict the output of the below code and explain why in a comment
@@ -56,3 +98,8 @@
 //        let z = "25";
 //        console.log(typeof x, typeof y, typeof z)
 
+// Answer :-
+let x; // undefined
+let y = null; // object (this is a known bug in JavaScript)
+let z = "25"; // string
+console.log(typeof x, typeof y, typeof z) // undefined object string

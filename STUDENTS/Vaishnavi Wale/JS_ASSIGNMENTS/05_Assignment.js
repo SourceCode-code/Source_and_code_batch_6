@@ -16,6 +16,15 @@
 //       HINT -> typeof strTen === typeof numTen  -> what comes first time ?
 //       after Number(strTen) what changes ?
 
+//ANSWER:
+let strTen = "10"
+let numTen = 10
+
+console.log(typeof strTen == typeof numTen)         // false because strTen is a String datatype and numTen is a number datatype
+ let newTen = Number(strTen)
+console.log(typeof newTen == typeof numTen)         // true --> Number(strTen) it convert the string into number datatype
+
+
 //Q2 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(Number(""))
 //       console.log(Number(null))
@@ -23,6 +32,14 @@
 //       console.log(Number(true))
 //       console.log(Number(false))
 //       HINT -> empty string and null become 0, but undefined becomes NaN. why ?
+
+//ANSWER:
+
+console.log(Number(""))         // 0
+console.log(Number(null))       // 0
+console.log(Number(undefined))  // NaN because it cannot convert into number.
+console.log(Number(true))       // 1
+console.log(Number(false))      // 0
 
 //Q3 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(parseInt("53841.5135"))
@@ -33,11 +50,23 @@
 //       HINT -> parseInt CUTS the decimal (no rounding), parseFloat keeps it,
 //       BOTH stop reading at the first character that is not a number.
 
+//ANSWER:
+console.log(parseInt("53841.5135"))     // 53841
+console.log(parseFloat("53841.5135"))   // 53841.5135
+console.log(parseInt("12.9abc"))        // 12
+console.log(parseFloat("12.9abc"))      // 12.9
+console.log(parseInt("abc12.9"))        // NaN
+
 //Q4 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log(Number("ASDFGHJKMNBVC"))
 //       console.log(typeof Number("ASDFGHJKMNBVC"))
 //       HINT -> can letters become a number ? and what is the DATATYPE of that
 //       failed result ? (this is a trick question)
+
+//ANSWER:
+
+console.log(Number("ASDFGHJKMNBVC"))        // NaN -> if the string is not a valid number, the result is NaN
+console.log(typeof Number("ASDFGHJKMNBVC")) // number-> NaN means the result is not a valid number, but its data type in JavaScript is still number
 
 //Q5 --> let number = 7020400749
 //       a) convert it to a string using String() and print the typeof
@@ -46,6 +75,20 @@
 //       what happens with String(null) and null.toString() ? (run the first one,
 //       the second one gives an ERROR -> write the error message in comments)
 
+//ANSWER:
+
+let number = 7020400749
+
+// a) convert it to a string using String() and print the typeof
+let numStr = String(number)
+console.log(numStr)            // 7020400749
+console.log(typeof numStr)     // string
+
+// b) convert it to a string using toString() and print the typeof
+let numStr2 = number.toString()
+console.log(numStr2)            // 7020400749          
+console.log(typeof numStr2)     // string
+
 //Q6 --> Boolean() -> predict the output (write answer as comment, then run and verify)
 //       console.log(Boolean("hello"))
 //       console.log(Boolean(""))
@@ -53,6 +96,16 @@
 //       console.log(Boolean(100))
 //       THEN -> write the 6 falsy values of javascript in comments.
 //       HINT -> everything that is NOT in your list is TRUTHY.
+
+// ANSWER:
+
+console.log(Boolean("hello"))   // true  --> non-empty string -> true
+console.log(Boolean(""))        // false --> empty string -> false
+console.log(Boolean(0))         // false  
+console.log(Boolean(100))       // true  --> any non-zero number -> true
+
+// Q write the 6 falsy values of javascript in comments.
+// Answer: false, 0, "" (empty string), null, undefined, NaN. --> it returns False
 
 // ------------------- SECTION B : PREDICT THE OUTPUT (COERCION) -------------------
 
@@ -65,6 +118,15 @@
 //       console.log("5" / 5)
 //       HINT -> + with ANY string = CONCATENATION. - * / ALWAYS convert to number first.
 
+//ANSWER:
+
+console.log(5 + 5)      // 10
+console.log(5 + "5")    // 55
+console.log("5" - 5)    // 0
+console.log(5 - "5")    // 0
+console.log("5" * 5)    // 25
+console.log("5" / 5)    // 1
+
 //Q8 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log("5" - true)
 //       console.log("5" - false)
@@ -73,12 +135,24 @@
 //       HINT -> true = 1 and false = 0 in maths.
 //       but + with a string does CONCAT, not maths. think twice for each line.
 
+//ANSWER:
+console.log("5" - true)     // 4
+console.log("5" - false)    // 5
+console.log("5" + true)     // 5true
+console.log("5" + false)    // 5false
+
 //Q9 --> Predict the output of the below code (write answer as comment, then run and verify)
 //       console.log("10" + "5")
 //       console.log("10" - "5")
 //       console.log(1 + "1")
 //       console.log(1 - "1")
 //       HINT -> same operators, different behaviour. explain EACH result in one line.
+
+// ANSWER:
+console.log("10" + "5")     // 105  --> IF both side of + is a STRING -> + acts as CONCATENATION (joins them)
+console.log("10" - "5")     // 5    --> string - string -> - acts as minus 
+console.log(1 + "1")        // 11   --> number + string --> CONCATE
+console.log(1 - "1")        // 0    --> number - String --> - acts as minus 
 
 //Q10 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        console.log(+"5")
@@ -87,12 +161,26 @@
 //        console.log(typeof +"5")
 //        HINT -> UNARY + is the fastest string -> number conversion.
 
+//ANSWER:
+console.log(+"5")       // 5
+console.log(+"5.5")     // 5.5
+console.log(+"abc")     // NaN
+console.log(typeof +"5")    // number
+
 //Q11 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        console.log(isNaN(Number("hello")))
 //        console.log(isNaN("123"))
 //        console.log(isNaN("hello123"))
 //        console.log(NaN === NaN)
 //        HINT -> NaN is not equal to ANYTHING, not even itself. what do we use to detect it ?
+
+//ANSWER:
+console.log(isNaN(Number("hello"))) // true
+console.log(isNaN("123"))           // false
+console.log(isNaN("hello123"))      // true
+console.log(NaN === NaN)            // false
+
+
 
 // ------------------- SECTION C : LOGIC BUILDING -------------------
 
@@ -101,9 +189,24 @@
 //        so the result becomes exactly 10, and print the result + its typeof.
 //        HINT -> which method ROUNDS to nearest (revision -> lecture 03) ?
 
+//ANSWER:
+let priceStr = "9.8"
+console.log(parseFloat(priceStr))
+let roundPrice = Math.round(priceStr)
+console.log(roundPrice)                 // 10
+console.log(typeof roundPrice)          // number
+
 //Q13 --> let mobileStr = "  9876543210  "
 //        Clean the extra spaces, convert it to a NUMBER, and print the number + its typeof.
 //        HINT -> chaining -> trim() first (lecture 04), then convert (this lecture).
+
+//ANSWER:
+let mobileStr = "  9876543210  "
+console.log(mobileStr.trim())
+let mobileNum = Number(mobileStr)   
+console.log(mobileNum)              // 9876543210
+console.log(mobileNum)              // 9876543210
+console.log(typeof mobileNum)       // number
 
 //Q14 --> let amountStr = "199.99"
 //        Convert it to a number, add 18% GST on it, and print the final amount
@@ -111,11 +214,26 @@
 //        HINT -> Number() to convert, arithmetic to add tax,
 //        .toFixed(2) to format (revision -> lecture 03).
 
+//Answer:                                     
+
+let amountStr = "199.99"
+let amountNum = Number(amountStr)
+console.log(amountNum)                  // 199.99
+let gstAmount = amountNum * 18/ 100
+let finalAmount = gstAmount + amountNum
+console.log(finalAmount.toFixed(2))     // 235.99
+
 //Q15 --> let otp = 483920
 //        Convert this NUMBER to a STRING and print it using a template literal
 //        like -> "Your OTP is : 483920"
 //        Then print the length of the OTP (how do you get length of a number ?)
 //        HINT -> String(otp) first, then .length works.
+
+//Answer:
+let otp = 483920
+let otpStr = String(otp)
+console.log(`Your OTP is: ${otpStr}`)   // Your OTP is: 483920
+console.log(otpStr.length)              // 6
 
 //Q16 --> let email = "siddhant.gadakh@gmail.com"
 //        a) check if the email contains "@" (print true/false)
@@ -123,6 +241,15 @@
 //        c) extract the username part (everything BEFORE the @) using slice()
 //        HINT -> includes() + indexOf() + slice() -> all from lecture 04,
 //        and the conversion here is only mental : everything is already a string :)
+
+//ANSWER:
+let email = "siddhant.gadakh@gmail.com"
+// a) check if the email contains "@" (print true/false)
+console.log(email.includes("@")? "True" : "False")          //True
+// b) find the index of "@"
+console.log(email.indexOf("@"))                             // 15
+// c) extract the username part (everything BEFORE the @) using slice()
+console.log(email.slice(0, -10 ))                           // siddhant.gadakh
 
 //Q17 --> let val1 = "5"
 //        let val2 = "10"
@@ -132,9 +259,32 @@
 //        Now CONVERT properly and print the CORRECT sum (15) and difference (-5).
 //        HINT -> one line joins, the other line does maths. why ?
 
+//Answer:
+let val1 = "5"
+let val2 = "10"
+console.log(val1 + val2)        // 510
+console.log(val1 - val2)        // -5
+
+let val1Num = Number(val1)
+let val2Num = Number(val2)
+let addVal = val1Num + val2Num
+let subVal = val1Num - val2Num 
+console.log(addVal)             // 15
+console.log(subVal)             // -5
+
 //Q18 --> WRITE 3 statements that give a TRUTHY value and 3 statements that give
 //        a FALSY value. Prove each one using Boolean(...) in console.log.
 //        HINT -> revise the falsy list from the lecture.
+
+//ANSWER:
+console.log(Boolean("Hello")); // true
+console.log(Boolean(100));     // true
+console.log(Boolean([]));      // true
+
+console.log(Boolean(false));   // false
+console.log(Boolean(0));       // false
+console.log(Boolean(""));      // false
+
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
@@ -143,9 +293,28 @@
 //        HINT -> NaN means the result of FAILED number maths. it is still a number
 //        that failed. comparison with NaN can never be true -> what method solves this ?
 
+//ANSWER:
+//why is typeof NaN === "number" ?
+let num4 = "Hello"-5
+console.log(num4)           // NaN
+console.log(typeof num4)    // number 
+//Q. why is NaN === NaN false ? and what is the CORRECT way to detect NaN ?
+// NaN stands for Not-a-Number, but it is still a value of the Number data type in JavaScript. 
+// That's why typeof NaN returns "number". NaN === NaN is false because NaN is a special value that is not equal to itself.
+
+// comparison with NaN can never be true -> what method solves this ?
+console.log(Number.isNaN(num4))     // true --> The correct way to check whether a value is NaN is Number.isNaN()
+
 //Q20 --> INTERVIEW QUESTION -> Number("") gives 0 but Number(undefined) gives NaN.
 //        Explain the difference between an EMPTY STRING and UNDEFINED.
 //        HINT -> "" is a real value (empty box), undefined means the box does not exist.
+//Answer:
+let emptyStr = Number("")
+let undefNum = Number(undefined)
+console.log(emptyStr)       // 0
+console.log(undefNum)       // NaN 
+// An empty string is an actual string value containing zero characters, and when JavaScript converts it to a number, it becomes 0
+//undefined means that no value has been assigned, so it cannot be converted to a valid number and results in NaN
 
 //Q21 --> INTERVIEW QUESTION (CLASSIC) -> what is the difference between
 //        parseInt("12.9") and Math.floor(12.9) ?
@@ -154,10 +323,24 @@
 //        console.log(Math.floor(-12.9))
 //        HINT -> parseInt CUTS towards ZERO, Math.floor goes DOWN on the number line.
 //        on negative numbers these are NOT the same !
+//Answer:
+console.log(parseInt("12.9"))   // 12
+console.log(Math.floor(12.9))   // 12
+
+console.log(parseInt("-12.9"))      // 12
+console.log(Math.floor(-12.9))      // 12
+//parseInt() --> parseInt CUTS towards ZERO
+// Math.floor() --> Math.floor goes DOWN on the number line.
+// nut for negative number this are not same . 
 
 //Q22 --> INTERVIEW QUESTION -> what is the difference between IMPLICIT and EXPLICIT conversion ?
 //        Give one example of each from this lecture.
 //        HINT -> implicit = JS converts automatically ("5" - 5), explicit = YOU convert (Number("5")).
+//ANSWER:
+console.log("10"-5)        // 5
+// This is the implicit conversion which means JS convert string 10 to number ten and then do substraction of two number .
+console.log(Number("14"))       // 14
+// This is a explicit conversion which means we convert string 5 to number 5 with the help applying Number() method. 
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
@@ -168,6 +351,17 @@
 //        sum (30), difference (-10), product (200) -> all as NUMBERS, not "1020" !
 //        Print using template literals like "Sum : 30".
 //        HINT -> convert once, store in new variables, then do clean maths.
+//ANSWER:
+let numA = "10"
+let numB = "20"
+let numAInt = Number(numA)
+let numBInt = Number(numB)
+let sum = numAInt + numBInt
+console.log(`Sum : ${sum}`)
+let diff = numAInt - numBInt
+console.log(`Difference : ${diff}`)
+let product = numAInt * numBInt
+console.log(`Product : ${product}`)
 
 //Q24 --> BONUS (MINI PROJECT - TYPE INSPECTOR REPORT) ->
 //        Declare one value of each type :
@@ -180,6 +374,29 @@
 //           null       -> ???
 //        HINT -> one line will SURPRISE you. typeof null is NOT "null".
 //        write the real output + explain in comments (famous JS interview quirk!).
+
+//ANSWER:
+let str = "abc"
+let valNum = 123
+let boolVal = true
+let token
+let nullVal = null
+
+console.log(`${str} ${"         --> "} ${typeof str}`)
+console.log(`${valNum}   ${ "       --> "} ${typeof valNum}`)
+console.log(`${boolVal}   ${ "      --> "} ${typeof boolVal}`)
+console.log(`${token}    ${ "--> "} ${typeof token}`)
+console.log(`${nullVal}   ${ "      --> "} ${typeof nullVal}`)
+
+//OUTPUT:
+
+/**
+ * abc          -->  string
+ * 123          -->  number
+ * true         -->  boolean
+ * undefined    -->  undefined
+ * null         -->  object      // This is a bug in JS thats why typeof null return object . 
+*/
 
 // ============================================
 // SUBMISSION CHECKLIST
