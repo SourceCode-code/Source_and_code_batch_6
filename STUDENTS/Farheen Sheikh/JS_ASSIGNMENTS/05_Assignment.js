@@ -207,6 +207,8 @@
 //        HINT -> one line will SURPRISE you. typeof null is NOT "null".
 //        write the real output + explain in comments (famous JS interview quirk!).
 //Answer:- 
+console.log("<-------------------- Q24 ------------------------------------>")
+
 
 // ============================================
 // SUBMISSION CHECKLIST
