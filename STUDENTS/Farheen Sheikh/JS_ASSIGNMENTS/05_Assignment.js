@@ -181,10 +181,6 @@ console.log(+"5.5") // 5.5
 console.log(+"abc") //NaN
 console.log(typeof +"5") //number
 
-
-
-
-
 //Q11 --> Predict the output of the below code (write answer as comment, then run and verify)
 //        console.log(isNaN(Number("hello")))
 //        console.log(isNaN("123"))
@@ -192,6 +188,16 @@ console.log(typeof +"5") //number
 //        console.log(NaN === NaN)
 //        HINT -> NaN is not equal to ANYTHING, not even itself. what do we use to detect it ?
 //Answer:- 
+console.log(isNaN(Number("hello"))) // True Number("hello") returns NaN because "hello" cannot be converted to a valid number.
+console.log(isNaN("123"))           // False The global isNaN() converts "123" to the number 123 before checking it.
+console.log(isNaN("hello123"))      // true "hello123" cannot be converted into a valid number.
+console.log(NaN === NaN)            // false NaN means Not a Number.It is not equal to itself, even when using strict equality (===).
+/*
+Note:- 
+Use Number.isNaN() when you want to check whether a value is specifically NaN.
+isNaN() converts the value to a number before checking.
+Number.isNaN() does not convert the value; it returns true only if the value is actually NaN.
+*/
 
 // ------------------- SECTION C : LOGIC BUILDING -------------------
 
@@ -200,11 +206,28 @@ console.log(typeof +"5") //number
 //        so the result becomes exactly 10, and print the result + its typeof.
 //        HINT -> which method ROUNDS to nearest (revision -> lecture 03) ?
 //Answer:- 
+let priceStr = "9.8"
+if (parseFloat(priceStr) !== 10){
+        priceStr = Math.round(parseFloat(priceStr))
+}
+console.log(priceStr)        // 10
+console.log(typeof priceStr) // number
+
 
 //Q13 --> let mobileStr = "  9876543210  "
 //        Clean the extra spaces, convert it to a NUMBER, and print the number + its typeof.
 //        HINT -> chaining -> trim() first (lecture 04), then convert (this lecture).
 //Answer:- 
+let mobileStr = "  9876543210  "
+mobileStr = Number(mobileStr.trim()) //Clean the extra spaces
+console.log(mobileStr)          // 9876543210
+console.log(typeof mobileStr)   // number
+/*
+Note:-
+1. trim() removes extra spaces from the beginning and end of the string.
+2. Number() converts the cleaned string into a number.
+3. console.log() prints the number and its data type.
+*/
 
 //Q14 --> let amountStr = "199.99"
 //        Convert it to a number, add 18% GST on it, and print the final amount
@@ -212,6 +235,16 @@ console.log(typeof +"5") //number
 //        HINT -> Number() to convert, arithmetic to add tax,
 //        .toFixed(2) to format (revision -> lecture 03).
 //Answer:- 
+ let amountStr = "199.99"
+
+//Convert it to a number
+ let amount = Number(amountStr) //Number(amountStr) converts "199.99" into the number 199.99.
+
+//add 18% GST on it
+let finalAmount = amount+(amount*18/100) //amount * 18 / 100 calculates 18% GST, which is approximately 36.00.
+
+//print the final amount
+console.log(finalAmount.toFixed(2)) //amount + GST gives the final amount of 235.9882.
 
 //Q15 --> let otp = 483920
 //        Convert this NUMBER to a STRING and print it using a template literal
@@ -219,6 +252,16 @@ console.log(typeof +"5") //number
 //        Then print the length of the OTP (how do you get length of a number ?)
 //        HINT -> String(otp) first, then .length works.
 //Answer:- 
+let otp = 483920
+
+//Convert this NUMBER to a STRING 
+let otpStr = String(otp)
+
+//print it using a template literal
+console.log(`Your OTP is : ${otpStr}`);  // template literal:- Your OTP is : 483920
+
+//print lenght
+console.log(otpStr.length) // lenght:- 6
 
 //Q16 --> let email = "siddhant.gadakh@gmail.com"
 //        a) check if the email contains "@" (print true/false)
@@ -227,6 +270,23 @@ console.log(typeof +"5") //number
 //        HINT -> includes() + indexOf() + slice() -> all from lecture 04,
 //        and the conversion here is only mental : everything is already a string :)
 //Answer:- 
+let email = "siddhant.gadakh@gmail.com"
+
+//a) check if the email contains "@" (print true/false)
+console.log(email.includes("@"))  // Output:- true
+//Checks whether the email contains the @ symbol. It returns true if found and false otherwise.
+
+//b) find the index of "@"
+console.log(email.indexOf("@"))  //output :-index 15
+//Returns the index (position) of the first @ symbol. JavaScript string indexes start at 0, so the index is 16.
+
+//c) extract the username part (everything BEFORE the @) using slice()
+let username = email.slice(0 , email.indexOf("@"))
+// 0 is the starting index. email.indexOf("@") gives the ending index, 16. slice() extracts characters from index 0 up to, but not including, index 16. 
+
+//print
+console.log(username) // output:- siddhant.gadakh
+
 
 //Q17 --> let val1 = "5"
 //        let val2 = "10"
@@ -236,11 +296,36 @@ console.log(typeof +"5") //number
 //        Now CONVERT properly and print the CORRECT sum (15) and difference (-5).
 //        HINT -> one line joins, the other line does maths. why ?
 //Answer:- 
+let val1 = "5"
+let val2 = "10"
+//WITHOUT converting manually, what do these print ?
+// consol.log(val1 + val2)  // output:- 510
+// consol.log(val1 - val2)  // output:- -5
+
+//Now CONVERT string to number properly 
+let numA = Number(val1)
+let numB = Number(val2)
+
+//print covert value
+console.log(numA + numB)
+console.log(numA - numB)
+
 
 //Q18 --> WRITE 3 statements that give a TRUTHY value and 3 statements that give
 //        a FALSY value. Prove each one using Boolean(...) in console.log.
 //        HINT -> revise the falsy list from the lecture.
 //Answer:- 
+// true value
+console.log(Boolean("Hello"))
+console.log(Boolean(10))
+console.log(Boolean([]))
+
+//false value
+console.log(Boolean(0))
+console.log(Boolean(null))
+console.log(Boolean(""))
+//false, 0, -0, 0n, "", null, undefined, and NaN.
+//Empty arrays [] and empty objects {} are truthy in JavaScript, even though they contain no elements or properties.
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
@@ -249,11 +334,24 @@ console.log(typeof +"5") //number
 //        HINT -> NaN means the result of FAILED number maths. it is still a number
 //        that failed. comparison with NaN can never be true -> what method solves this ?
 //Answer:- 
+console.log(typeof NaN);           // "number"
+console.log(typeof NaN === "number"); // true
+//NaN stands for Not-a-Number. It is a special numeric value that represents an invalid or unrepresentable numerical result. That is why JavaScript considers its data type to be "number".
+//In JavaScript, NaN is not equal to any value, including itself. Therefore, even strict equality (===) returns false.
 
 //Q20 --> INTERVIEW QUESTION -> Number("") gives 0 but Number(undefined) gives NaN.
 //        Explain the difference between an EMPTY STRING and UNDEFINED.
 //        HINT -> "" is a real value (empty box), undefined means the box does not exist.
 //Answer:- 
+console.log(typeof "");     // "string"
+console.log(Number(""));    // 0
+//Empty string: ""
+//Think of a box that exists but contains nothing.
+//Number("") → 0
+
+//An empty string ("") is a valid string value containing zero characters.
+//undefined indicates a missing or unassigned value. Since it does not represent a valid numeric value, Number(undefined) returns NaN.
+
 
 //Q21 --> INTERVIEW QUESTION (CLASSIC) -> what is the difference between
 //        parseInt("12.9") and Math.floor(12.9) ?
@@ -263,11 +361,23 @@ console.log(typeof +"5") //number
 //        HINT -> parseInt CUTS towards ZERO, Math.floor goes DOWN on the number line.
 //        on negative numbers these are NOT the same !
 //Answer:- 
+console.log(parseInt("12.9"));    // 12 extracts an integer from a string
+console.log(Math.floor(12.9));    // 12 Math.floor() — rounds down to the nearest integer
+
+console.log(parseInt("-12.9"));   // -12
+console.log(Math.floor(-12.9));   // -13
+
 
 //Q22 --> INTERVIEW QUESTION -> what is the difference between IMPLICIT and EXPLICIT conversion ?
 //        Give one example of each from this lecture.
 //        HINT -> implicit = JS converts automatically ("5" - 5), explicit = YOU convert (Number("5")).
 //Answer:- 
+//Implicit Definition: Implicit conversion happens when JavaScript automatically converts a value from one data type to another without you explicitly asking it to.
+console.log("5" - 5); // 0
+
+
+//EXPLICIT Definition: Explicit conversion happens when the programmer manually converts a value into another data type using a function such as Number(), String(), or Boolean().
+console.log(Number("5")); // 5
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
@@ -279,6 +389,22 @@ console.log(typeof +"5") //number
 //        Print using template literals like "Sum : 30".
 //        HINT -> convert once, store in new variables, then do clean maths.
 //Answer:- 
+let num_A = "10"
+let num_B = "20"
+
+// Convert strings to numbers once
+let a = Number(num_A);
+let b = Number(num_B);
+
+// Perform mathematical operations
+let sum = a + b
+let difference = a - b
+let product = a * b
+
+//Print using template literals like "Sum : 30".
+console.log(`Sum : ${sum}`)
+console.log(`difference: ${difference}`)
+console.log(`product : ${product}`)
 
 //Q24 --> BONUS (MINI PROJECT - TYPE INSPECTOR REPORT) ->
 //        Declare one value of each type :
@@ -292,6 +418,25 @@ console.log(typeof +"5") //number
 //        HINT -> one line will SURPRISE you. typeof null is NOT "null".
 //        write the real output + explain in comments (famous JS interview quirk!).
 //Answer:- 
+let str_1 = "Farheen";
+let num = 8459053694;
+let bool = true;
+let value;
+let emptyValue = null;
+
+// Print report using template literals and typeof
+console.log(`${str_1} -> ${typeof str_1}`);
+console.log(`${num} -> ${typeof num}`);
+console.log(`${bool} -> ${typeof bool}`);
+console.log(`${value} -> ${typeof value}`);
+console.log(`${emptyValue} -> ${typeof emptyValue}`);
+
+// Explanation:
+// typeof null returns "object", not "null".
+// This is a famous historical quirk in JavaScript. 
+
+
+
 
 // ============================================
 // SUBMISSION CHECKLIST
