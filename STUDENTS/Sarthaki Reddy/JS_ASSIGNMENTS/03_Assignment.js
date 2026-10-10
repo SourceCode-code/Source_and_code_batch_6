@@ -241,6 +241,14 @@ console.log((0.1 + 0.2).toFixed(2)===(0.3).toFixed(2))
 //        HINT -> each block must be a 4-DIGIT number (1000 to 9999) so it never shows 3 digits,
 //        then JOIN the 3 blocks with spaces.
 
+
+let digit_1 = Math.floor(Math.random()*(10000-1000)+1000)
+let digit_2 = Math.floor(Math.random()*(10000-1000)+1000)
+let digit_3 = Math.floor(Math.random()*(10000-1000)+1000)
+
+console.log(digit_1, " " ,digit_2, " ", digit_3)
+
+
 //Q21 --> BONUS (MINI PROJECT - BILLING RECEIPT) ->
 //        A customer buys 3 items with these prices : 199.99, 449.50, 89.75
 //        a) calculate the total bill
@@ -251,6 +259,22 @@ console.log((0.1 + 0.2).toFixed(2)===(0.3).toFixed(2))
 //           Discount   : 10.0%
 //           Final Bill : Rs. 665.32
 //        HINT -> discount = total * (randomPercent / 100). Round at the END, not in between.
+
+let item1_price = 199.99
+let item2_price = 449.50
+let item3_price = 89.75
+
+let totalBill= item1_price + item2_price + item3_price
+console.log(`TotalBill ${totalBill}`)
+//Math.floor(Math.random()*(max-min+1)+min)
+let discountbetween= Math.floor(Math.random()*(15-5+1))+5
+console.log(discountbetween)
+ let discount= totalBill *( discountbetween/100)
+ console.log(`Discount ${discount.toFixed(2)}`)
+let finalBill= totalBill-discount
+console.log(`FinalBill ${finalBill}`)
+
+
 
 // ============================================
 // SUBMISSION CHECKLIST
