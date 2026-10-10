@@ -114,3 +114,64 @@ console.log(basic_operation_array)
 
 console.log(basic_operation_array.length)   // STILL 8 -> delete DID NOT REDUCE THE LENGTH
 
+
+//-------------------------------------------------METHODS ON ARRAY --------------------------------
+
+
+// WHEN WE USE ANY METHOD WE GET 2 THINGS 
+
+// OUTPUT -> RESULT OF ACTION PERFORMED 
+// RETURN TYPE --> THE DATATYPE OF RECVIED OUTPUT 
+
+let Method_array_1 = ["siddhant","arjun","gadakh",27]
+
+
+// ADDITION TO ARRAY 
+
+// 1 METHOD -  push() -> THIS METHOD WILL ADD A ELEMENT AT THE END OF THE ARRAY 
+
+// stnax   --> arrayName.push("value that is to added")
+
+Method_array_1.push("lead-software-engineer")
+
+console.log(Method_array_1)
+
+// output -> [ 'siddhant', 'arjun', 'gadakh', 27, 'lead-software-engineer' ]
+// return type  --> array 
+
+// 2 METHOD - unshift() -> THIS METHOD WILL ADD A ELEMENT AT THE START OF THE ARRAY 
+
+
+// stnax   --> arrayName.unshift("value that is to added")
+
+
+Method_array_1.unshift("Mr")
+
+console.log(Method_array_1)
+
+//output -> [ 'Mr', 'siddhant', 'arjun', 'gadakh', 27, 'lead-software-engineer' ]
+// return type -> array 
+
+
+//METHODS FOR DELETION 
+
+// 3 METHOD -> pop() -> this removes the element form the end.
+
+//syntax ->arrayName.pop()
+
+Method_array_1.pop()
+console.log(Method_array_1)
+
+
+//output - > [ 'Mr', 'siddhant', 'arjun', 'gadakh', 27 ]
+//return type -> array 
+
+//4 METHOD -> shift() ->  this removes the element form the start.
+
+//syntax ->arrayName.shift()
+
+Method_array_1.shift()
+
+console.log(Method_array_1)
+//output -> [ 'siddhant', 'arjun', 'gadakh', 27 ]
+//return type -> array 
