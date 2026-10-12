@@ -285,3 +285,95 @@ console.log(Boolean(0))   // false
 console.log(Boolean(null)) // false
 
 // Other falsy values include undefined and NaN.
+
+console.log("=================================================")
+console.log("SECTION D : INTERVIEW QUESTIONS")
+console.log("=================================================")
+
+//Q19 --> INTERVIEW QUESTION -> why is typeof NaN === "number" ?
+console.log("Q19")
+//        Also : why is NaN === NaN false ? and what is the CORRECT way to detect NaN ?
+//        HINT -> NaN means the result of FAILED number maths. it is still a number
+//        that failed. comparison with NaN can never be true -> what method solves this ?
+
+console.log(typeof NaN); // "number"
+
+// NaN === NaN is false because NaN is not equal to itself.
+
+console.log(NaN === NaN); // false
+
+// Correct way to detect the actual NaN value:
+
+console.log(Number.isNaN(NaN)); // true
+
+// Number.isNaN() is preferred when checking specifically for NaN.
+
+console.log("=================================================")
+
+//Q20 --> INTERVIEW QUESTION -> Number("") gives 0 but Number(undefined) gives NaN.
+console.log("Q20")
+//        Explain the difference between an EMPTY STRING and UNDEFINED.
+//        HINT -> "" is a real value (empty box), undefined means the box does not exist.
+// Number("") gives 0:
+
+// "" is an empty string.
+// It is a real string value containing zero characters.
+// JavaScript converts an empty string to 0 when using Number().
+
+// Number(undefined) gives NaN:
+
+// undefined means that a value has not been assigned.
+// JavaScript cannot convert undefined into a meaningful number,
+// so the result is NaN.
+
+console.log(Number(""));         // 0
+console.log(Number(undefined));  // NaN
+
+console.log("=================================================")
+
+
+//Q21 --> INTERVIEW QUESTION (CLASSIC) -> what is the difference between
+console.log("Q21")
+//        parseInt("12.9") and Math.floor(12.9) ?
+//        Both LOOK like they give 12. Now check these two and explain :
+
+//        HINT -> parseInt CUTS towards ZERO, Math.floor goes DOWN on the number line.
+//        on negative numbers these are NOT the same !
+// parseInt("12.9") -> 12
+// Math.floor(12.9) -> 12
+
+// They look the same for positive numbers,
+// but they behave differently with negative numbers.
+
+console.log(parseInt("-12.9"));  // -12
+console.log(Math.floor(-12.9));  // -13
+
+// parseInt() removes the decimal part and moves toward ZERO.
+
+// -12.9 -> -12
+
+// Math.floor() moves DOWN toward negative infinity.
+
+// -12.9 -> -13
+
+// Therefore parseInt() and Math.floor() are NOT the same.
+
+console.log("=================================================")
+
+//Q22 --> INTERVIEW QUESTION -> what is the difference between IMPLICIT and EXPLICIT conversion ?
+console.log("Q22")
+//        Give one example of each from this lecture.
+//        HINT -> implicit = JS converts automatically ("5" - 5), explicit = YOU convert (Number("5")).
+
+// IMPLICIT conversion:
+// JavaScript automatically converts the datatype.
+
+console.log("5" - 5); // 0
+
+// JavaScript automatically converts "5" into 5.
+
+// EXPLICIT conversion:
+// We manually convert the datatype.
+console.log(Number("5")); // 5
+
+// Here, we explicitly told JavaScript to convert "5" to a number.
