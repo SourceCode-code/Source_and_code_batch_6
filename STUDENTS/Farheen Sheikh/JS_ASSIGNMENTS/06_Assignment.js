@@ -177,6 +177,19 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //           "first name is longer" / "last name is longer"
 //        HINT -> .length (lecture 04) + comparison (this lecture).
 //Answer:- 
+console.log("<-------------------- Q13 ------------------------------------>")
+
+let firstName = "siddhant"
+let lastName = "gadakh"
+//a) compare BOTH lengths using > and print the boolean
+console.log(firstName.length >lastName.length )  //true
+//b) use the ternary to print which name is longer :
+//           "first name is longer" / "last name is longer"
+console.log(firstName.length > lastName.length
+        ? "first name is longer"
+        : "last name is longer"
+           ) // Output: first name is longer
+
 
 //Q14 --> let word1 = "python"
 //        let word2 = "jargon"
@@ -184,25 +197,53 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        Print the final true/false.
 //        HINT -> includes() (lecture 04) combined with && (this lecture).
 //Answer:- 
+console.log("<-------------------- Q14 ------------------------------------>")
+
+let word1 = "python"
+let word2 = "jargon"
+//Check if the word "on" is found in BOTH words using includes() and &&.
+console.log(word1.includes("on") && word2.includes("on"))
+
 
 //Q15 --> let base = 10
 //        let height = 6
 //        Calculate the area of the triangle (formula -> (base * height) / 2)
 //        and print it like "Area of triangle is : 30".
 //        OPTIONAL -> try it with prompt() for user input (works in the BROWSER console only).
-//Answer:- 
+//Answer:- console.log("<-------------------- Q15 ------------------------------------>")
+let base = 10
+let height = 6
+let Area_of_triangle = base * height /2
+console.log(`Area of triangle is :${Area_of_triangle} `)
 
 //Q16 --> let length = 12
 //        let width = 8
 //        Calculate the AREA (length * width) and PERIMETER (2 * (length + width))
 //        of the rectangle. Print both in a readable format using template literals.
-//Answer:- 
+//Answer:-
+console.log("<-------------------- Q16 ------------------------------------>")
+let length = 12
+let width = 8
+let area = length * width
+let perimeter = (2*(length+width))
+
+console.log(`area of rectangle is : ${area}`)
+console.log(`area of perimeter is : ${perimeter}`)
 
 //Q17 --> let radius = 7
 //        Calculate the AREA (Math.PI * radius ** 2) and CIRCUMFERENCE
 //        (2 * Math.PI * radius) of the circle. Round both to 2 decimals with toFixed().
 //        HINT -> Math.PI is a PROPERTY (no brackets) -> revision lecture 03.
 //Answer:- 
+console.log("<-------------------- Q17 ------------------------------------>")
+
+let radius = 7
+let AREA = Math.PI * radius ** 2
+let CIRCUMFERENCE  =2 * Math.PI * radius
+
+console.log(`Area of circle is : ${AREA.toFixed(2)}`) //Output:-  153.94
+console.log(`Area of circumference is : ${CIRCUMFERENCE.toFixed(2)}`)//Output:-  43.98
+
 
 //Q18 --> let salary = 25000
 //        Using ONLY assignment shortcuts, do these steps in order :
@@ -212,6 +253,21 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        Print the final salary.
 //        HINT -> golden formula (lecture 03) for the random part.
 //Answer:- 
+console.log("<-------------------- Q18 ------------------------------------>")
+let salary = 25000;
+
+// a) Add a bonus of 5000
+salary += 5000; // salary = 25000 + 5000 = 30000
+
+// b) Deduct 10% tax
+salary *= 0.9; // salary = 25000 * 0.9 = 30000
+
+// c) Add a random incentive between 500 and 1500
+salary += Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
+
+// Print the final salary
+console.log(`Final salary is : ${salary}`); //Final salary is : 27591
+
 
 // ------------------- SECTION D : INTERVIEW QUESTIONS (answer in comments) -------------------
 
@@ -219,12 +275,46 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        Write ONE line for each with a small example.
 //        HINT -> assignment | loose comparison | strict comparison.
 //Answer:- 
+console.log("<-------------------- Q19 ------------------------------------>")
+// 1. =  (Assignment operator): Assigns a value to a variable.
+let c = 5;
+
+// 2. == (Loose equality): Compares values after type conversion if needed.
+console.log(5 == "5");   // true
+
+// 3. === (Strict equality): Compares values AND data types without type conversion.
+console.log(5 === "5");  // false
+
 
 //Q20 --> INTERVIEW QUESTION -> why do JS developers ALWAYS prefer === over == ?
 //        Give one real example where == gives a SURPRISING result.
 //        HINT -> "0" == 0, "" == 0, null == undefined -> try these in the console,
 //        write the results, and explain the surprise.
 //Answer:- 
+console.log("<-------------------- Q20 ------------------------------------>")
+
+console.log("0" == 0);          // true
+console.log("" == 0);           // true
+console.log(null == undefined); // true
+//"0" == 0 → true because JavaScript converts the string "0" into the number 0.
+//"" == 0 → true because JavaScript converts the empty string "" into the number 0.
+//null == undefined → true because JavaScript treats null and undefined as equal when using loose equality (==).
+
+console.log("0" === 0);          // false
+console.log("" === 0);           // false
+console.log(null === undefined); // false
+
+let userInput = "0";
+
+if (userInput == 0) {
+    console.log("Input is zero");
+} // Output: Input is zero
+
+/*
+Interview answer:-Prefer === because it avoids implicit type conversion,
+ makes comparisons more predictable, and reduces bugs.
+ Use == only when you intentionally want JavaScript's type-conversion behavior.
+*/
 
 //Q21 --> INTERVIEW QUESTION -> what is the output of the below code ? explain step by step.
 //        let x = 5
@@ -234,11 +324,34 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        HINT -> solve LEFT to RIGHT : x++ gives the OLD value first,
 //        then ++x increases BEFORE using. track x at every step.
 //Answer:- 
+console.log("<-------------------- Q21 ------------------------------------>")
+
+let x = 5;
+let y = x++ + ++x; //y = 5 + 7 = 12
+//x++ → Use first, increment afterward.
+//++x → Increment first, use afterward.
+
+console.log(y); // 12
+console.log(x); // 7
 
 //Q22 --> INTERVIEW QUESTION -> what does the % (modulus) operator do ?
 //        Write 3 real-world uses of % (from the lecture + your own thinking).
 //        HINT -> even/odd check is one. what about checking divisibility by 5 ? or cycles ?
-//Answer:- 
+//Answer:-
+console.log("<-------------------- Q22 ------------------------------------>")
+
+//The modulus operator % returns the remainder after dividing one number by another.
+console.log(10 % 3); // 1
+console.log(12 % 4); // 0
+console.log(7 % 2);  // 1
+
+//1. Check whether a number is even or odd
+let num_1 = 8;
+console.log(num_1 % 2 === 0); // true (even)
+
+//2. Check divisibility by 5
+let num_2 = 25;
+console.log(num_2 % 5 === 0); // true
 
 //Q23 --> INTERVIEW QUESTION -> what is operator precedence ?
 //        Predict WITHOUT running, then confirm :
@@ -248,6 +361,17 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        HINT -> * / % are calculated BEFORE + - (like BODMAS maths).
 //        brackets () always win.
 //Answer:- 
+console.log("<-------------------- Q23 ------------------------------------>")
+/*
+What is operator precedence in JavaScript?
+Operator precedence determines the order in which operators are evaluated in an expression.
+Operators with higher precedence are evaluated before operators with lower precedence. 
+Parentheses () can change the order of evaluation.
+*/
+
+console.log(2 + 3 * 4);     // 14
+console.log((2 + 3) * 4);   // 20
+console.log(10 - 4 % 3);    // 9
 
 // ------------------- SECTION E : BONUS CHALLENGE -------------------
 
@@ -260,6 +384,33 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        HINT -> a = a + b  ->  b = a - b  ->  a = a - b
 //        track the values on paper step by step, then explain WHY it works in comments.
 //Answer:- 
+console.log("<-------------------- Q24 ------------------------------------>")
+
+let a1 = 3;
+let b1 = 8;
+
+// Print values BEFORE swapping
+console.log("Before swapping:");
+console.log("a =", a); // 3
+console.log("b =", b); // 8
+
+// Swap using arithmetic operators
+a = a + b; // a = 3 + 8 = 11
+b = a - b; // b = 11 - 8 = 3
+a = a - b; // a = 11 - 3 = 8
+
+// Print values AFTER swapping
+console.log("After swapping:");
+console.log("a =", a); // 8
+console.log("b =", b); // 3
+
+// WHY IT WORKS:
+// Step 1: a stores the sum of both values (3 + 8 = 11).
+// Step 2: Subtracting the old b from the sum gives the old a (11 - 8 = 3).
+//         So b now contains the old value of a.
+// Step 3: Subtracting the new b from the sum gives the old b (11 - 3 = 8).
+//         So a now contains the old value of b.
+
 
 //Q25 --> BONUS (MINI PROJECT - SHOPPING BILL) ->
 //        let price = 499
@@ -276,6 +427,28 @@ console.log((year%2 == 0) ? "Even" : "ODD") //output:- even
 //        HINT -> ternary gives you the discount AMOUNT (0 or total * 0.1),
 //        toFixed(2) for the money format (revision lecture 03).
 //Answer:- 
+console.log("<-------------------- Q25 ------------------------------------>")
+
+let price = 499;
+let quantity = 3;
+
+// a) Calculate the total using *=
+let total = price;
+total *= quantity; //total = 499 × 3 = 1497
+
+// b) Calculate the discount using a ternary operator
+let discount = total > 1000 ? total * 0.1 : 0;
+
+// Calculate the final bill
+let finalBill = total - discount;
+
+// c) Print the receipt in the required format
+console.log(`Price     : Rs. ${price}`) //Price     : Rs. 499
+console.log(`Quantity  : ${quantity}`) //Quantity  : 3
+console.log(`Total     : Rs. ${total.toFixed(2)}`) //Total     : Rs. 1497.00
+console.log(`Discount  : Rs. ${discount.toFixed(2)}`)// Discount  : Rs. 149.70
+console.log(`Final Bill: Rs. ${finalBill.toFixed(2)}`)// Final Bill: Rs. 1347.30
+
 
 // ============================================
 // SUBMISSION CHECKLIST
