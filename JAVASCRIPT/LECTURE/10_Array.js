@@ -93,7 +93,7 @@ console.log(basic_operation_array[0])
 
 // 2 UPDATE  -> TO UPDATE THE EXISTING VALUE 
 
-basic_operation_array[basic_operation_array.length-1] = "software engineer"
+basic_operation_array[basic_operation_array.length - 1] = "software engineer"
 //basic_operation_array[6] = "software engineer"
 
 console.log(basic_operation_array)
@@ -123,7 +123,7 @@ console.log(basic_operation_array.length)   // STILL 8 -> delete DID NOT REDUCE 
 // OUTPUT -> RESULT OF ACTION PERFORMED 
 // RETURN TYPE --> THE DATATYPE OF RECVIED OUTPUT 
 
-let Method_array_1 = ["siddhant","arjun","gadakh",27]
+let Method_array_1 = ["siddhant", "arjun", "gadakh", 27]
 
 
 // ADDITION TO ARRAY 
@@ -175,3 +175,134 @@ Method_array_1.shift()
 console.log(Method_array_1)
 //output -> [ 'siddhant', 'arjun', 'gadakh', 27 ]
 //return type -> array 
+
+const fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes", "Pineapple", "Strawberry", "Watermelon", "Kiwi", "Papaya"];
+
+//slice(starting index , ending index) -> but it will not consider ending index  
+
+let arr_slice = fruits.slice(0, 3) //[ 'Apple', 'Banana', 'Mango' ]
+
+console.log(arr_slice)
+
+// splice(starting index , number character)
+
+
+const fruits_1 = ["Apple", "Banana", "Mango", "Orange", "Grapes", "Pineapple", "Strawberry", "Watermelon", "Kiwi", "Papaya"];
+
+
+let splice_arr = fruits_1.splice(0, 5)
+
+console.log(splice_arr) //[ 'Apple', 'Banana', 'Mango', 'Orange', 'Grapes' ]
+
+
+
+// sort -> this method will sort the array alphabatically 
+
+const mixedArray = [10, "Hello", 25, "Apple", 42, "World"];
+
+console.log(mixedArray.sort())
+
+
+// if we want numbers 
+
+const numbers = [
+    123456789,
+    987654321,
+    1234567890,
+    0,
+    9876543210,
+    1234567890123,
+    999999999999999];
+
+// to sort numbers use this 
+
+let small_large =numbers.sort((a,b)=>{return a-b}) // small to large
+
+
+console.log(small_large)
+
+// reverse() - this is used to revserse your array
+console.log(small_large.reverse()) 
+
+// resverse is an array method 
+
+
+// question - > revsere the given string 
+
+let str_q = " hello my name is ....."
+
+console.log(str_q.split("").reverse().join("")) //..... si eman ym olleh 
+
+
+// join() -> this method is used to convert your array into string 
+
+
+console.log(fruits.join(" --> "))
+
+console.log(fruits.join(" "))
+
+
+// inculdes() -> this will check if the element is present in the array or not 
+
+console.log(fruits.includes("Mango"))
+console.log(fruits.includes("mango"))
+
+
+// concat -> this method is used to join two or more arrays 
+
+let a = [ 1,2,3]
+let b = [4,5,6]
+let c = [7,8,9]
+
+let combine_array = a.concat(b,c)
+console.log(combine_array) 
+
+let rev_combine= c.concat(b,a)
+console.log(rev_combine)
+
+
+//flat() -->this is used to fallten the array 
+// if in a single there are mutiple array you want to combine them in a single array use flat
+
+const arr = [1, 2, [3, 4], [5, 6]];
+
+console.log(arr.flat()) //[ 1, 2, 3, 4, 5, 6 ]
+
+
+// how to find the max and min value od array 
+
+const number_a = [
+  42, 17, 89, 3, 56,
+  91, 24, 68, 12, 75,
+  34, 100, 7, 63, 48
+];
+
+
+let sorted_array = number_a.sort((a,b)=>{return a-b})
+console.log(number_a)
+
+console.log(sorted_array[0]) // smallest
+console.log(sorted_array[sorted_array.length-1]) // largest element 
+console.log(sorted_array[sorted_array.length-2]) // second largest  element
+
+
+// max
+console.log(Math.max(...number_a)) //100
+
+
+// min 
+
+console.log(Math.min(...number_a)) //3
+
+
+//---------------------------------------------ADVANCE METHODS -------------------------------------
+// LOOPS IN ARRAY 
+
+/**
+ * map()
+ * filter()
+ * reduce()
+ * forEach()
+ * every()
+ * some()
+ */
