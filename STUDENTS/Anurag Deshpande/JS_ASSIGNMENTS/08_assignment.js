@@ -1,3 +1,4 @@
+
 console.log("==========================================")
 console.log("assignment 08")
 console.log("section A ")
@@ -40,3 +41,6 @@ let month = console.log(date.getMonth()) + 1 //
 let todays_date = console.log(date.getDate) 
 let hours = console.log(date.getHours())
 let minute = console.log(date.getMinutes())
+
+console.log("=================================")
+
