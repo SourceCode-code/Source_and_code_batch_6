@@ -167,7 +167,7 @@ console.log(one); // 11
 
 ```js
 {
-  let a = 10;
+  let `a = 10;
   var b = 20;
   console.log(a); // 10 (works inside the block)
   console.log(b); // 20
