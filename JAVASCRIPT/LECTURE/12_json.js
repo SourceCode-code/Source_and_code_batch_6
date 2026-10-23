@@ -1,18 +1,40 @@
-//JSON -> JAVASCRIPT OBJECT NOTATATION
+// ============================================================
+// 12 - JAVASCRIPT : JSON (JAVASCRIPT OBJECT NOTATION)
+// ============================================================
 
-//WHY WAS JSON MADE OR WHAT ARE THE USE CASE
+// SECTION 1 -> WHAT IS JSON ?
+// ============================================================
+
 /**
- * JSON MAKES DATA MORE MANAGEABLE AND IT MAKES DATA MORE UNDERSTANDABLE/READABLE
+ * JSON -> JavaScript Object Notation
+ * It is a lightweight data-interchange format that is easy for humans to read/write
+ * and easy for machines to parse/generate.
+ *
+ * JSON is text-based and language-independent (used by many programming languages).
  */
 
-// WHAT ARE PRIMARY USECASES FOR A AUTOMATION TESTOR
-/*
-1 JSON IS USED TO STORED THE DATA FOR AUTOMATION
-2 JSON IS USED TO SEND DATA FORM CLIENT SIDE TO SERVER SIDE AND VICE VERSA ( FOR REST API )
+/**
+ * WHY WAS JSON MADE / PRIMARY USE CASES FOR AN AUTOMATION TESTOR
+ * -------------------------------------------------------------------------
+ * 1. JSON is used to store test data for automation (test users, payloads, config).
+ * 2. JSON is used to send data from client side to server side and vice versa (REST APIs).
+ * 3. JSON is the new generation alternative to XML (lighter, faster, easier to parse).
+ */
 
-*/
+// SECTION 2 -> JSON SYNTAX RULES
+// ============================================================
 
-// JSON IS NEW GEN ALTERNATIVE TO XML
+/**
+ * JSON RULES ->
+ * 1. Data is in name/value pairs ( key : value )
+ * 2. Data is separated by commas
+ * 3. Curly braces hold objects { }
+ * 4. Square brackets hold arrays [ ]
+ * 5. BOTH keys AND string values must be wrapped in DOUBLE QUOTES " "
+ * 6. No comments allowed in JSON
+ * 7. No trailing commas allowed in JSON
+ * 8. Numbers must NOT have leading zeros
+ */
 
 /*
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,12 +82,11 @@ JSON EXAMPLE
   */
 
 
-// WHAT IS DIFFERENCE BETWEEN JSON AND OBJECT 
-//IN JSON FOR BOTH KEY AND HAVE ARE WRAPPED ("DOUBLE")
+// SECTION 3 -> DIFFERENCE BETWEEN JSON AND JAVASCRIPT OBJECT
+// ============================================================
 
-/*
-JSON EXAMPLE
- {
+/* JSON EXAMPLE (notice keys are in double quotes)
+{
     "id": 102,
       "name": "Priya",
       "age": 21,
@@ -88,10 +109,16 @@ JSON EXAMPLE
 
 
 
-//-------------------- CONVERSION OF JSON INTO OBJECT AND VICE VERSA ---------------------------
-// NOTE WHEN DELACRING YOUR JSON DATA IN JS FILE ALWAYS WRAP IT IN BACKTICKS 
+// SECTION 4 -> CONVERSION OF JSON INTO OBJECT AND VICE VERSA
+// ============================================================
+/**
+ * NOTE -> When declaring JSON data inside a JS file, always wrap it in backticks (` `)
+ * because JSON contains double quotes which would conflict with normal string quotes.
+ */
 
-// PARSE() -> THIS METHOD IS USED TO CONVERT YOUR JSON DATA INTO OBJECTS
+// ----------------------------------------------------------
+// JSON.parse() -> Convert JSON string into JavaScript Object
+// ----------------------------------------------------------
 
 let car_json = `{
     "brand": "Toyota",
@@ -110,36 +137,19 @@ let car_json = `{
     ],
     "available": true
 }`
-//sytanx
-
-/*
-varaiblename =JSON.parse(json data )
+/* SYNTAX
+variablename = JSON.parse(json data)
 */
 
 let car_obj = JSON.parse(car_json)
-console.log(car_obj)
+console.log("Parsed car object:", car_obj)
+console.log("Brand:", car_obj.brand)
+console.log("Model:", car_obj.model)
+console.log("Features:", car_obj.features)
 
-/*
-{
-  brand: 'Toyota',
-  model: 'Fortuner',
-  year: 2025,
-  color: 'Black',
-  fuel_type: 'Diesel',
-  transmission: 'Automatic',
-  seating_capacity: 7,
-  price: 3500000,
-  features: [
-    'Air Conditioning',
-    'Touchscreen Display',
-    'Parking Sensors',
-    'Sunroof'
-  ],
-  available: true
-}
-  */
-
-//STRINGIFY() -> THIS METHOD IS USED TO CONVERT OBJECT INTO JSON
+// ----------------------------------------------------------
+// JSON.stringify() -> Convert JavaScript Object into JSON string
+// ----------------------------------------------------------
 
 const student_OBJ = {
     id: 101,
@@ -147,12 +157,35 @@ const student_OBJ = {
     age: 20,
     course: "BCA",
     city: "Mumbai"
-};
+}
 
 let json_student_data = JSON.stringify(student_OBJ)
+console.log("\nStringified student:", json_student_data)
 
-console.log(json_student_data) 
-//{"id":101,"name":"Rahul","age":20,"course":"BCA","city":"Mumbai"}
+// ----------------------------------------------------------
+// JSON.stringify() with pretty-print (space argument)
+// ----------------------------------------------------------
+
+console.log("\nPretty-printed JSON:")
+console.log(JSON.stringify(student_OBJ, null, 2))
+
+// ----------------------------------------------------------
+// JSON.stringify() with replacer (array of keys to keep)
+// ----------------------------------------------------------
+
+let Paul = {
+    email: "paul@paul.com",
+    skills: ["HTML", "CSS", "JavaScript", "MongoDB", "Express", "React", "Node"],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+}
+
+// one-line solution -> keep only needed fields
+let p_json = JSON.stringify(Paul, ["email", "isLoggedIn"])
+console.log("\nReplacer array (email, isLoggedIn only):", p_json)
+
+// (student_OBJ and JSON.stringify examples already covered above)
 
 
 let users = {
@@ -225,79 +258,75 @@ let users = {
 };
 
 
+// Convert whole users object to JSON
 let JSON_EXAMPLE = JSON.stringify(users)
-console.log(JSON_EXAMPLE)
+console.log("\nAll users JSON:", JSON_EXAMPLE)
 
 
-// EXAMPLE -> CONVERSION OF DATA TO JSON BUT ONLY KEEPING THE NEEDED DATA 
-console.log(users["Alex"])
-
+// Convert only ONE user (like extracting a single API response)
+console.log("\nSingle user (Alex):", users["Alex"])
 let alex_json = JSON.stringify(users["Alex"])
-console.log(alex_json)  //{"email":"alex@alex.com","skills":["HTML","CSS","JavaScript"],"age":20,"isLoggedIn":false,"points":30}
+console.log("Alex JSON:", alex_json)
 
 
-// complex --> 
-
-
-// get the data and convert it into single object/json
-//email 
-//age 
-
+// ----------------------------------------------------------
+// Filter -> keep only email and age for every user
+// ----------------------------------------------------------
 
 let filter = {}
 
-for(let key in users){
+for (let key in users) {
     filter[key] = {
         email:users[key].email,
         age:users[key].age
     }
 }
 
-console.log(filter)
+console.log("\nFiltered object:", filter)
 
-/**
- * {
-  Alex: { email: 'alex@alex.com', age: 20 },
-  Asab: { email: 'asab@asab.com', age: 25 },
-  Brook: { email: 'daniel@daniel.com', age: 30 },
-  Daniel: { email: 'daniel@alex.com', age: 20 },
-  John: { email: 'john@john.com', age: 20 },
-  Thomas: { email: 'thomas@thomas.com', age: 20 },
-  Paul: { email: 'paul@paul.com', age: 20 }
-}
- */
+
+
+
+
+
 
 let filter_json = JSON.stringify(filter)
-console.log(filter_json)
+console.log("Filtered JSON:", filter_json)
 
-/*
-{"Alex":{"email":"alex@alex.com","age":20},"Asab":{"email":"asab@asab.com","age":25},"Brook":{"email":"daniel@daniel.com","age":30},"Daniel":{"email":"daniel@alex.com","age":20},"John":{"email":"john@john.com","age":20},"Thomas":{"email":"thomas@thomas.com","age":20},"Paul":{"email":"paul@paul.com","age":20}}
-*/
+// SECTION 6 -> SAFE JSON PARSING (TRY/CATCH)
+// ============================================================
 
+/**
+ * JSON.parse() throws an error if the string is NOT valid JSON.
+ * In automation/API testing, always wrap JSON.parse() in try/catch
+ * so your script does not crash on malformed API responses.
+ */
 
-let Paul= {
-        email: "paul@paul.com",
-        skills: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "MongoDB",
-            "Express",
-            "React",
-            "Node",
-        ],
-        age: 20,
-        isLoggedIn: false,
-        points: 40,
+function safeParse(jsonString) {
+    try {
+        return JSON.parse(jsonString)
+    } catch (error) {
+        console.error("Invalid JSON received:", error.message)
+        return null
     }
-//one line solution -> 
+}
 
-let p_json = JSON.stringify(Paul,["email","isLoggedIn"])
-console.log(p_json)
+// Valid JSON
+let valid = safeParse('{"name": "Sid", "age": 25}')
+console.log("\nSafe parse valid:", valid)
 
-//{"email":"paul@paul.com","isLoggedIn":false}
+// Invalid JSON (missing quotes around key)
+let invalid = safeParse('{name: "Sid", age: 25}')
+console.log("Safe parse invalid:", invalid)
 
+// SECTION 7 -> JSON FILE IN THIS FOLDER
+// ============================================================
 
-//JSON 
-// WHY IS USED 
-// CONVERSION OPERTAION 
+/**
+ * NOTE: This lecture folder also contains 12_B_EXAMPLE_json.json
+ * which is a real JSON file version of the users data used above.
+ * You can read it with Node's fs module in real automation projects:
+ *
+ * const fs = require('fs')
+ * const data = JSON.parse(fs.readFileSync('./12_B_EXAMPLE_json.json', 'utf8'))
+ */
