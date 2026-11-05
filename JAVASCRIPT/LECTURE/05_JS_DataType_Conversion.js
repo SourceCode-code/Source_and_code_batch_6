@@ -172,4 +172,3 @@ console.log(isNaN("hello123")) // true
 // NOTE -> NaN is NOT equal to anything, not even to itself !
 console.log(NaN === NaN) // false  (classic interview question)
 // that is why we use isNaN() to detect it
-
