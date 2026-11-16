@@ -92,9 +92,9 @@ console.log(myAge);  //O/p- 34
 // ------------------- SECTION C : CHALLENGE (based on theory notes) -------------------
 
 //Q10 --> The below variable names are INVALID. Write the reason next to each one as a comment
-//        let 1num = 1  --- veriable name should start with $ or _ or alphabet
+//        let 1num = 1  --- veriable name should not start with number or symbol
 //        let my name = "js" ---- there should be no space allowed in variable name
-//        let let = 2 -----variable name should not be a command name
+//        let let = 2 -----variable name should not be a reserved keyword ex. var let const
 //        HINT -> check variable naming rules in theory notes
 
 
