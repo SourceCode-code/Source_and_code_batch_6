@@ -142,7 +142,7 @@ console.log(word_count) // 12
 
 // program 3 -> count the number of vowels in any given string ( "aeiou" )
 
-let norm_str = "hello my name is anurag"
+let norm_str = /hello my name is anurag/gi
 
 let v_count = 0
 
