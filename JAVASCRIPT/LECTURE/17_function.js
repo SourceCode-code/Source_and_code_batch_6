@@ -1,0 +1,114 @@
+// WHAT IS VARIBLE ? 
+/**
+ * its is cointainer that is used to store data 
+ */
+
+
+let x = 10
+let y = 30
+
+
+// mathmetical 
+
+console.log(x + y)
+console.log(x - y)
+console.log(x * y)
+console.log(x / y)
+console.log(x % y)
+console.log(x ** y)
+
+
+// now calcauylte for 
+
+let z = 50
+let w = 100
+
+
+
+// FUNCTIONS -> FUNCTION IS CONTAINER THAT IS USED TO STORE YOUR CODE 
+
+// WHY TO USE IT -> 
+// CODE MAGNAGEABLE 
+// THERE NO REPEATION 
+// IT AVOID SYNTAX MISTAKES 
+// IT WILL MAKE YOU DYNAMIC 
+
+
+// SYNTAX FUNCTION OF FUNCTION 
+
+
+/**
+ * 
+ * function functionname(parameters){
+ * // logics steps
+ * }
+ * 
+ * 
+ * how to call or use the function 
+ * 
+ * functionname(parameter
+ * 
+ * 
+ */
+
+
+function calci(x,y) {
+
+    console.log(x+y)
+    console.log(x - y)
+    console.log(x * y)
+    console.log(x / y)
+    console.log(x % y)
+    console.log(x ** y)
+}
+
+calci(100,50)
+calci(2,10)
+calci(2,2)
+
+
+// there are total 6 functions in js  and they are classifed  on 2 major catoregy 
+
+// 1 on the basis of wrting 
+
+/*
+1 delecrative type 
+2 expression type 
+3 arrow function 
+*/
+
+// basis paramter 
+/*
+1 with parameter without retrun type 
+2 without parameter without retrun type
+3 with parameter with retrun type
+
+*/
+
+
+
+
+// program 2 -> find the number of words in the string WITHOUT using any method
+
+//let count_str = "hello my name is siddhant and i am a mentor for automation"
+
+
+
+
+console.log("____________________________________________")
+function space_count(count_str){
+    let word_count = 0 // words = number of spaces + 1 -> so the count starts from 1
+for (let i = 0; i < count_str.length; i++) {
+    if (count_str[i] === " ") {
+        word_count++ // every space means one more word starts after it
+    }
+    // console.log(word_count)
+}
+console.log(word_count) // 12
+}
+
+
+space_count("hello my name is siddhant and i am a mentor for automation")
+
+
+space_count("hello world")

@@ -144,3 +144,67 @@ let vaild_ad_reg = /^[2-9][0-9]{3} ?[0-9]{4} ?[0-9]{4}$/
 
 console.log(vaild_ad_reg.test(valid_adhar)) //false
 
+
+
+
+//example -> check the password strength 
+// length 8 chars  1 uppercase , 1 digit 
+
+
+let password_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
+
+console.log(password_pattern.test("abc123"))
+
+
+// ectaract all number form the string 
+
+
+let string = " hello my name is siddhant is 26 years old and i have 5 years of expereince as softweare i started my carrer in 2021 "
+
+
+console.log(string.match(/\d+/g)) //[ '26', '5', '2021' ]
+
+
+// count the vowels in the string 
+
+
+
+let vowels_string = " hello my name is sIddhant is 26 years old and i have 5 years of expereince as softweare i started my carrer in 2021 "
+
+/**
+ * 
+ * let norm_str = /hello my name is anurag/gi
+
+let v_count = 0
+
+for (let i = 0; i < norm_str.length; i++) {
+    let v_words = norm_str[i].toLowerCase() // one CHARACTER -> lowercase so that "A" / "E" also match
+    if (v_words === "a" || v_words === "e" || v_words === "i" || v_words === "o" || v_words === "u") {
+        v_count++
+    }
+}
+
+console.log(v_count) // 8
+ * 
+ */
+
+console.log(vowels_string.match(/[aeiou]/gi))
+console.log(vowels_string.match(/[aeiou]/gi).length)
+
+
+// clean the text 
+
+let encyrtstring = "h,!.el!.lo w'o.r,l!!!!!!!!!!!d my n!!!!!!ame is j.............ohn"
+
+console.log(encyrtstring.replace(/[,!.']/g,"")) //
+
+
+// encyrtption and decryption 
+
+
+let password = "12345"
+
+
+
+
+
