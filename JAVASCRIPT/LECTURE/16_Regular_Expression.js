@@ -147,13 +147,10 @@ console.log(vaild_ad_reg.test(valid_adhar)) //false
 
 
 
-//example -> check the password strength 
-// length 8 chars  1 uppercase , 1 digit 
+let password_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
+console.log(password_pattern.test("abc123"));
 
-let password_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
-
-console.log(password_pattern.test("abc123"))
 
 
 // ectaract all number form the string 

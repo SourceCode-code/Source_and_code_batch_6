@@ -46,7 +46,7 @@ let w = 100
  * 
  * how to call or use the function 
  * 
- * functionname(parameter
+ * functionname(parameter)
  * 
  * 
  */
@@ -109,6 +109,100 @@ console.log(word_count) // 12
 
 
 space_count("hello my name is siddhant and i am a mentor for automation")
-
-
 space_count("hello world")
+
+
+
+
+
+
+// function classfied on the basis of writing 
+
+//1 DELECRATIVE FUNCTION -> HERE WE DELACRE THE NAME OF THE FUNCTION WHILE CRAETING IT AND SO IT IS CALLED AS DELECRTIVE FUNCTION
+
+//SYNTAX
+
+function sayHello(){
+    console.log("hello!")
+}
+
+
+sayHello()
+
+
+// 2 Expression type function -> because a function is stored in a varaible that is why this is called exprfession function 
+
+//beacuse that varaible expresses the function  
+
+//SYNTAX 
+
+let printName =function (name){
+    return name 
+}
+
+let a =printName("sid")
+console.log(a)
+
+
+
+// 3 ARROW TYPE FUNCTION -> because this function uses arrow instead of the keyword function 
+
+
+let bye = ()=>{
+    console.log("bye")
+}
+
+
+bye()
+
+
+// calssfication on basis of parameters 
+
+// 1 without parameter without return type 
+
+
+function fullname(){
+    console.log("siddhant")
+}
+
+fullname()
+
+fullname()
+
+// 2 with parameter without retrun type 
+
+function cal(num1,num2){
+    console.log(num1+num2)
+    console.log(num1-num2)
+    console.log(num1*num2)
+}
+
+
+
+cal(10,2)
+cal(20,5)
+
+
+// with parameter with retrun type 
+
+// return type -> a function with a return type have a special usecase where i can store the output of the function in a varibale and then further use it 
+
+//NOTE :- WHEN EVER THERE IS FUNCTION WHICH HAS A RETURN TYPE WORD KEYWORD  YOU CAN NOT USE CONSOLE.LOG( ) IN THAT FUNCTION { with curly braces }
+
+// SYNATX 
+
+function add(num1,num2){
+    return  num1+num2
+}
+
+let q = add(2,3)
+
+console.log(q+10)
+console.log(q+q)
+
+
+
+// note :- function parameters can be anything any data type
+
+
+
