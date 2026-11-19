@@ -52,9 +52,9 @@ let w = 100
  */
 
 
-function calci(x,y) {
+function calci(x, y) {
 
-    console.log(x+y)
+    console.log(x + y)
     console.log(x - y)
     console.log(x * y)
     console.log(x / y)
@@ -62,9 +62,9 @@ function calci(x,y) {
     console.log(x ** y)
 }
 
-calci(100,50)
-calci(2,10)
-calci(2,2)
+calci(100, 50)
+calci(2, 10)
+calci(2, 2)
 
 
 // there are total 6 functions in js  and they are classifed  on 2 major catoregy 
@@ -96,15 +96,15 @@ calci(2,2)
 
 
 console.log("____________________________________________")
-function space_count(count_str){
+function space_count(count_str) {
     let word_count = 0 // words = number of spaces + 1 -> so the count starts from 1
-for (let i = 0; i < count_str.length; i++) {
-    if (count_str[i] === " ") {
-        word_count++ // every space means one more word starts after it
+    for (let i = 0; i < count_str.length; i++) {
+        if (count_str[i] === " ") {
+            word_count++ // every space means one more word starts after it
+        }
+        // console.log(word_count)
     }
-    // console.log(word_count)
-}
-console.log(word_count) // 12
+    console.log(word_count) // 12
 }
 
 
@@ -122,7 +122,7 @@ space_count("hello world")
 
 //SYNTAX
 
-function sayHello(){
+function sayHello() {
     console.log("hello!")
 }
 
@@ -136,19 +136,17 @@ sayHello()
 
 //SYNTAX 
 
-let printName =function (name){
-    return name 
+let printName = function (name) {
+    return name
 }
 
-let a =printName("sid")
+let a = printName("sid")
 console.log(a)
-
-
 
 // 3 ARROW TYPE FUNCTION -> because this function uses arrow instead of the keyword function 
 
 
-let bye = ()=>{
+let bye = () => {
     console.log("bye")
 }
 
@@ -161,7 +159,7 @@ bye()
 // 1 without parameter without return type 
 
 
-function fullname(){
+function fullname() {
     console.log("siddhant")
 }
 
@@ -171,16 +169,16 @@ fullname()
 
 // 2 with parameter without retrun type 
 
-function cal(num1,num2){
-    console.log(num1+num2)
-    console.log(num1-num2)
-    console.log(num1*num2)
+function cal(num1, num2) {
+    console.log(num1 + num2)
+    console.log(num1 - num2)
+    console.log(num1 * num2)
 }
 
 
 
-cal(10,2)
-cal(20,5)
+cal(10, 2)
+cal(20, 5)
 
 
 // with parameter with retrun type 
@@ -191,14 +189,14 @@ cal(20,5)
 
 // SYNATX 
 
-function add(num1,num2){
-    return  num1+num2
+function add(num1, num2) {
+    return num1 + num2
 }
 
-let q = add(2,3)
+let q = add(2, 3)
 
-console.log(q+10)
-console.log(q+q)
+console.log(q + 10)
+console.log(q + q)
 
 
 
@@ -206,3 +204,87 @@ console.log(q+q)
 
 
 
+// Examples of usecases of function 
+
+// Write a function to get me the largest and smallest number in the given array based upon parameter given 
+
+
+function GET_VALUE(array, neededvalue) {
+    let min = Math.min(...array)
+    let max = Math.max(...array)
+
+    if (neededvalue.toLowerCase() === "min") {
+        console.log(min)
+    }
+    else if (neededvalue.toLowerCase() === "max") {
+        console.log(max)
+    }
+    else {
+        console.log("enter correct parameter ")
+    }
+}
+
+
+GET_VALUE([42, 7, 89, 13, 56, 91, 24, 68, 3, 75], "min")
+
+
+// let numar = [42, 7, 89, 13, 56, 91, 24, 68, 3, 75]
+
+// console.log(Math.min(...numar))
+// console.log(Math.max(...numar))
+
+
+// vowels counting in a string 
+
+function count_vowel(string) {
+    console.log(string.match(/[aeiou]/gi).length)
+}
+//36
+
+
+count_vowel('The curious little fox wandered through the forest, searching for a magical place where the stars touched the trees."')
+
+
+
+// what a function can have unlimted number of parameters 
+
+function get_sum(...numbers) {
+    let total = 0
+    for (let n = 0; n < numbers.length; n++) {
+        total += n
+    }
+    return total
+
+}
+
+
+console.log(get_sum(0, 1, 2))
+
+console.log(get_sum(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+
+// write function which retrun me sperate even and odd array 
+
+
+function sperate_even_odd(array) {
+
+    let even = []
+    let odd = []
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            even.push(array[i])
+        }
+        else {
+            odd.push(array[i])
+        }
+    }
+    return {
+        even_numbers: even,
+        odd_numbers: odd
+    }
+
+}
+
+
+console.log(sperate_even_odd([42, 7, 89, 13, 56, 91, 24, 68, 3, 75]))
